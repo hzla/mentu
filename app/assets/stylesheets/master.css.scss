@@ -1,0 +1,126 @@
+@import 'variables';
+
+/** Buttons and Form Elements **/
+
+body div {
+	transition: all 0.25s ease-in-out 0s;
+}
+
+.btn {
+	color: white;
+	cursor: pointer;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.red-btn {
+	background: $red;
+	color: white;
+}
+
+.red-btn:hover {
+	background: white;
+	border: 1px solid $red;
+	color: $red;
+}
+
+
+.btn-rnd {
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+	text-align: center;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+input {
+	border: none;
+    -webkit-appearance: none;
+}
+
+div, input {
+	-webkit-transition: background .3s;
+}
+
+/** Backgrounds **/
+
+.white-back {
+	background: white;
+}
+
+.gray-back {
+	background: $light-grey;
+}
+
+.hidden {
+	display: none;
+}
+
+
+/** Text Formatting **/
+
+a {
+	text-decoration: none;
+	color: $black;
+}
+
+
+.bold {
+	font-weight: 600;
+}
+
+.huge-text {
+	font-size: 30px;
+}
+
+.large-text {
+	font-size: 24px;
+}
+
+
+.med-text{
+	font-size: 16px;
+}
+
+.small-text {
+	font-size: 14px;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-middle {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.mobile {
+	display: none;
+}
+
+
+
+/***********  Media Queries *******************/
+
+
+
+/************** elements with the class mobile shown, no-mobile are hidden  *****************/
+
+@media (max-width: 1023px) {
+	.no-mobile {
+		display: none;
+	}
+	.mobile {
+		display: inline-block;
+	}
+}

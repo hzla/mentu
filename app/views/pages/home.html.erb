@@ -1,0 +1,107 @@
+<%= render partial: "main_header" %>
+
+<%= video_tag "mentu.webm", id: "video", autoplay: true, :loop => true %>
+
+<div id="full-page">
+	<div class="section landing-section" id="section-1">
+		<div class="section-content">
+			<div class="section-main-text">
+				Find awesome personal mentors and get things done.
+			</div>
+
+			<div class="btn get-started sign-up">
+				Get Started
+			</div>
+		</div>
+	</div>
+	<div class="section landing-section" id="section-2">
+		<div class="section-content">
+			<div class="section-main-text">
+				Here's how it works.
+			</div>
+			<div class="step" id="step-1">
+				<div class="step-number">1</div>
+				<div class="step-title">Choose Your Interests</div>
+				<div class="step-desc">Tell us what you're passionate about. You can get help for a TOEFL test, a job interview, or a startup pitch.</div>
+			</div>
+			<div class="step" id="step-2">
+				<div class="step-number">2</div>
+				<div class="step-title">Select Your Mentor</div>
+				<div class="step-desc">Select mentors you like most based on their strengths, backgrounds, and availability. You can choose as many mentors as you like.</div>
+			</div>
+			<div class="step" id="step-3">
+				<div class="step-number">3</div>
+				<div class="step-title">Start Your Learning</div>
+				<div class="step-desc">Log in when the session starts, and connect with your mentors as you go through your fully personalized curriculum.
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="section landing-section" id="section-3">
+		<div class="section-content">
+			<div class="section-main-text">
+				Our mentors come from all over. Many from prestigious institutes.
+			</div>
+			<div id="places">
+				<% @places.each do |place| %>
+					<%= image_tag "#{place}.png", :class => "place" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="section landing-section" id="section-4">
+		<div class="section-content">
+			<div class="section-main-text">
+				Apply as a Mentor.
+			</div>
+			<div class="section-sub-text">
+				Earn Money With Your Business Education
+			</div>
+			<div class="section-desc-text">
+				If you're a native English speaker with an education or background in business, and you think that you'd be a good fit for our community, apply to join our little revolution.
+			</div>
+
+			<div class="btn get-started sign-up">
+				Get Started
+			</div>
+		</div>
+	</div>
+</div>
+<div class="side-dots">
+	<div class="circle active" id="full-1"></div>
+	<div class="circle" id="full-2"></div>
+	<div class="circle" id="full-3"></div>
+	<div class="circle" id="full-4"></div>
+</div>
+
+<div id="sign-up-modal" class="hidden">
+	<%= image_tag 'exit.svg', id: 'close-sign-up-modal' %>
+	<div id="sign-up-text" class="med-text">
+		Thanks for your interest in becoming a mentor,
+		we’re always on the lookout for help. Please leave your contact info and we’ll be in touch within the day.
+	</div>
+
+	<%= form_tag users_path, id: "user-form", remote: true do %>
+		<%= text_field_tag :email, nil, id: "user-email", placeholder: "Email" %>
+		<%= submit_tag "Submit", id: "submit-email", :class => "btn-rnd red-btn" %>
+	<% end %>
+
+</div>
+
+
+
+
+<% if !@browser.mobile? %>
+	<script>
+		$(document).ready(function() {
+			$('#full-page').fullpage({
+		      onLeave: function(index, nextIndex, direction){
+		       	console.log($($('.circle')[nextIndex - 1]).addClass('active'))
+		        $('.circle').removeClass('active')
+						$($('.circle')[nextIndex - 1]).addClass('active')
+		      }
+		  });
+		})
+	</script>
+<% end %>
