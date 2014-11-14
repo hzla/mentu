@@ -280,11 +280,11 @@ body {
 	#sign-up-modal {
 		width: 300px;
 		height: 300px;
-		left: calc(50% - 150px);
+		left: calc(50% - 140px);
 		top: calc(50vh - 150px);
 	}
 	#close-sign-up-modal {
-		left: calc(50%  + 110px);
+		left: calc(50%  + 115px);
 		top: calc(50vh - 170px);
 
 	}
@@ -350,7 +350,7 @@ body {
 			margin-top: 25vh;
 		}
 		.get-started {
-			bottom: 0;
+			top: 82vh;
 		}
 	}
 
