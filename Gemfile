@@ -30,4 +30,8 @@ gem 'browser'
 gem 'dotenv-rails' #remember to load
 gem 'pry'
 
+# Use unicorn as the app server
+gem 'unicorn'
 
+# Deploy with Capistrano
+gem 'capistrano'
