@@ -1,11 +1,13 @@
 require "bundler/capistrano"
+require "rvm/capistrano"
 
 server "106.185.29.68", :web, :app, :db, primary: true
-
-set :application, "mentu"
+# set :default_shell, '/bin/bash -l'
 set :default_environment, {
-    'PATH' => "/opt/ruby-enterprise/bin/:$PATH"
-  }
+  'PATH' => "/opt/ruby-enterprise/bin/:$PATH"
+}
+set :application, "mentu"
+
 set :user, "deployer"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
