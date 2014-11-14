@@ -53,31 +53,30 @@
 	position: absolute;
 	left: 20px;
 	top: 45vh;
-	width: 20px;
+	width: 16px;
 	z-index: 500;
 }
 
 .circle {
 	width: 10px;
 	height: 10px;
-	float: left;
 	border-radius: 10px;
 	background: lightgray;
 	margin-top: 10px;
 	cursor: pointer;
-	margin-left: 5px;
+	margin-left: auto;
+	margin-right: auto;
+
 }
 
 .circle:hover {
-	width: 20px;
-	height: 20px;
-	margin-left: 0px;
+	width: 16px;
+	height: 16px;
 }
 .circle.active {
 	background: white;
-	width: 20px;
-	height: 20px;
-	margin-left: 0px;
+	width: 16px;
+	height: 16px;
 }
 
 
@@ -96,14 +95,14 @@
 		font-size: 24px;
 		line-height: 54px;
 		height: 60px;
-		width: 200px;
-		left: calc(50% - 100px);
+		width: 240px;
+		left: calc(50% - 120px);
 		bottom: 35vh;
 	}
 	.get-started:hover {
 		background: none;
 	}
-	
+
 }
 
 /*** Section 2 ***/
@@ -111,14 +110,14 @@
 
 #section-2 {
 	.section-main-text {
-		margin-top: 20px;
-		font-size: 48px;
+		margin-top: 10vh;
+		font-size: 36px;
 	}
 	.step {
 		position: absolute;
 		width: 33%;
 		height: calc(100% - 280px);
-		top: 160px;
+		top: 30vh;
 		color: white;
 		text-align: center;
 	}
@@ -136,15 +135,16 @@
 		font-weight: 700;
 	}
 	.step-title {
-		font-size: 36px;
+		font-size: 24px;
 		width: 100%;
 		margin: 40px 0px;
-		font-weight: 700;
+		font-weight: 400;
 	}
 	.step-desc {
-		font-size: 20px;
+		font-size: 17px;
 		width: 100%;
 		font-weight: 300;
+		line-height: 1.2;
 	}
 
 
@@ -156,16 +156,17 @@
 
 #section-3 {
 	.section-main-text {
-		margin-top: 20px;
-		font-size: 48px;
+		margin-top: 10vh;
+		font-size: 36px;
+		line-height: 1.2;
 	}
 	#places {
 		width: 100%;
 	}
 	.place {
 		display: inline;
-		height: 200px;
-		width: 195px;
+		height: 160px;
+		width: auto;
 		margin-right: 40px;
 		margin-top: 40px;
 	}
@@ -177,7 +178,7 @@
 
 #section-4 {
 	.section-main-text {
-		margin-top: 35vh;
+		margin-top: 20vh;
 		height: 60px;
 	}
 	.section-sub-text {
@@ -190,6 +191,7 @@
 		font-weight: 400;
 		font-size: 20px;
 		width: 100%;
+		line-height: 1.2;
 	}
 	.get-started {
 		position: absolute;
@@ -200,7 +202,7 @@
 		height: 60px;
 		width: 200px;
 		left: calc(50% - 100px);
-		bottom: 15vh;
+		top: 60vh;
 	}
 	.get-started:hover {
 		background: none;
@@ -216,7 +218,7 @@
 	max-width: calc(100% - 40px);
 	max-height: calc(100vh - 40px);
 	width: 400px;
-	height: 260px;
+	height: 280px;
 	background: white;
 	left: calc(50% - 200px);
 	top: calc(50vh - 125px);
@@ -236,10 +238,11 @@
 }
 
 #sign-up-text {
-	text-align: center;
+	text-align: left;
 	width: calc(100% - 40px);
 	margin: 0 auto;
 	margin-top: 40px;
+	line-height: 1.2;
 }
 
 #user-form {
@@ -250,8 +253,8 @@
 #user-email {
 	width: 100%;
 	height: 40px;
-	font-size: 24px;
-	padding-left: 20px;
+	font-size: 16px;
+	padding-left: 15px;
 	box-sizing: border-box;
 	background: $light-grey;
 	border-radius: 5px;
@@ -261,7 +264,7 @@
 #submit-email {
 	height: 40px;
 	width: 100%;
-	font-size: 24px;
+	font-size: 16px;
 	margin-top: 20px;
 }
 
@@ -272,10 +275,9 @@
 
 
 @media (max-width: 1023px) {
-	
+
 body {
 	#full-page {
-
 	}
 	.landing-section {
 		display: inline-block;
@@ -295,29 +297,41 @@ body {
 		display: none;
 	}
 	#section-2 {
-		#section-main-text {
+		.section-main-text {
 			margin-top: 20px;
+			font-size: 36px;
 		}
 		#step-1 {
 			margin-top: 20px;
+		}
+		.step-number{
+			margin-top: 40px;
+		}
+		.step-title{
+			margin: 20px 0;
+		}
+		.step-desc{
+			margin-bottom: 10px;
 		}
 		.step, #step-2, #step-3 {
 			width: 100%;
 			position: static;
 			margin-bottom: 20px;
+			margin-top: 40px;
 		}
 	}
 	#section-3 {
 		.section-main-text {
-			margin-bottom: 20px;
+			margin-bottom: 40px;
+			margin-top: 40px;
 		}
 		#places {
 			text-align: center;
 		}
 		.place {
-			width: 100px;
-			height: 100px;
-			margin: 0px 20px;
+			width: 110px;
+			height: auto;
+			margin: 10px 20px;
 		}
 	}
 	#section-4 {
@@ -331,7 +345,5 @@ body {
 
 
 }
-	
-
 
 }
