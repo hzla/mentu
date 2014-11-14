@@ -30,6 +30,8 @@ gem 'browser'
 gem 'dotenv-rails' #remember to load
 gem 'pry'
 
+
+gem "net-ssh", "~> 2.7.0"
 # Use unicorn as the app server
 gem 'unicorn'
 
