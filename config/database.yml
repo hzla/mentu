@@ -4,7 +4,7 @@ development:
   database: mentu
   host: localhost
   username: mentu
-  password: 
+  password: secret
 test:
   adapter: postgresql
   encoding: unicode
@@ -12,11 +12,11 @@ test:
   host: localhost
   pool: 5
   username: mentu
-  password:
+  password: secret
 production:
   adapter: postgresql
   encoding: unicode
   database: mentu_production
   pool: 25
   username: mentu
-  password:
+  password: secret
