@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 	  else #create new user if not authorized
 	    user = User.create_with_facebook auth_hash
 	    session[:user_id] = user.id 
-	    redirect_to root_path({welcome: true})
+	    redirect_to root_path({sign_up: true})
 	  end
 	end
 

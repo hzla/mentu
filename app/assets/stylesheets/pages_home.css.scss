@@ -1,0 +1,354 @@
+@import 'shared/variables';
+
+/*** Main Layout ***/
+
+#video {
+	position: fixed; right: 0; bottom: 0;
+	min-width: 100%; min-height: 100%;
+	background-size: cover;
+}
+
+.landing-section {
+	background: black;
+	position: relative;
+}
+
+.section-main-text {
+	font-size: 48px;
+	width: 100%;
+	text-align: center;
+}
+
+.section-sub-text {
+	font-size: 24px;
+	width: 100%;
+	text-align: center;
+}
+
+.section-content {
+	max-width: 960px;
+	padding: 0px calc(50% - 480px);
+	height: calc(100% - 80px);
+	padding-top: 80px;
+	position: relative;
+	color: white;
+	text-align: center;
+}
+
+.section-content-top {
+	position: absolute;
+	width: 100vw;
+	top: 0;
+	left: 0;
+}
+
+.section-content-bottom {
+	position: absolute;
+	width: 100vw;
+	bottom: 0;
+	left: 0;
+}
+
+.section-footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+.section-footer, .section-content-bottom {
+	#new_user {
+			height: 40px;
+			width: 720px;
+			margin: 40px calc(50% - 360px);
+		}
+	.landing-user-field {
+		height: 100%;
+		width: 180px;
+		box-sizing: border-box;
+		border-right: 1px solid $black;
+		padding: 0px 10px;
+		float: left;
+		font-size: 16px;
+	}
+	.landing-user-field.submit {
+		background: $fb-blue;
+		color: white;
+	}
+
+}
+
+
+
+/** Side Dots for scrolling **/
+
+.side-dots {
+	position: absolute;
+	left: 20px;
+	top: 45vh;
+	width: 16px;
+	z-index: 500;
+}
+
+.circle {
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background: lightgray;
+	margin-top: 10px;
+	cursor: pointer;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.circle:hover {
+	width: 16px;
+	height: 16px;
+}
+.circle.active {
+	background: white;
+	width: 16px;
+	height: 16px;
+}
+
+/*** Section 1 ***/
+
+#section-1 {
+	background: rgba(0,0,0,.05);
+	.section-main-text {
+		margin-top: 15vh;
+		height: 60px;
+	}
+
+	.section-sub-text {
+		margin-top: 10px;
+	}
+	.sign-up-container {
+		position: absolute;
+		bottom: 35vh;
+		width: 360px;
+		left: calc(50% - 180px);
+	}
+	.get-started {
+		background: $yellow;
+		font-size: 24px;
+		line-height: 60px;
+		width: 320px;
+		height: 60px;
+		color: $black;
+		margin: 20px;
+		margin-top: 10px;
+	}
+	.section-footer {
+		background: $black;
+	}
+}
+
+/*** Section 2 ***/
+
+
+#section-2 {
+	.section-content-top {
+		height: 240px;
+		background: white;
+		.section-text {
+			font-size: 24px;
+			margin-top: 40px;
+			color: $black;
+		}
+		#places {
+			height: calc(100% - 64px);
+			margin-top: 40px;
+		}
+		.place {
+			height: 80px;
+			margin-left: 20px;
+		}
+	}
+	.section-content-bottom {
+		background: $yellow;
+		height: calc(100% - 240px);
+		.section-text {
+			font-size: 24px;
+			font-weight: 700;
+			color: black;
+			margin: 20px 0px;
+		}
+	}
+	.col-3-container {
+		width: 960px;
+		margin: 0 auto;
+		height: 100%;
+	}
+	.col-3 {
+		width: 33%;
+		color: $black;
+		text-align: center;
+		float: left;
+	}
+	.step-number {
+		font-size: 48px;
+		width: 100%;
+		font-weight: 700;
+	}
+	.step-title {
+		font-size: 24px;
+		width: 100%;
+		margin: 40px 0px;
+		font-weight: 400;
+	}
+	.step-desc {
+		font-size: 17px;
+		width: 100%;
+		font-weight: 300;
+		line-height: 1.2;
+	}
+}
+
+/*** Section 4 ***/
+
+#section-4 {
+	background: white;
+	.section-text {
+		font-size: 24px;
+		font-weight: 700;
+		color: $black;
+		margin: 40px 0px 20px 0px;
+	}
+	.section-sub-text {
+		font-size: 16px;
+		margin-top: 10px;
+		color: $black;
+	}
+	.section-content-top {
+		height: calc(100% - 240px);
+	}
+	.section-content-bottom {
+		height: 240px;
+		background: $light-grey;
+		.landing-user-field {
+			border-right: 1px solid $light-grey;
+		}
+	}
+	.col-3-container {
+		width: 960px;
+		margin: 0 auto;
+		height: calc(100% - 220px);
+		margin-top: 40px;
+		font-size: 16px;
+	}
+	.col-3 {
+		width: 30%;
+		height: 100%;
+		color: $black;
+		text-align: center;
+		float: left;
+		margin: 0 1.5%;
+
+	}
+	.mentor-info-header {
+		border-bottom: 1px solid $yellow;
+		font-size: 24px;
+		font-weight: 700;
+		padding-bottom: 20px;
+	}
+	.mentor-info {
+		margin: 20px 0px;
+	}
+	.get-started {
+		height: 40px;
+		width: 320px;
+		margin: 40px auto;
+		background: $yellow;
+		color: $black;
+		line-height: 40px;
+		cursor: pointer;
+	}
+
+}
+
+/******* Media Queries ******/
+
+
+@media (max-width: 1023px) {
+
+	body {
+		#sign-up-modal {
+			width: 300px;
+			height: 300px;
+			left: calc(50% - 140px);
+			top: calc(50vh - 150px);
+		}
+		#close-sign-up-modal {
+			left: calc(50%  + 115px);
+			top: calc(50vh - 170px);
+
+		}
+		#full-page {
+		}
+		.landing-section {
+			display: inline-block;
+			width: 100vw;
+			height: auto;
+			min-height: 100vh
+		}
+		#section-1 .get-started {
+			bottom: 10vh;
+		}
+		.section-content {
+			width: calc(100% - 10px);
+			min-height: calc(100vh - 60px);
+			padding-top: 20px;
+		}
+		.side-dots {
+			display: none;
+		}
+		#section-2 {
+			.section-main-text {
+				margin-top: 20px;
+				font-size: 36px;
+			}
+			.col-3:first-child {
+				margin-top: 20px;
+			}
+			.step-number{
+				margin-top: 40px;
+			}
+			.step-title{
+				margin: 20px 0;
+			}
+			.step-desc{
+				margin-bottom: 10px;
+			}
+			.col-3 {
+				width: 100%;
+				position: static;
+				margin-bottom: 20px;
+				margin-top: 40px;
+			}
+		}
+		#section-3 {
+			.section-main-text {
+				margin-bottom: 40px;
+				margin-top: 40px;
+			}
+			#places {
+				text-align: center;
+			}
+			.place {
+				width: 110px;
+				height: auto;
+				margin: 10px 20px;
+			}
+		}
+		#section-4 {
+			.section-main-text {
+				margin-top: 25vh;
+			}
+			.get-started {
+				top: 82vh;
+			}
+		}
+	}
+}

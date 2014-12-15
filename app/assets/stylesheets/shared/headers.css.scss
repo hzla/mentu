@@ -7,15 +7,15 @@
 	z-index: 2;
 	height: 60px;
 	width: 100%;
-	background: $yellow;
+	color: white;
 }
 
 .logo {
 	position: absolute;
-	left: 40px;
+	left: calc(50% - 70px);
 	top: 10px;
 	height: 40px;
-	width: auto;
+	width: 140px;
 }
 
 #main-header-actions {
@@ -28,20 +28,18 @@
 .main-header-action {
 	float: left;
 	height: 40px;
-	width: 80px;
 	line-height: 40px;
 	margin-left: 20px;
 	cursor: pointer;
-	padding: 0px;
-	border: 2px solid black;
 	box-sizing: border-box;
+	padding: 0px 10px;
 	font-size: 16px;
 	text-align: center;
 }
 
 .main-header-action:hover {
-	background-color: $black;
-	color: $yellow;
+	background-color: $yellow;
+	color: black;
 }
 
 .main-header-action.selected {

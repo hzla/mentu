@@ -1,8 +1,10 @@
 <div id="main-header">
 	<%= image_tag "yacademy.png", :class => "logo" %>
 	<div id="main-header-actions" class="large-text bold">
-		<div class="main-header-action sign-up">
-			Sign Up
-		</div>
+		<%= link_to '/auth/facebook' do %>
+			<div class="main-header-action sign-up yellow">
+				Log in with Facebook
+			</div>
+		<% end %>
 	</div>
 </div>

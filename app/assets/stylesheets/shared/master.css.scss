@@ -2,15 +2,13 @@
 
 /** Buttons and Form Elements **/
 
-body div {
-	transition: all 0.25s ease-in-out 0s;
-}
-
 .btn {
 	color: white;
 	cursor: pointer;
 	text-align: center;
 	box-sizing: border-box;
+	height: 40px;
+	line-height: 40px;
 }
 
 .red-btn {
@@ -18,12 +16,16 @@ body div {
 	color: white;
 }
 
+.yellow-btn {
+	background: $yellow;
+	color: $black;
+}
+
 .red-btn:hover {
 	background: white;
 	border: 1px solid $red;
 	color: $red;
 }
-
 
 .btn-rnd {
 	border-radius: 5px;
@@ -39,13 +41,19 @@ button:focus {
     outline: none;
 }
 
-input {
+input, textarea {
 	border: none;
-    -webkit-appearance: none;
+	padding: none;
+	margin: none;
+	outline: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+
 }
 
-div, input {
+div, input, textarea {
 	-webkit-transition: background .3s;
+	font-size: 16px;
 }
 
 /** Backgrounds **/
@@ -54,9 +62,14 @@ div, input {
 	background: white;
 }
 
-.gray-back {
+.light-grey-back {
 	background: $light-grey;
 }
+
+.yellow-back {
+	background: $yellow;
+}
+
 
 .hidden {
 	display: none;
@@ -72,7 +85,7 @@ a {
 
 
 .bold {
-	font-weight: 600;
+	font-weight: 700;
 }
 
 .huge-text {
@@ -106,6 +119,17 @@ a {
 
 .mobile {
 	display: none;
+}
+
+
+/****** Colors ******/
+
+.yellow {
+	color: $yellow;
+}
+
+.grey {
+	color: $grey;
 }
 
 

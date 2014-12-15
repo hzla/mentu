@@ -3,10 +3,10 @@ class PagesController < ApplicationController
 	skip_before_action :require_login
 
 	def home
-		if current_user
-		
+		if current_user && !current_user.has_filled_out_basic_info
+			@show_welcome_modal = true	
 		end
-		@places = ["draper", "deloitte", "kairos", "kelley", "oxford", "princeton", "stanford", "startupweekend"]
+		@user = User.new
 	end
 
 	def faq

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get "/#{page}", to: ("pages#" + "#{page}"), as: page 
   end
 
+
   get '/auth/facebook/callback', :to => 'sessions#create'
   get '/auth/failure', :to => 'sessions#failure'
   get '/logout', :to => 'sessions#destroy'
