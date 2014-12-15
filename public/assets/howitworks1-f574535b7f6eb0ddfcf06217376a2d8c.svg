@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="168px" height="168px" viewBox="0 0 168 168" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.1 (9977) - http://www.bohemiancoding.com/sketch -->
+    <title>Oval 17 + Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="landing" sketch:type="MSArtboardGroup" transform="translate(-251.000000, -1032.000000)">
+            <g id="1.-Choose-Your-Inter-+-Tell-us-what-you're--+-Rectangle-6-+-2.-Choose-Your-Inter-+-Tell-us-what-you're--+-Rectangle-6-+-3.-Choose-Your-Inter-+-Tell-us-what-you're--+-Rectangle-6" sketch:type="MSLayerGroup" transform="translate(220.000000, 1032.000000)">
+                <g id="1.-Choose-Your-Inter-+-Tell-us-what-you're--+-Rectangle-6-+-Oval-17-+-Group" sketch:type="MSShapeGroup">
+                    <g id="Oval-17-+-Group" transform="translate(31.000000, 0.000000)">
+                        <circle id="Oval-17" fill="#FFF8DC" cx="84" cy="84" r="84"></circle>
+                        <g id="Group" transform="translate(42.000000, 48.000000)">
+                            <ellipse id="Path" fill="#4DBBFF" cx="6.72" cy="6.72727273" rx="6.72" ry="6.72727273"></ellipse>
+                            <ellipse id="Path" fill="#47D896" cx="6.72" cy="26.9090909" rx="6.72" ry="6.72727273"></ellipse>
+                            <ellipse id="Oval-107" fill="#47D896" cx="6.72" cy="47.0909091" rx="6.72" ry="6.72727273"></ellipse>
+                            <ellipse id="Oval-107" fill="#4DBBFF" cx="6.72" cy="67.2727273" rx="6.72" ry="6.72727273"></ellipse>
+                            <rect id="Rectangle-470" fill="#4DBBFF" x="20.16" y="0" width="62.9352093" height="13.4545455"></rect>
+                            <rect id="Rectangle-470" fill="#47D896" x="20.16" y="20.1818182" width="51.681224" height="13.4545455"></rect>
+                            <rect id="Rectangle-470" fill="#47D896" x="20.16" y="40.3636364" width="37.8155297" height="13.4545455"></rect>
+                            <rect id="Rectangle-470" fill="#4DBBFF" x="20.16" y="60.5454545" width="57.9838123" height="13.4545455"></rect>
+                            <path d="M6.68413047,49.2455482 L10.08,45.7043558 L8.72165219,44.2878788 L6.00495656,47.1208327 L4.64660875,45.7043558 L3.28826094,47.1208327 L6.00495656,49.9537866 L6.68413047,49.2455482 L6.68413047,49.2455482 Z" id="Rectangle-57" fill="#FFFFFF"></path>
+                            <path d="M6.68413047,29.06373 L10.08,25.5225376 L8.72165219,24.1060606 L6.00495656,26.9390145 L4.64660875,25.5225376 L3.28826094,26.9390145 L6.00495656,29.7719685 L6.68413047,29.06373 L6.68413047,29.06373 Z" id="Rectangle-57" fill="#FFFFFF"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

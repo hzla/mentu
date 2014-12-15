@@ -1,0 +1,1028 @@
+@charset "UTF-8";/*** Main Layout ***/
+/* line 5, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+}
+
+/* line 11, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+.landing-section {
+  background: black;
+  position: relative;
+}
+
+/* line 16, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+.section-main-text {
+  font-size: 48px;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 22, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+.section-sub-text {
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 28, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+.section-content {
+  max-width: 960px;
+  padding: 0px calc(50% - 480px);
+  height: calc(100% - 80px);
+  padding-top: 80px;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+/* line 38, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+.section-content-top {
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+
+/* line 45, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+.section-content-bottom {
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
+  left: 0;
+}
+
+/* line 52, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+.section-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* line 60, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+.section-footer #new_user, .section-content-bottom #new_user {
+  height: 40px;
+  width: 720px;
+  margin: 40px calc(50% - 360px);
+}
+/* line 65, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+.section-footer .landing-user-field, .section-content-bottom .landing-user-field {
+  height: 100%;
+  width: 180px;
+  box-sizing: border-box;
+  border-right: 1px solid #1b1b1b;
+  padding: 0px 10px;
+  float: left;
+  font-size: 16px;
+}
+/* line 74, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+.section-footer .landing-user-field.submit, .section-content-bottom .landing-user-field.submit {
+  background: #3b5998;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+/* line 84, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+.fb-icon {
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+/** Side Dots for scrolling **/
+/* line 93, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+.side-dots {
+  position: absolute;
+  left: 20px;
+  top: 45vh;
+  width: 16px;
+  z-index: 500;
+}
+
+/* line 101, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: lightgray;
+  margin-top: 10px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 113, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+.circle:hover {
+  width: 16px;
+  height: 16px;
+}
+
+/* line 117, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+.circle.active {
+  background: white;
+  width: 16px;
+  height: 16px;
+}
+
+/*** Section 1 ***/
+/* line 125, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-1 {
+  background: rgba(0, 0, 0, 0.05);
+}
+/* line 127, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-1 .section-main-text {
+  margin-top: 15vh;
+  height: 60px;
+}
+/* line 132, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-1 .section-sub-text {
+  margin-top: 10px;
+}
+/* line 135, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-1 .sign-up-container {
+  position: absolute;
+  bottom: 35vh;
+  width: 360px;
+  left: calc(50% - 180px);
+}
+/* line 141, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-1 .get-started {
+  background: #ffe179;
+  font-size: 24px;
+  line-height: 60px;
+  width: 320px;
+  height: 60px;
+  color: #1b1b1b;
+  margin: 20px;
+  margin-top: 10px;
+}
+/* line 151, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-1 .section-footer {
+  background: #1b1b1b;
+}
+
+/*** Section 2 ***/
+/* line 160, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-2 .section-content-top {
+  height: 240px;
+  background: white;
+}
+/* line 163, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-2 .section-content-top .section-text {
+  font-size: 24px;
+  margin-top: 40px;
+  color: #1b1b1b;
+}
+/* line 168, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-2 .section-content-top #places {
+  height: calc(100% - 64px);
+  margin-top: 40px;
+}
+/* line 172, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-2 .section-content-top .place {
+  height: 80px;
+  margin-left: 20px;
+}
+/* line 177, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-2 .section-content-bottom {
+  background: #ffe179;
+  height: calc(100% - 240px);
+}
+/* line 180, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-2 .section-content-bottom .section-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
+  margin: 20px 0px;
+}
+/* line 187, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-2 .col-3-container {
+  width: 960px;
+  margin: 0 auto;
+  height: 100%;
+}
+/* line 192, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-2 .col-3 {
+  width: 33%;
+  color: #1b1b1b;
+  text-align: center;
+  float: left;
+}
+/* line 198, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-2 .step-number {
+  font-size: 48px;
+  width: 100%;
+  font-weight: 700;
+}
+/* line 203, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-2 .step-title {
+  font-size: 24px;
+  width: 100%;
+  margin: 40px 0px;
+  font-weight: 400;
+}
+/* line 209, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-2 .step-desc {
+  font-size: 17px;
+  width: 100%;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+/*** Section 4 ***/
+/* line 219, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-4 {
+  background: white;
+}
+/* line 221, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-4 .section-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1b1b1b;
+  margin: 40px 0px 20px 0px;
+}
+/* line 227, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-4 .section-sub-text {
+  font-size: 16px;
+  margin-top: 10px;
+  color: #1b1b1b;
+}
+/* line 232, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-4 .section-content-top {
+  height: calc(100% - 240px);
+}
+/* line 235, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-4 .section-content-bottom {
+  height: 240px;
+  background: #eeeeee;
+}
+/* line 238, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-4 .section-content-bottom .landing-user-field {
+  border-right: 1px solid #eeeeee;
+}
+/* line 242, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-4 .col-3-container {
+  width: 960px;
+  margin: 0 auto;
+  height: calc(100% - 220px);
+  margin-top: 40px;
+  font-size: 16px;
+}
+/* line 249, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-4 .col-3 {
+  width: 30%;
+  height: 100%;
+  color: #1b1b1b;
+  text-align: center;
+  float: left;
+  margin: 0 1.5%;
+}
+/* line 258, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-4 .mentor-info-header {
+  border-bottom: 1px solid #ffe179;
+  font-size: 24px;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+/* line 264, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-4 .mentor-info {
+  margin: 20px 0px;
+}
+/* line 267, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+#section-4 .get-started {
+  height: 60px;
+  width: 320px;
+  margin: 40px auto;
+  background: #ffe179;
+  color: #1b1b1b;
+  line-height: 60px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/******* Media Queries ******/
+@media (max-width: 1023px) {
+  /* line 286, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body #sign-up-modal {
+    width: 300px;
+    height: 300px;
+    left: calc(50% - 140px);
+    top: calc(50vh - 150px);
+  }
+  /* line 292, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body #close-sign-up-modal {
+    left: calc(50%  + 115px);
+    top: calc(50vh - 170px);
+  }
+  /* line 299, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body .landing-section {
+    display: inline-block;
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+  }
+  /* line 305, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body #section-1 .get-started {
+    bottom: 10vh;
+  }
+  /* line 308, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body .section-content {
+    width: calc(100% - 10px);
+    min-height: calc(100vh - 60px);
+    padding-top: 20px;
+  }
+  /* line 313, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body .side-dots {
+    display: none;
+  }
+  /* line 317, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body #section-2 .section-main-text {
+    margin-top: 20px;
+    font-size: 36px;
+  }
+  /* line 321, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body #section-2 .col-3:first-child {
+    margin-top: 20px;
+  }
+  /* line 324, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body #section-2 .step-number {
+    margin-top: 40px;
+  }
+  /* line 327, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body #section-2 .step-title {
+    margin: 20px 0;
+  }
+  /* line 330, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body #section-2 .step-desc {
+    margin-bottom: 10px;
+  }
+  /* line 333, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body #section-2 .col-3 {
+    width: 100%;
+    position: static;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+  /* line 341, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body #section-3 .section-main-text {
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+  /* line 345, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body #section-3 #places {
+    text-align: center;
+  }
+  /* line 348, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body #section-3 .place {
+    width: 110px;
+    height: auto;
+    margin: 10px 20px;
+  }
+  /* line 355, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body #section-4 .section-main-text {
+    margin-top: 25vh;
+  }
+  /* line 358, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home.css.scss */
+  body #section-4 .get-started {
+    top: 82vh;
+  }
+}
+/* line 3, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+.modal-overlay-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  z-index: 2;
+}
+
+/* line 14, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+.landing-modal {
+  position: absolute;
+  width: 720px;
+  left: calc(50% - 360px);
+  top: 80px;
+  background: white;
+  margin-bottom: 40px;
+}
+
+/* line 23, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* line 30, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+.modal-section {
+  width: 100%;
+  text-align: center;
+}
+
+/* line 35, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+.modal-header-container {
+  border-bottom: 1px solid #9c9c9c;
+}
+
+/* line 39, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+.modal-content {
+  width: calc(100% - 120px);
+  margin: 0 auto;
+}
+
+/* line 44, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+.modal-header {
+  font-size: 36px;
+  font-weight: 700;
+  padding: 40px 0px 20px 0px;
+}
+
+/* line 50, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+.modal-sub-header {
+  padding-bottom: 20px;
+}
+
+/*************  User Form Section *****************/
+/* line 57, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+.modal-content .edit_user {
+  margin-top: 20px;
+}
+
+/* line 61, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+.modal-user-field {
+  height: 40px;
+  width: calc(100% - 60px);
+  margin: 5px auto;
+  padding: 0px 10px;
+}
+
+/* line 68, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+.modal-form-text {
+  padding: 20px 0px;
+}
+
+/* line 72, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+.submit-basic-info {
+  width: 300px;
+  display: inline;
+  margin-bottom: 20px;
+}
+
+/* line 78, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+#apply-mentor {
+  height: 120px;
+  font-size: 36px;
+  line-height: 120px;
+  cursor: pointer;
+}
+
+/* line 86, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+#apply-mentor.applied {
+  line-height: 1;
+  background: white;
+  font-size: 16px;
+}
+/* line 90, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+#apply-mentor.applied .mentor-text {
+  margin: 20px 0px;
+}
+/* line 93, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+#apply-mentor.applied .btn {
+  width: 300px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+/*********** Mentor Form Section *************/
+/* line 102, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+#mentor-form {
+  text-align: left;
+}
+
+/* line 106, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+.mentor-field-container {
+  border-bottom: 1px solid #9c9c9c;
+  margin: 20px 0px;
+}
+
+/* line 111, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+#user_app_response {
+  height: 160px;
+}
+
+/* line 115, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+.mentor-field-number {
+  float: left;
+  font-weight: bold;
+}
+
+/* line 120, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+.mentor-field-question {
+  width: calc(100% - 20px);
+  float: right;
+  line-height: 1.2;
+}
+
+/* line 126, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+.mentor-field {
+  width: 100%;
+  padding: 0px 10px;
+  margin: 10px 0px;
+  height: 40px;
+}
+
+/* line 133, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/pages_home_modals.css.scss */
+#submit-mentor-app {
+  width: 300px;
+  margin-left: calc(50% - 150px);
+  margin-bottom: 20px;
+}
+
+
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+
+Copyright (c) 2013 Daniel Eden
+*/
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+.zoomOutLeft {
+  -webkit-animation-name: zoomOutLeft;
+  animation-name: zoomOutLeft;
+}
+
+@-webkit-keyframes zoomOutLeft {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(42px);
+    transform: scale(.475) translateX(42px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(-2000px);
+    transform: scale(.1) translateX(-2000px);
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+  }
+}
+
+@keyframes zoomOutLeft {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(42px);
+    -ms-transform: scale(.475) translateX(42px);
+    transform: scale(.475) translateX(42px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(-2000px);
+    -ms-transform: scale(.1) translateX(-2000px);
+    transform: scale(.1) translateX(-2000px);
+    -webkit-transform-origin: left center;
+    -ms-transform-origin: left center;
+    transform-origin: left center;
+  }
+}
+
+@-webkit-keyframes zoomOutRight {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(-42px);
+    transform: scale(.475) translateX(-42px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(2000px);
+    transform: scale(.1) translateX(2000px);
+    -webkit-transform-origin: right center;
+    transform-origin: right center;
+  }
+}
+
+@keyframes zoomOutRight {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(-42px);
+    -ms-transform: scale(.475) translateX(-42px);
+    transform: scale(.475) translateX(-42px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(2000px);
+    -ms-transform: scale(.1) translateX(2000px);
+    transform: scale(.1) translateX(2000px);
+    -webkit-transform-origin: right center;
+    -ms-transform-origin: right center;
+    transform-origin: right center;
+  }
+}
+
+.zoomOutRight {
+  -webkit-animation-name: zoomOutRight;
+  animation-name: zoomOutRight;
+}
+
+@-webkit-keyframes zoomOutUp {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(60px);
+    transform: scale(.475) translateY(60px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(-2000px);
+    transform: scale(.1) translateY(-2000px);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+  }
+}
+/** Home Page Header **/
+/* line 5, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/headers.css.scss */
+#main-header {
+  position: fixed;
+  z-index: 2;
+  height: 60px;
+  width: 100%;
+  color: white;
+}
+
+/* line 13, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/headers.css.scss */
+.logo {
+  position: absolute;
+  left: calc(50% - 70px);
+  top: 10px;
+  height: 40px;
+  width: 140px;
+}
+
+/* line 21, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/headers.css.scss */
+#main-header-actions-left {
+  float: left;
+  margin-left: 40px;
+  margin-top: 10px;
+  height: 40px;
+}
+
+/* line 29, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/headers.css.scss */
+#main-header-actions-right {
+  margin-right: 40px;
+  margin-top: 10px;
+  height: 40px;
+  float: right;
+}
+
+/* line 36, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/headers.css.scss */
+.main-header-action {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 20px;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 0px 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* line 48, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/headers.css.scss */
+.main-header-action:hover {
+  background-color: #ffe179;
+  color: black;
+}
+
+/* line 53, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/headers.css.scss */
+.main-header-action.selected {
+  background: black;
+  padding: 5px;
+  color: #ffe179;
+}
+
+@media (max-width: 1023px) {
+  /* line 62, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/headers.css.scss */
+  body .logo {
+    height: 40px;
+    width: 150px;
+    left: calc(50% - 75px);
+    top: 20px;
+  }
+  /* line 69, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/headers.css.scss */
+  body #main-header-actions-right {
+    display: none;
+  }
+}
+/* line 3, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/layouts.css.scss */
+.vert-padding {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/** Buttons and Form Elements **/
+/* line 5, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.btn {
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 40px;
+}
+
+/* line 14, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.red-btn {
+  background: #e8425e;
+  color: white;
+}
+
+/* line 19, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.yellow-btn {
+  background: #ffe179;
+  color: #1b1b1b;
+}
+
+/* line 24, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.red-btn:hover {
+  background: white;
+  border: 1px solid #e8425e;
+  color: #e8425e;
+}
+
+/* line 30, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.btn-rnd {
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* line 40, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+/* line 44, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+input, textarea {
+  border: none;
+  padding: none;
+  margin: none;
+  outline: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+}
+
+/* line 54, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+div, input, textarea {
+  -webkit-transition: background .3s;
+  font-size: 16px;
+}
+
+/** Backgrounds **/
+/* line 61, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.white-back {
+  background: white;
+}
+
+/* line 65, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.light-grey-back {
+  background: #eeeeee;
+}
+
+/* line 69, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.yellow-back {
+  background: #ffe179;
+}
+
+/* line 74, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.hidden {
+  display: none;
+}
+
+/** Text Formatting **/
+/* line 81, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+a {
+  text-decoration: none;
+  color: #1b1b1b;
+}
+
+/* line 87, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.bold {
+  font-weight: 700;
+}
+
+/* line 91, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.huge-text {
+  font-size: 30px;
+}
+
+/* line 95, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.large-text {
+  font-size: 24px;
+}
+
+/* line 100, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.med-text {
+  font-size: 16px;
+}
+
+/* line 104, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.small-text {
+  font-size: 14px;
+}
+
+/* line 108, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 112, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.text-middle {
+  text-align: center;
+}
+
+/* line 116, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.text-right {
+  text-align: right;
+}
+
+/* line 120, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.mobile {
+  display: none;
+}
+
+/****** Colors ******/
+/* line 127, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.yellow {
+  color: #ffe179;
+}
+
+/* line 131, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+.grey {
+  color: #9c9c9c;
+}
+
+/***********  Media Queries *******************/
+/************** elements with the class mobile shown, no-mobile are hidden  *****************/
+@media (max-width: 1023px) {
+  /* line 144, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+  .no-mobile {
+    display: none;
+  }
+
+  /* line 147, /Users/andylee/Desktop/freelance/mentu/app/assets/stylesheets/shared/master.css.scss */
+  .mobile {
+    display: inline-block;
+  }
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input{
+	font-family: 'Muli', sans-serif;
+}
+
+body {
+	font-family: 'Muli', sans-serif;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
