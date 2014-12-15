@@ -4,6 +4,22 @@ Home =
     $('body').on 'submit', '#mentor-form .edit_user', @validateAndThankMentor
     $('body').on 'click', '.close-modal', @closeModal
     $('body').on 'click', '#apply-mentor', @showMentorForm
+    $('body').on 'click', '.landing-user-field.submit', @saveUserInfoInSession
+    $('body').on 'click', '#mentors-link', @showMentorsSection
+
+  showMentorsSection: ->
+    $.fn.fullpage.moveTo(2)
+
+  saveUserInfoInSession: ->
+    form = $(@).parents('form')
+    isEmpty = false
+    form.find('input').each ->
+      empty = $(@).val() == ""
+      isEmpty = true if empty
+      console.log isEmpty
+      $(@).css('border', '1px solid red') if empty
+    return false if isEmpty
+    $(@).parents('form').submit()
 
   showMentorForm: ->
     $('.modal-header').text('Glad to have you on board!')

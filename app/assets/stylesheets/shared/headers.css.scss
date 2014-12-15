@@ -18,7 +18,15 @@
 	width: 140px;
 }
 
-#main-header-actions {
+#main-header-actions-left {
+	float: left;
+	margin-left: 40px;
+	margin-top: 10px;
+	height: 40px;
+}
+
+
+#main-header-actions-right {
 	margin-right: 40px;
 	margin-top: 10px;
 	height: 40px;
@@ -58,7 +66,7 @@
 			top: 20px;
 
 		}
-		#main-header-actions {
+		#main-header-actions-right {
 			display: none;
 		}
 	}

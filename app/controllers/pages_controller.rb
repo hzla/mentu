@@ -3,8 +3,14 @@ class PagesController < ApplicationController
 	skip_before_action :require_login
 
 	def home
-		if current_user && !current_user.has_filled_out_basic_info
-			@show_welcome_modal = true	
+		if params[:debugging] 
+			@debugging = true
+		end
+		if current_user && session[:dream_school]
+			current_user.update_attributes dream_school: session[:dream_school], email: session[:email], major: session[:major]
+			session[:dream_school] = nil
+			session[:major] = nil
+			session[:email] = nil
 		end
 		@user = User.new
 	end

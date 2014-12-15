@@ -2,8 +2,10 @@ class UsersController < ApplicationController
 	include SessionsHelper
 
 	def create
-		User.create email: params[:email]
-		render nothing: true
+		session[:dream_school] = params[:user][:dream_school]
+		session[:major] = params[:user][:major]
+		session[:email] = params[:user][:email]
+		redirect_to '/auth/facebook'
 	end
 
 	def update
