@@ -23,7 +23,7 @@
 				<% end %>
 			</div>
 		</div>
-		<div class="section-footer">
+		<div class="section-footer no-mobile">
 			<%= form_for @user do |f| %>
 				<%= f.text_field :dream_school, :class => "landing-user-field", placeholder: "Dream School" %>
 				<%= f.text_field :major, :class => "landing-user-field", placeholder: "Major" %>
@@ -103,7 +103,7 @@
 					</div>
 				<% end %>
 			</div>
-			<div class="section-content-bottom">
+			<div class="section-content-bottom no-mobile">
 				<div class="section-text">Get help applying to college</div>
 				<div class="section-sub-text">Tell us a bit about yourself so we can keep you in the loop when we launch.</div>
 				<%= form_for @user do |f| %>
@@ -123,78 +123,11 @@
 	<div class="circle active" id="full-1"></div>
 	<div class="circle" id="full-2"></div>
 	<div class="circle" id="full-3"></div>
-	<div class="circle" id="full-4"></div>
 </div>
 
 
 <% if current_user %>
-	<div class="modal-overlay-container">
-		
-		<% if !current_user.has_filled_out_basic_info || @debugging %>
-			<div class="landing-modal">
-				<%= image_tag 'close.svg', :class => "close-modal hidden show-on-submit" %>
-				<div class="modal-section light-grey-back">
-					<div class="modal-content">
-						<div class="modal-header-container">
-							<div class="modal-header">Thanks for signing up</div>
-							<div class="modal-sub-header">There's just a couple more things we need to know</div>
-						</div>		
-						<div class="animate-on-submit">
-							<%= form_for current_user, :class => "modal-user-form", remote: true do |f| %>
-								<%= f.text_field :dream_school, :class => "modal-user-field", placeholder: "Dream School" %>
-								<%= f.text_field :major, :class => "modal-user-field", placeholder: "Major" %>
-								<%= f.text_field :email, :class => "modal-user-field", placeholder: "Email" %>
-								<div class="modal-form-text">We'll send you an email when we're ready to launch</div>
-								<%= f.submit "Submit", :class => "yellow-btn submit-basic-info btn" %>
-							<% end %>
-							<div class="modal-form-text bold">Not a prospective student?</div>
-						</div>
-						<div class="hidden" id="mentor-form">
-							<%= form_for current_user, :class => "modal-mentor-form", remote: true do |f| %>
-								<div class="mentor-field-container">
-									<div class="mentor-field-number">1.</div>
-									<div class="mentor-field-question">Describe a time when Hashtag occupy literally retro, farm-to-table cliche Kickstarter chambray quinoa Vice Portland. Ugh yr gentrify Bushwick, gastropub scenester ennui salvia art party cred Blue Bottle. Vinyl lomo pickled, distillery Godard jean shorts Wes Anderson Shoreditch swag church-key. </div>
-									<%= f.text_area :app_response, :class => "mentor-field", placeholder: "Type your response here" %>
-								</div>
-								<div class="mentor-field-container">
-									<div class="mentor-field-number">2.</div>
-									<div class="mentor-field-question">Make a 1 minute long video telling us who you are and why you’d like to become a mentor. Upload it to Youtube or Vimeo and enter the link in the field below:</div>
-									<%= f.text_field :video_url, :class => "mentor-field", placeholder: "Paste video link here" %>
-								</div>
-								<div class="bold">Other Info</div>
-								<%= f.text_field :school, :class => "mentor-field", placeholder: "Current or previous school" %>
-								<%= f.text_field :major, :class => "mentor-field", placeholder: "Major(s)" %>
-								<%= f.text_field :email, :class => "mentor-field", placeholder: "Email" %>
-								<div class="grey vert-padding">
-									Not ready to submit just yet? Come back whenever you want and just click "Apply to be a mentor" again to bring up this form.
-								</div>
-								<%= f.submit "Submit Application", id: "submit-mentor-app", :class => "yellow-btn btn" %>
-							<% end %>
-						</div>
-					</div>
-				</div>
-				<div class="modal-section yellow-back" id="apply-mentor">
-					<span class="hide-on-submit">Apply to be a mentor</span>
-					<div class="show-on-submit hidden">
-						<div class="bold mentor-text">Not a prospective student?</div>
-						<div class="btn yellow-btn">Apply to be a mentor</div>
-					</div>
-				</div>
-			</div>
-		<% else %>
-			<div class="landing-modal">
-				<%= image_tag 'close.svg', :class => "close-modal show-on-submit" %>
-				<div class="modal-section light-grey-back">
-					<div class="modal-content">
-						<div class="modal-header-container">
-							<div class="modal-header">Thanks for signing up</div>
-							<div class="modal-sub-header">We'll let you know when we're ready to launch.</div>
-						</div>	
-					</div>
-				</div>
-		<% end %>
-
-	</div>
+	<%= render partial: 'sign_up_modal' %>
 <% end %>
 
 <% if !@browser.mobile? %>
