@@ -54,3 +54,9 @@ namespace :deploy do
   end
   before "deploy", "deploy:check_revision"
 end
+
+namespace :custom do
+  task :reset do
+    run "cd #{current_path} && bundle exec rake db:reset RAILS_ENV=#{rails_env}"
+  end
+end
