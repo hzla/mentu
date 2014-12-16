@@ -18,5 +18,5 @@ production:
   encoding: unicode
   database: mentu_production
   pool: 25
-  username: mentu
-  password: secret
+  username: root
+  password: password
