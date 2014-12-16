@@ -56,7 +56,7 @@ namespace :deploy do
 end
 
 namespace :custom do
-  task :create do
+  task :setup do
     run "bin/rake db:create db:migrate"
   end
 end
