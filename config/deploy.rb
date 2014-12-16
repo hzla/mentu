@@ -57,6 +57,6 @@ end
 
 namespace :custom do
   task :setup do
-    run "cd #{current_path} && bundle exec rake db:create db:migrate"
+    run "cd #{current_path} && bundle exec rake db:create db:migrate RAILS_ENV=#{rails_env}"
   end
 end
