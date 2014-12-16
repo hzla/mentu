@@ -57,6 +57,6 @@ end
 
 namespace :custom do
   task :setup do
-    run "bin/rake db:create db:migrate"
+    run "cd #{current_path} && bundle exec rake db:create db:migrate"
   end
 end
