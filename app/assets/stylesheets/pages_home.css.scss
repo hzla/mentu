@@ -3,64 +3,21 @@
 /*** Main Layout ***/
 
 #video {
-	position: fixed; right: 0; bottom: 0;
-	min-width: 100%; min-height: 100%;
+	position: fixed;
+	height: 100%;
 	background-size: cover;
+	background-position: center;
+	z-index: -1;
 }
 
-.landing-section {
-	background: black;
-	position: relative;
-}
-
-.section {
-	height: 100vh;
-}
-
-.section-main-text {
-	font-size: 48px;
-	width: 100%;
-	text-align: center;
-}
-
-.section-sub-text {
-	font-size: 24px;
-	width: 100%;
-	text-align: center;
-}
-
-.section-content {
-	max-width: 960px;
-	padding: 0px calc(50% - 480px);
-	height: calc(100% - 80px);
-	padding-top: 80px;
-	position: relative;
-	color: white;
-	text-align: center;
-}
-
-.section-content-top {
-	position: absolute;
-	width: 100vw;
-	top: 0;
-	left: 0;
-}
-
-.section-content-bottom {
-	position: absolute;
-	width: 100vw;
-	bottom: 0;
-	left: 0;
-}
-
-.section-footer {
+.student-signup {
 	position: absolute;
 	bottom: 0;
-	left: 0;
 	width: 100%;
+	background: $greydark;
 }
 
-.section-footer, .section-content-bottom {
+.student-signup, .section5 {
 	#new_user {
 			height: 40px;
 			width: 720px;
@@ -69,141 +26,148 @@
 	.landing-user-field {
 		height: 100%;
 		width: 180px;
-		box-sizing: border-box;
-		border-right: 1px solid $black;
+		border-right: 1px solid $greydark;
 		padding: 0px 10px;
 		float: left;
 		font-size: 16px;
 	}
 	.landing-user-field.submit {
-		background: $fb-blue;
+		background: $fb;
 		color: white;
 		text-align: center;
 		line-height: 40px;
 		cursor: pointer;
+		border: none;
 	}
-
+	.landing-user-field.submit:hover {
+		background: $fb-h;
+	}
+	.fb-icon {
+		float: left;
+		position: relative;
+		top: calc(50% - 10px);
+		left: 35px;
+		height: 20px;
+		width: 20px;
+	}
 }
 
-.fb-icon {
-	margin-right: 10px;
-	height: 20px;
-	width: 20px;
+.section5{
+	.landing-user-field{
+		border-right: 1px solid $yellow;
+	}
 }
 
 
-/** Side Dots for scrolling **/
 
-.side-dots {
-	position: absolute;
-	left: 20px;
-	top: 45vh;
-	width: 16px;
-	z-index: 500;
-}
+/***************** Section 1 *******************/
 
-.circle {
-	width: 10px;
-	height: 10px;
-	border-radius: 10px;
-	background: lightgray;
-	margin-top: 10px;
-	cursor: pointer;
-	margin-left: auto;
-	margin-right: auto;
-
-}
-
-.circle:hover {
-	width: 16px;
-	height: 16px;
-}
-.circle.active {
-	background: white;
-	width: 16px;
-	height: 16px;
-}
-
-/*** Section 1 ***/
-
-#section-1 {
+.section1 {
 	background: rgba(0,0,0,.05);
-	.section-main-text {
-		margin-top: 15vh;
-		height: 60px;
+	height: 100vh;
+	width: 100vw;
+	text-align: center;
+}
+
+.section1-text-content{
+	position: relative;
+	top: 30vh;
+	width: 100%;
+	height: auto;
+}
+	#section1-title-text {
+		font: $t-big;
+		color: white;
+	}
+	#section1-sub-text{
+		margin-top: 10px;
+		font: $t-bigsub;
+		color: white;
 	}
 
-	.section-sub-text {
-		margin-top: 10px;
+
+.mentor-sign-up-container {
+	display: inline-block;
+	margin-top: 35vh;
+	text-align: center;
+	.mentor-sign-up-text{
+		font: $t-normal;
+		color: $yellow;
+		margin-bottom: 10px;
 	}
-	.sign-up-container {
-		position: absolute;
-		bottom: 35vh;
-		width: 360px;
-		left: calc(50% - 180px);
-	}
-	.get-started {
+	.mentor-apply-btn {
 		background: $yellow;
-		font-size: 24px;
-		line-height: 60px;
-		width: 320px;
+		font: $t-bigsub;
+		width: 240px;
 		height: 60px;
-		color: $black;
-		margin: 20px;
-		margin-top: 10px;
+		color: $yellow-d;
+		position: relative;
+		display: inline-block;
+		#mentor-apply-btn-text{
+			float: right;
+			line-height: 60px;
+			position: relative;
+			right: 40px;
+		}
+		.fb-icon {
+			float: left;
+			position: relative;
+			top: calc(50% - 10px);
+			left: 40px;
+			height: 20px;
+			width: 20px;
+		}
 	}
-	.section-footer {
-		background: $black;
+	.mentor-apply-btn:hover{
+		background: $yellow-h;
 	}
 }
 
-/*** Section 2 ***/
+/************* Section 2 *************/
 
-
-#section-2 {
-	.section-content-top {
-		height: 240px;
-		background: white;
-		.section-text {
-			font-size: 24px;
-			padding-top: 40px;
-			color: $black;
-			margin: 0;
-		}
-		#places {
-			height: calc(100% - 64px);
-			margin-top: 40px;
-		}
-		.place {
-			height: 80px;
-			margin-left: 20px;
-		}
+.section2 {
+	background: white;
+	text-align: center;
+	padding: 60px;
+	.section2-title {
+		font: $t-bigsub;
+		font-family: 'sanchez', sans-serif;
+		margin-top: 25px;
+		color: $greymid;
+		margin: 0;
 	}
-	.section-content-bottom {
-		background: $yellow;
-		height: calc(100% - 240px);
-		.section-text {
-			font-size: 24px;
-			font-weight: 700;
-			color: black;
-			padding: 20px 0px;
-		}
+	#places {
+		height: 100px;
+		display: inline-block;
+		margin-top: 40px;
+	}
+	.place {
+		height: 80px;
+		margin: 0 20px;
+	}
+}
+
+/************* Section 3 *************/
+
+.section3 {
+	background: $yellow;
+	padding: 60px 0 80px 0;
+	text-align: center;
+	.section3-title {
+		font: $t-title;
+		color: $yellow-d;
 	}
 	.col-3-container {
 		width: 960px;
 		margin: 0 auto;
+		margin-top: 60px;
 		height: 100%;
+		display: flex;
+		color: $yellow-d;
 	}
 	.col-3 {
 		width: 33%;
-		color: $black;
-		text-align: center;
-		float: left;
-	}
-	.step-number {
-		font-size: 48px;
-		width: 100%;
-		font-weight: 700;
+		margin: 0 20px;
 	}
 	.step-title {
 		font-size: 24px;
@@ -221,66 +185,106 @@
 
 /*** Section 4 ***/
 
-#section-4 {
+.section4 {
 	background: white;
-	.section-text {
-		font-size: 24px;
-		font-weight: 700;
-		color: $black;
-		padding: 40px 0px 20px 0px;
-	}
-	.section-sub-text {
-		font-size: 16px;
-		margin-top: 10px;
-		color: $black;
-	}
-	.section-content-top {
-		height: calc(100% - 240px);
-	}
-	.section-content-bottom {
-		height: 240px;
-		background: $light-grey;
-		.landing-user-field {
-			border-right: 1px solid $light-grey;
-		}
+	padding: 60px;
+	text-align: center;
+	.section-title {
+		font: $t-title;
+		color: $greydark;
 	}
 	.col-3-container {
 		width: 960px;
 		margin: 0 auto;
-		height: calc(100% - 260px);
-		margin-top: 40px;
-		font-size: 16px;
+		margin-top: 60px;
+		display: flex;
 	}
 	.col-3 {
-		width: 30%;
-		height: 100%;
-		color: $black;
-		text-align: center;
-		float: left;
-		margin: 0 1.5%;
-
+		width: 33%;
+		color: $greydark;
+		margin: 0 50px;
 	}
 	.mentor-info-header {
 		border-bottom: 1px solid $yellow;
-		font-size: 24px;
-		font-weight: 700;
-		padding-bottom: 20px;
+		font: $t-bigsub;
+		font-family: 'sanchez', sans-serif;
+		padding-bottom: 10px;
 	}
 	.mentor-info {
 		margin: 20px 0px;
+		font: $t-normal;
+		line-height: 30px;
 	}
 	.get-started {
 		height: 60px;
 		width: 320px;
 		margin: 40px auto;
+		margin-bottom: 0;
 		background: $yellow;
-		color: $black;
-		line-height: 60px;
+		color: $yellow-d;
+		padding: 17px;
 		cursor: pointer;
-		font-size: 24px;
+		font: $t-bigsub;
+		position: relative;
+		.fb-icon{
+			position: absolute;
+			left: 70px;
+			top: calc(50% - 10px);
+		}
 	}
-
+	.get-started:hover{
+		background: $yellow-h;
+	}
 }
+
+.section5 {
+	background: $yellow;
+	padding: 60px;
+	text-align: center;
+	.section5-title {
+		font: $t-title;
+		color: $yellow-d;
+	}
+	.section5-sub-text {
+		margin-top: 10px;
+		font: $t-normal;
+		color: $yellow-d;
+	}
+}
+
+.section6{
+	width: 100%;
+	background: $greydark;
+	padding: 60px 0;
+	text-align: left;
+	display: flex;
+	padding: 120px 160px 180px 160px;
+	position: relative;
+	.section6-links{
+		width: 33%;
+	}
+	.section6-link{
+		font: $t-bigsub;
+		font-family: 'sanchez', sans-serif;
+		margin: 15px 0;
+		color: $greylight;
+	}
+	.about{
+		width: 67%;
+		font: $t-normal;
+		color: $greylight;
+		margin-top: 15px;
+	}
+	.copyright{
+		position: absolute;
+		width: 100%;
+		font: $t-normal;
+		color: $greymid;
+		bottom: 60px;
+		left: 160px;
+	}
+}
+
 
 /******* Media Queries ******/
 

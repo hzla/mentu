@@ -7,51 +7,52 @@
 	z-index: 2;
 	height: 60px;
 	width: 100%;
-	color: white;
+	font: $t-normal;
+	top: 0;
+	text-align: center;
 }
 
 .logo {
-	position: absolute;
-	left: calc(50% - 70px);
-	top: 10px;
+	position: relative;
 	height: 40px;
 	width: 140px;
+	top: calc(50% - 20px);
 }
 
 #main-header-actions-left {
+	left: 0;
+	padding: 10px 20px;
+	height: 60px;
+	color: white;
 	float: left;
-	margin-left: 40px;
-	margin-top: 10px;
-	height: 40px;
 }
 
 
 #main-header-actions-right {
-	margin-right: 40px;
-	margin-top: 10px;
-	height: 40px;
+	padding: 10px 20px;
+	height: 60px;
+	color: white;
 	float: right;
+	right: 0px;
 }
 
 .main-header-action {
 	float: left;
 	height: 40px;
 	line-height: 40px;
-	margin-left: 20px;
 	cursor: pointer;
-	box-sizing: border-box;
-	padding: 0px 10px;
+	padding: 0px 20px;
 	font-size: 16px;
 	text-align: center;
 }
 
 .main-header-action:hover {
 	background-color: $yellow;
-	color: black;
+	color: $yellow-d;
 }
 
 .main-header-action.selected {
-	background: black;
+	background: $greydark;
 	padding: 5px;
 	color: $yellow;
 }
@@ -60,10 +61,8 @@
 @media (max-width: 1023px) {
 	body {
 		.logo {
-			height: 40px;
-			width: 150px;
-			left: calc(50% - 75px);
-			top: 20px;
+			height: 30px;
+			width: auto;
 
 		}
 		#main-header-actions-right, #main-header-actions-left {

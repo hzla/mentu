@@ -1,29 +1,28 @@
 <%= render partial: "main_header" %>
 
 <%= video_tag "mentu.webm", id: "video", autoplay: true, :loop => true %>
-
 <div id="full-page">
-	<div class="section landing-section" id="section-1">
-		<div class="section-content">
-			<div class="section-main-text">
+	<div class="section1">
+		<div class="section1-text-content">
+			<div id="section1-title-text">
 				Get Matched with Your Personal Mentors
 			</div>
-			<div class="section-sub-text">
+			<div id="section1-sub-text">
 				Learn from 1000+ top college students
 			</div>
-
-			<div class="sign-up-container">
-				<div class="section-text yellow">
-					We're currently taking mentor applications
-				</div>
-				<%= link_to '/auth/facebook' do %>
-					<div class="btn get-started sign-up">
-						<%= image_tag 'fbiconyellow.svg', :class => "fb-icon" %> Sign up to apply
-					</div>
-				<% end %>
-			</div>
 		</div>
-		<div class="section-footer no-mobile">
+		<div class="mentor-sign-up-container">
+			<div class="mentor-sign-up-text">
+				We're currently taking mentor applications
+			</div>
+			<%= link_to '/auth/facebook' do %>
+				<div class="btn mentor-apply-btn sign-up">
+					<%= image_tag 'fbiconyellow.svg', :class => "fb-icon" %>
+					<div id="mentor-apply-btn-text">Sign up to Apply</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="student-signup no-mobile">
 			<%= form_for @user do |f| %>
 				<%= f.text_field :dream_school, :class => "landing-user-field", placeholder: "Dream School" %>
 				<%= f.text_field :major, :class => "landing-user-field", placeholder: "Major" %>
@@ -35,86 +34,95 @@
 		</div>
 	</div>
 
-	<div class="section landing-section" id="section-2">
-		<div class="section-content">
-			<div class="section-content-top">
-				<div class="section-text">
-					Our mentors come from all over. Many from prestigious institutes.
-				</div>
-				<div id="places">
-					<% (1..6).each do |place| %>
-						<%= image_tag "school#{place}.png", :class => "place" %>
-					<% end %>
-				</div>
+	<div class="section2">
+		<div class="section2-title">
+			Our mentors come from all over. Many from prestigious institutes.
+		</div>
+		<div id="places">
+			<% (1..6).each do |place| %>
+				<%= image_tag "school#{place}.png", :class => "place" %>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="section3">
+		<div class="section3-title">
+			Here's how it works.
+		</div>
+		<div class="col-3-container">
+			<div class="col-3">
+				<%= image_tag 'howitworks1.svg', :class => "step-pic" %>
+				<div class="step-title">1. Choose Your Interests</div>
+				<div class="step-desc">Tell us what you're passionate about. You can get help for a TOEFL test, a job interview, or a startup pitch.</div>
 			</div>
-			<div class="section-content-bottom">
-				<div class="section-text">
-					Here's how it works.
-				</div>
-				<div class="col-3-container">
-					<div class="col-3">
-						<%= image_tag 'howitworks1.svg', :class => "step-pic" %>
-						<div class="step-title">1. Choose Your Interests</div>
-						<div class="step-desc">Tell us what you're passionate about. You can get help for a TOEFL test, a job interview, or a startup pitch.</div>
-					</div>
-					<div class="col-3">
-						<%= image_tag 'howitworks2.svg', :class => "step-pic" %>
-						<div class="step-title">2. Select Your Mentor</div>
-						<div class="step-desc">Select mentors you like most based on their strengths, backgrounds, and availability. You can choose as many mentors as you like.</div>
-					</div>
-					<div class="col-3">
-						<%= image_tag 'howitworks3.svg', :class => "step-pic" %>
-						<div class="step-title">3. Start Your Learning</div>
-						<div class="step-desc">Log in when the session starts, and connect with your mentors as you go through your fully personalized curriculum.
-						</div>
-					</div>
+			<div class="col-3">
+				<%= image_tag 'howitworks2.svg', :class => "step-pic" %>
+				<div class="step-title">2. Select Your Mentor</div>
+				<div class="step-desc">Select mentors you like most based on their strengths, backgrounds, and availability. You can choose as many mentors as you like.</div>
+			</div>
+			<div class="col-3">
+				<%= image_tag 'howitworks3.svg', :class => "step-pic" %>
+				<div class="step-title">3. Start Your Learning</div>
+				<div class="step-desc">Log in when the session starts, and connect with your mentors as you go through your fully personalized curriculum.
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="section landing-section" id="section-4">
-		<div class="section-content">
-			<div class="section-content-top">
-				<div class="section-text">Interested in becoming a mentor?</div>
-				<div class="col-3-container">
-					<div class="col-3">
-						<div class="mentor-info-header">Responsibilities</div>
-						<div class="mentor-info">
-							College Search Advice<br><br>Experience Sharing<br><br>Essay Writing<br><br>Personal Growth
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="mentor-info-header">Benefits</div>
-						<div class="mentor-info">
-							Training<br><br>We pay $40/hr<br><br>$20 for every mentor you refer that gets accepted
-						</div>
-					</div>
-					<div class="col-3">
-						<div class="mentor-info-header">Requirements</div>
-						<div class="mentor-info">
-							A paragraph summary about why you'd like to become a mentor<br><br>A 1 minute video telling us about yourself
-						</div>
-					</div>
+	<div class="section4">
+		<div class="section-title">Interested in becoming a mentor?</div>
+		<div class="col-3-container">
+			<div class="col-3">
+				<div class="mentor-info-header">Responsibilities</div>
+				<div class="mentor-info">
+					College Search Advice<br>Experience Sharing<br>Essay Writing<br>Personal Growth
 				</div>
-				<%= link_to '/auth/facebook' do %>
-					<div class="btn get-started sign-up">
-						<%= image_tag 'fbiconyellow.svg', :class => "fb-icon" %> Sign up to apply
-					</div>
-				<% end %>
 			</div>
-			<div class="section-content-bottom no-mobile">
-				<div class="section-text">Get help applying to college</div>
-				<div class="section-sub-text">Tell us a bit about yourself so we can keep you in the loop when we launch.</div>
-				<%= form_for @user do |f| %>
-					<%= f.text_field :dream_school, :class => "landing-user-field", placeholder: "Dream School" %>
-					<%= f.text_field :major, :class => "landing-user-field", placeholder: "Major" %>
-					<%= f.text_field :email, :class => "landing-user-field", placeholder: "Email" %>
-					<div class="landing-user-field submit">
-							<%= image_tag 'fbicon.svg', :class=> "fb-icon" %> Sign Up
-					</div>
-				<% end %>
+			<div class="col-3">
+				<div class="mentor-info-header">Benefits</div>
+				<div class="mentor-info">
+					Training<br>We pay $40/hr<br>$20 for every mentor you refer that gets accepted
+				</div>
 			</div>
+			<div class="col-3">
+				<div class="mentor-info-header">Requirements</div>
+				<div class="mentor-info">
+					A paragraph summary about why you'd like to become a mentor<br>A 1 minute video telling us about yourself
+				</div>
+			</div>
+		</div>
+		<%= link_to '/auth/facebook' do %>
+			<div class="btn get-started sign-up">
+				<%= image_tag 'fbiconyellow.svg', :class => "fb-icon" %>Sign up to apply
+			</div>
+		<% end %>
+	</div>
+
+	<div class="section5 no-mobile">
+		<div class="section5-title">Get help applying to college</div>
+		<div class="section5-sub-text">Tell us a bit about yourself so we can keep you in the loop when we launch.</div>
+		<%= form_for @user do |f| %>
+			<%= f.text_field :dream_school, :class => "landing-user-field", placeholder: "Dream School" %>
+			<%= f.text_field :major, :class => "landing-user-field", placeholder: "Major" %>
+			<%= f.text_field :email, :class => "landing-user-field", placeholder: "Email" %>
+			<div class="landing-user-field submit">
+					<%= image_tag 'fbicon.svg', :class=> "fb-icon" %> Sign Up
+			</div>
+		<% end %>
+	</div>
+
+	<div class="section6">
+		<div class="section6-links">
+			<div class="section6-link">About</div>
+			<div class="section6-link">Terms & Conditions</div>
+			<div class="section6-link">Privacy</div>
+			<div class="section6-link">Contact Us</div>
+		</div>
+		<div class="about">
+			Mentu helps students Umami Blue Bottle direct trade, cliche leggings keffiyeh crucifix art party sriracha food truck aesthetic fixie occupy +1. Selfies American Apparel Shoreditch, ennui XOXO twee four loko literally. Banjo meditation pop-up, wolf Marfa lumbersexual ugh Bushwick tofu 8-bit occupy semiotics. Cornhole crucifix lumbersexual Pitchfork mlkshk freegan.
+		</div>
+		<div class="copyright">
+			©2014 Mentu. All Rights Reserved.
 		</div>
 	</div>
 </div>
