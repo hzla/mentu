@@ -18,12 +18,25 @@ $greydark: #414141;
 
 $t-big: normal normal 400 44px/normal "sanchez", sans-serif;
 $t-title: normal normal 600 30px/normal "futura-pt", sans-serif;
-$t-bigsub: normal normal 300 20px/normal "futura-pt", sans-serif;
-$t-normal: normal normal 300 16px/normal "futura-pt", sans-serif;
-$t-admin: normal normal 300 14px/normal "futura-pt", sans-serif;
+$t-bigsub: normal normal 400 20px/normal "futura-pt", sans-serif;
+$t-normal: normal normal 400 16px/normal "futura-pt", sans-serif;
+$t-admin: normal normal 400 14px/normal "futura-pt", sans-serif;
 
 $g: 20px;
 $c: 60px;
 
-$btnborder: 1px solid;
-$br: 5px;
+@mixin muscle {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;
+}
+
+@mixin vertical-center {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
