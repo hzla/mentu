@@ -19,6 +19,8 @@
 	background: $greydark;
 }
 
+/***************** Signup Box *******************/
+
 .student-signup, .section5 {
 	#new_user {
 			height: 40px;
@@ -125,7 +127,7 @@
 	}
 }
 
-/************* Section 2 *************/
+/***************** Section 2 *******************/
 
 .section2 {
 	background: white;
@@ -140,16 +142,17 @@
 	}
 	#places {
 		height: 100px;
-		display: inline-block;
 		margin-top: 40px;
 	}
 	.place {
-		height: 80px;
+		width: 110px;
 		margin: 0 20px;
+		display: inline;
+		vertical-align: middle;
 	}
 }
 
-/************* Section 3 *************/
+/***************** Section 3 *******************/
 
 .section3 {
 	background: $yellow;
@@ -164,7 +167,7 @@
 		margin: 0 auto;
 		margin-top: 60px;
 		height: 100%;
-		display: flex;
+		@include muscle;
 		color: $yellow-d;
 	}
 	.col-3 {
@@ -185,7 +188,7 @@
 	}
 }
 
-/*** Section 4 ***/
+/***************** Section 4 *******************/
 
 .section4 {
 	background: white;
@@ -199,7 +202,7 @@
 		width: 960px;
 		margin: 0 auto;
 		margin-top: 60px;
-		display: flex;
+		@include muscle;
 	}
 	.col-3 {
 		width: 33%;
@@ -239,6 +242,8 @@
 	}
 }
 
+/***************** Section 5 *******************/
+
 .section5 {
 	background: $yellow;
 	padding: 60px;
@@ -254,12 +259,14 @@
 	}
 }
 
+/***************** Section 6 *******************/
+
 .section6{
 	width: 100%;
 	background: $greydark;
 	padding: 60px 0;
 	text-align: left;
-	display: flex;
+	@include muscle;
 	padding: 120px 160px 180px 160px;
 	position: relative;
 	.section6-links{
@@ -288,7 +295,7 @@
 }
 
 
-/******* Media Queries ******/
+/***************** Media Queries *******************/
 
 
 @media (max-width: 1023px) {
