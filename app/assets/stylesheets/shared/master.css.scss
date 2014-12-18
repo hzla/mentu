@@ -1,37 +1,13 @@
 @import 'variables';
 
 /** Buttons and Form Elements **/
-
-.btn {
-	color: white;
-	cursor: pointer;
-	text-align: center;
-	box-sizing: border-box;
-	height: 40px;
-	line-height: 40px;
-}
-
-.red-btn {
-	background: $red;
-	color: white;
-}
-
 .yellow-btn {
 	background: $yellow;
-	color: $black;
+	color: $yellow-d;
 }
 
-.red-btn:hover {
-	background: white;
-	border: 1px solid $red;
-	color: $red;
-}
-
-.btn-rnd {
-	border-radius: 5px;
-	color: white;
-	cursor: pointer;
-	text-align: center;
+.yellow-btn:hover{
+	background: $yellow-h;
 }
 
 input:focus,
@@ -54,6 +30,7 @@ input, textarea {
 div, input, textarea {
 	-webkit-transition: background .3s;
 	font-size: 16px;
+	box-sizing: border-box;
 }
 
 /** Backgrounds **/
