@@ -29,8 +29,11 @@ gem 'protected_attributes', '~> 1.0.5'
 gem 'browser'
 gem 'dotenv-rails' #remember to load
 gem 'pry'
-gem 'rails_admin'
-
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
+gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'formtastic', github: 'justinfrench/formtastic'
+gem 'devise'
 
 gem "net-ssh", "~> 2.7.0"
 # Use unicorn as the app server
