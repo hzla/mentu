@@ -6,6 +6,11 @@ Home =
     $('body').on 'click', '#apply-mentor', @showMentorForm
     $('body').on 'click', '.landing-user-field.submit', @saveUserInfoInSession
     $('body').on 'click', '#mentors-link', @showMentorsSection
+    $('body').on 'change', '#hidden-essay-upload', @showFile
+
+  showFile: (e) ->
+    $('#shown-essay-upload').text($('#hidden-essay-upload').val().split("\\").slice(2))
+
 
   showMentorsSection: ->
     $.fn.fullpage.moveTo(2)
@@ -25,7 +30,7 @@ Home =
     $('.modal-header').text('Glad to have you on board!')
     $('.modal-sub-header').text('Please complete the two tasks below:')
     $('#apply-mentor, .hide-on-submit, .animate-on-submit').hide()
-    $('#mentor-form').show().addClass('animated fadeIn')
+    $('#mentor-form, .close-modal').show().addClass('animated fadeIn')
 
     
   closeModal: ->
@@ -38,6 +43,8 @@ Home =
       empty = $(@).val() == ""
       isEmpty = true if empty
       $(@).css('border', '1px solid red') if empty
+      if $(@).attr('id') == "hidden-essay-upload"
+        $('#shown-essay-upload').css('border', '1px solid red') if empty
     return false if isEmpty
   
     $('#mentor-form').animate

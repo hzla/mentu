@@ -29,6 +29,7 @@ gem 'protected_attributes', '~> 1.0.5'
 gem 'browser'
 gem 'dotenv-rails' #remember to load
 gem 'pry'
+gem 'rails_admin'
 
 
 gem "net-ssh", "~> 2.7.0"

@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :authorizations
 
-	attr_accessible :name, :email, :profile_pic_url, :school, :dream_school, :timezone, :major, :app_response, :video_url
+	attr_accessible :role, :essay, :name, :email, :profile_pic_url, :school, :dream_school, :timezone, :major, :app_response, :video_url
 
 	def self.create_with_facebook auth_hash
 		timezone = auth_hash.extra.raw_info.timezone
