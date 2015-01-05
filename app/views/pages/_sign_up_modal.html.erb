@@ -19,16 +19,24 @@
 						<div class="modal-form-text bold">Not a prospective student?</div>
 					</div>
 					<div class="hidden" id="mentor-form">
-						<%= form_for current_user, :class => "modal-mentor-form", remote: true do |f| %>
+						<%= form_for current_user, :class => "modal-mentor-form", html: {multipart: true} do |f| %>
 							<div class="mentor-field-container">
 								<div class="mentor-field-number">1.</div>
-								<div class="mentor-field-question">Describe a time when Hashtag occupy literally retro, farm-to-table cliche Kickstarter chambray quinoa Vice Portland. Ugh yr gentrify Bushwick, gastropub scenester ennui salvia art party cred Blue Bottle. Vinyl lomo pickled, distillery Godard jean shorts Wes Anderson Shoreditch swag church-key. </div>
+								<div class="mentor-field-question">Where are you from, who are you?  What makes you a good mentor? </div>
 								<%= f.text_area :app_response, :class => "mentor-field", placeholder: "Type your response here" %>
 							</div>
 							<div class="mentor-field-container">
 								<div class="mentor-field-number">2.</div>
 								<div class="mentor-field-question">Make a 1 minute long video telling us who you are and why you’d like to become a mentor. Upload it to Youtube or Vimeo and enter the link in the field below:</div>
 								<%= f.text_field :video_url, :class => "mentor-field", placeholder: "Paste video link here" %>
+							</div>
+							<div class="mentor-field-container">
+								<div class="mentor-field-number">3.</div>
+								<div class="mentor-field-question">Please upload an you have written as a part of your college application. All of your info is kept anonymous.</div>
+								<div id="essay-uploader-container">
+									<%= f.file_field :essay, :class => "mentor-field", id: "hidden-essay-upload" %>
+									<div id="shown-essay-upload">Click to upload essay</div>
+								</div>
 							</div>
 							<div class="bold">Other Info</div>
 							<%= f.text_field :school, :class => "mentor-field", placeholder: "Current or previous school" %>
