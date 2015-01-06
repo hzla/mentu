@@ -69,7 +69,7 @@ end
 
 def run_interactively(command)
   server ||= find_servers_for_task(current_task).first
-  exec %Q(ssh #{user}@#{myproductionhost} -t '#{command}')
+  exec %Q(ssh #{user}@106.185.29.68 -t '#{command}')
 end
 
 namespace :custom do
