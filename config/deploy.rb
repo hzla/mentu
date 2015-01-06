@@ -1,6 +1,6 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
-require "recipes/rails"
+require "config/recipes/rails"
 
 server "106.185.29.68", :web, :app, :db, primary: true
 # set :default_shell, '/bin/bash -l'
