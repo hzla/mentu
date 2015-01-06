@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	has_many :authorizations
-	mount_uploader :essay, EssayUploader
+	# mount_uploader :essay, EssayUploader
 
 	attr_accessible :role, :essay, :name, :email, :profile_pic_url, :school, :dream_school, :timezone, :major, :app_response, :video_url
 
