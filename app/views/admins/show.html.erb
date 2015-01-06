@@ -19,7 +19,7 @@
 
 			<% if @user.document %>
 				<div class="app-question">Essay</div>
-				<%= link_to 'Click Here for Essay', @user.document.url, :class => "app-response blue underline" %>
+				<%= link_to 'Click Here for Essay', @user.document.url.gsub("s3.", "s3-ap-northeast-1."), :class => "app-response blue underline" %>
 			<% end %>
 		</div>
 	<% end %>
