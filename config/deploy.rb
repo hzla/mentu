@@ -20,6 +20,8 @@ set :branch, "master"
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
+set :shared_children, shared_children + %w{public/uploads}
+
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 namespace :deploy do
