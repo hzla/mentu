@@ -31,6 +31,8 @@ gem 'dotenv-rails' #remember to load
 gem 'pry'
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk'
+gem 'exception_notification'
+
 
 gem "net-ssh", "~> 2.7.0"
 # Use unicorn as the app server
