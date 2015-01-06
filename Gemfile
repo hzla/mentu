@@ -29,7 +29,7 @@ gem 'protected_attributes', '~> 1.0.5'
 gem 'browser'
 gem 'dotenv-rails' #remember to load
 gem 'pry'
-gem 'carrierwave'
+gem "paperclip", "~> 4.2"
 
 gem "net-ssh", "~> 2.7.0"
 # Use unicorn as the app server
