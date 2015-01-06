@@ -1,6 +1,5 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
-require "config/recipes/rails"
 
 server "106.185.29.68", :web, :app, :db, primary: true
 # set :default_shell, '/bin/bash -l'
@@ -56,6 +55,14 @@ namespace :deploy do
   before "deploy", "deploy:check_revision"
 end
 
+namespace :rails do
+  desc "Open the rails console on one of the remote servers"
+  task :console, :roles => :app do
+    hostname = find_servers_for_task(current_task).first
+    port = exists?(:port) ? fetch(:port) : 22
+    exec "ssh -l #{user} #{hostname} -p #{port} -t 'source ~/.profile && #{current_path}/script/rails c #{rails_env}'"
+  end
+end
 
 
 namespace :custom do
