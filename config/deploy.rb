@@ -55,6 +55,23 @@ namespace :deploy do
   before "deploy", "deploy:check_revision"
 end
 
+namespace :rails do
+  desc "Remote console"
+  task :console, :roles => :app do
+    run_interactively "bundle exec rails console #{rails_env}"
+  end
+
+  desc "Remote dbconsole"
+  task :dbconsole, :roles => :app do
+    run_interactively "bundle exec rails dbconsole #{rails_env}"
+  end
+end
+
+def run_interactively(command)
+  server ||= find_servers_for_task(current_task).first
+  exec %Q(ssh #{user}@#{myproductionhost} -t '#{command}')
+end
+
 namespace :custom do
   task :setup do
     run "cd #{current_path} && bundle exec rake db:create db:migrate RAILS_ENV=#{rails_env}"

@@ -9,7 +9,7 @@
 						<div class="modal-sub-header">There's just a couple more things we need to know</div>
 					</div>		
 					<div class="animate-on-submit">
-						<%= form_for current_user, :class => "modal-user-form", remote: true do |f| %>
+						<%= form_for current_user, :class => "modal-user-form", html: {multipart: true}, remote: true do |f| %>
 							<%= f.text_field :dream_school, :class => "modal-user-field", placeholder: "Dream School" %>
 							<%= f.text_field :major, :class => "modal-user-field", placeholder: "Major" %>
 							<%= f.text_field :email, :class => "modal-user-field", placeholder: "Email" %>

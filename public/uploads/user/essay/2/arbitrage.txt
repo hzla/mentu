@@ -1,0 +1,134 @@
+Arbitrage Master Plan
+
+This is meant to be used as a plan to do bitcoin arbitrage where there exists price differences in bitcoin in china and U.S. 
+
+
+Goal: To increase USD 
+
+Process: USD => BTC =>RMB => USD
+
+Minimum Setup Requirements:
+US Bank: Has 10000 worth of USD
+Coinbase: Has 10 or more bitcoins
+China Exchange: Has 10 bitcoins
+China Bank: Has 10000 USD worth of rmb
+
+
+What to do each round
+_____________________________
+The following steps are based on the following assumptions
+Assume 10% price difference in bitcoin prices in us and china. 
+Assume zero fees. 
+Assume each action can be initiated one after another 
+Assume bitcoin price at 1000 in US. 
+Limits: Can only buy 10 bitcoins a day
+
+Step: 1 Buy 10 bitcoins from coinbase,     
+	
+	time to complete: 5 days
+	Result After:
+	US Bank: 0 USD (-10000 USD)
+	Coinbase: 10 BTC
+	China Exchange: 10 BTC
+	China Bank: 10000 USD worth of RMB
+
+Step 2: Transfer 10 different bitcoin to China exchange, 
+	
+	time to complete: 1-2 hours
+	Result After:
+	US Bank: 0 USD
+	Coinbase:  0 BTC (-10 BTC)
+	China Exchange: 10 BTC
+	China Bank:  10000 USD worth of RMB 
+
+Step 3: sell 10 bitcoins already in china exchange and withdraw to bank
+	
+	time to complete: 1-2 days
+	Result After:
+	US Bank: 0 USD
+	Coinbase: 0 BTC
+	China Exchange: 0 BTC (-10 BTC)
+	China Bank: 10000 USD worth of RMB
+
+Step 4: send rmb already in bank back to america
+	
+	time to complete: 1-2 days
+	Result After:
+	US Bank: 0 USD
+	Coinbase: 0 BTC
+	China Exchange: 0 BTC
+	China Bank: 0 USD worth of RMB -(10000 USD worth of RMB) 
+
+The above actions are meant to be done as fast as possible and right after another. This is possible because of the funds in the setup. As you move money from one place to next, there will be already money waiting for you to move in the next step. It is important to do so is done to protect against any sudden price changes. The goal is to increase USD not BTC so during the waiting period, the BTC price changes will not matter as long as the arbitrage opportunity is still there.
+
+_____________________________________________________________
+
+After 1-2 hours step 2 should take effect
+
+	Result After:
+	US Bank: 0 USD
+	Coinbase: 0 USD
+	China Exchange: 10 BTC (+10 BTC)
+	China Bank: Has 0 USD worth of rmb
+
+After 1-2 days step 3 and step 4 should take effect
+
+	Result After:
+	US Bank: 10000 USD (USD) (+ 10000 USD)
+	Coinbase: 0 BTC 
+	China Exchange: Has 10 bitcoins
+	China Bank: Has 11000 USD worth of RMB (+11000 USD worth of RMB)
+
+After 5 days Step 1 takes effect
+	
+	Result After:
+	US Bank: 10000 USD
+	Coinbase: 10 BTC (+10 BTC)
+	China Exchange: 10 BTC
+	China Bank: 11000 USD worth of RMB 
+ 
+
+
+To increase process efficiency and convenience, find ways to decrease time it takes to buy bitcoin.
+To increase abitrage velocity, find ways to be able to purchase more bitcoin at a time
+To increase efficiency, find way to lower fees and find exchanges with larger price differences
+
+If you have only 10 bitcoins in coinbase to start out, this round can only be performed about once every 5 days
+If you have more 30 bitcoin in  coinbase to start out, this round can be performed about once every 2 days because that means you can buy bitcoins and recieve every 2 days for 3 rounds and after the 5th day, ten more bitcoins will flow back in to coinbase account about every two days. 
+
+DO NOT initiate any steps with more than 10 bitcoins worth at a time
+DO NOT initiate any steps when the total the setup minimum requirements are not met. 
+
+_________________________________________________________________
+
+Bitcoin Arbitrage Profitability Calculations using Coinbase
+
+
+X amount + 1% (buy using coinbase)
+		  (send to china exchange)
+		  (exchange to rmb)
+.5%		  (withdraw to china bank)
+x%		  (transfer to american bank)
+
+
+
+5% RMB/USD rate = 6.86% total fees
+4% RMB/USD rate = 5.75% total fees
+3% RMB/USD rate = 4.65% total fees
+2% RMB/USD rate = 3.61% total fees
+1% RMB/USD rate = 2.57% total fees
+flat fee RMB/USD = 1.54%
+
+
+Profit per bitcoin =  equals price difference percentage minus fee percentage * price of bitcoin
+
+Total Profit = Profit per bitcoin * number of bitcoins 
+
+
+
+
+
+
+
+
+

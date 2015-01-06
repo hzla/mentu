@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	has_many :authorizations
+	mount_uploader :essay, EssayUploader
 
 	attr_accessible :role, :essay, :name, :email, :profile_pic_url, :school, :dream_school, :timezone, :major, :app_response, :video_url
 
@@ -14,6 +15,10 @@ class User < ActiveRecord::Base
 
 	def has_filled_out_basic_info
 		(email.to_s != "" && dream_school.to_s != "" && major.to_s != "") || (email.to_s != "" && app_response.to_s != "")
+	end
+
+	def is_mentor
+		app_response != nil
 	end
 end
 

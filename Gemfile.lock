@@ -1,46 +1,3 @@
-GIT
-  remote: git://github.com/activerecord-hackery/polyamorous.git
-  revision: 9485cc761b6f55ba0bfb3850cc9574e4923dc268
-  specs:
-    polyamorous (1.1.0)
-      activerecord (>= 3.0)
-
-GIT
-  remote: git://github.com/activerecord-hackery/ransack.git
-  revision: c58b736f36de54702a7144d2ba5bed6ce14fb8f9
-  specs:
-    ransack (1.5.1)
-      actionpack (>= 3.0)
-      activerecord (>= 3.0)
-      activesupport (>= 3.0)
-      i18n
-      polyamorous (~> 1.1)
-
-GIT
-  remote: git://github.com/gregbell/active_admin.git
-  revision: 46bc9ff2aa46d09dd855f0edc0c437ff2d183594
-  specs:
-    activeadmin (1.0.0.pre)
-      arbre (~> 1.0, >= 1.0.2)
-      bourbon
-      coffee-rails
-      formtastic (~> 3.1)
-      formtastic_i18n
-      inherited_resources (~> 1.4, != 1.5.0)
-      jquery-rails
-      jquery-ui-rails (~> 5.0)
-      kaminari (~> 0.15)
-      rails (>= 3.2, < 5.0)
-      ransack (~> 1.3)
-      sass-rails
-
-GIT
-  remote: git://github.com/justinfrench/formtastic.git
-  revision: 23c18c3698e58a8dc72859438b71ca930bbd3f79
-  specs:
-    formtastic (3.2.0.pre)
-      actionpack (>= 3.2.13)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -72,13 +29,7 @@ GEM
       tzinfo (~> 1.1)
     ancestry (2.1.0)
       activerecord (>= 3.0.0)
-    arbre (1.0.2)
-      activesupport (>= 3.0.0)
     arel (5.0.1.20140414130214)
-    bcrypt (3.1.9)
-    bourbon (3.2.3)
-      sass (~> 3.2)
-      thor
     browser (0.6.0)
     builder (3.2.2)
     capistrano (2.15.5)
@@ -87,6 +38,11 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -96,13 +52,6 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     daemons (1.1.9)
-    devise (3.4.1)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      responders
-      thread_safe (~> 0.1)
-      warden (~> 1.2.3)
     dotenv (1.0.2)
     dotenv-rails (1.0.2)
       dotenv (= 1.0.2)
@@ -113,33 +62,19 @@ GEM
       i18n (~> 0.5)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
-    formtastic_i18n (0.1.1)
     geocoder (1.2.4)
-    has_scope (0.6.0.rc)
-      actionpack (>= 3.2, < 5)
-      activesupport (>= 3.2, < 5)
     hashie (3.2.0)
     highline (1.6.21)
     hike (1.2.3)
     i18n (0.6.11)
-    inherited_resources (1.5.1)
-      actionpack (>= 3.2, < 4.2)
-      has_scope (~> 0.6.0.rc)
-      railties (>= 3.2, < 4.2)
-      responders (~> 1.0)
     jbuilder (2.2.4)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (5.0.3)
-      railties (>= 3.2.16)
     json (1.8.1)
     jwt (1.0.0)
-    kaminari (0.16.1)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
     kgio (2.9.2)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -173,7 +108,6 @@ GEM
       multi_json (~> 1.3)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
-    orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.5)
     protected_attributes (1.0.8)
@@ -204,8 +138,6 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
-    responders (1.1.2)
-      railties (>= 3.2, < 4.2)
     rvm-capistrano (1.5.4)
       capistrano (~> 2.15.4)
     sass (3.2.19)
@@ -249,33 +181,27 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
-    warden (1.2.3)
-      rack (>= 1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  activeadmin!
   ancestry
   browser
   capistrano (~> 2.15)
+  carrierwave
   coffee-rails (~> 4.0.0)
-  devise
   dotenv-rails
   faker
-  formtastic!
   geocoder
   jbuilder (~> 2.0)
   jquery-rails
   net-ssh (~> 2.7.0)
   omniauth-facebook
   pg
-  polyamorous!
   protected_attributes (~> 1.0.5)
   pry
   rails (= 4.1.0)
-  ransack!
   rvm-capistrano
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
