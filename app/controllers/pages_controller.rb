@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 		if params[:debugging] 
 			@debugging = true
 		end
+		@show_modal = params[:sign_in] == "true"
 		if current_user && session[:dream_school]
 			current_user.update_attributes dream_school: session[:dream_school], email: session[:email], major: session[:major]
 			session[:dream_school] = nil
