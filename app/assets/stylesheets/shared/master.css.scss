@@ -14,7 +14,7 @@ input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+  outline: none;
 }
 
 input, textarea {
@@ -24,7 +24,6 @@ input, textarea {
 	outline: none;
   -webkit-appearance: none;
   box-sizing: border-box;
-
 }
 
 div, input, textarea {
@@ -47,11 +46,9 @@ div, input, textarea {
 	background: $yellow;
 }
 
-
 .hidden {
 	display: none;
 }
-
 
 /** Text Formatting **/
 
@@ -59,7 +56,6 @@ a {
 	text-decoration: none;
 	color: $black;
 }
-
 
 .bold {
 	font-weight: 700;
@@ -76,7 +72,6 @@ a {
 .large-text {
 	font-size: 24px;
 }
-
 
 .med-text{
 	font-size: 16px;
@@ -102,7 +97,6 @@ a {
 	display: none;
 }
 
-
 /****** Colors ******/
 
 .yellow {
@@ -117,11 +111,7 @@ a {
 	color: blue;
 }
 
-
-
 /***********  Media Queries *******************/
-
-
 
 /************** elements with the class mobile shown, no-mobile are hidden  *****************/
 

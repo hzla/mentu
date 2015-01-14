@@ -5,15 +5,11 @@ Home =
     $('body').on 'click', '.close-modal', @closeModal
     $('body').on 'click', '#apply-mentor', @showMentorForm
     $('body').on 'click', '.landing-user-field.submit', @saveUserInfoInSession
-    $('body').on 'click', '#mentors-link', @showMentorsSection
     $('body').on 'change', '#hidden-essay-upload', @showFile
 
   showFile: (e) ->
+    #shows the filename of the uploaded file
     $('#shown-essay-upload').text($('#hidden-essay-upload').val().split("\\").slice(2))
-
-
-  showMentorsSection: ->
-    $.fn.fullpage.moveTo(2)
 
   saveUserInfoInSession: ->
     form = $(@).parents('form')
@@ -21,7 +17,6 @@ Home =
     form.find('input').each ->
       empty = $(@).val() == ""
       isEmpty = true if empty
-      console.log isEmpty
       $(@).css('border', '1px solid red') if empty
     return false if isEmpty
     $(@).parents('form').submit()
@@ -32,7 +27,6 @@ Home =
     $('#apply-mentor, .hide-on-submit, .animate-on-submit').hide()
     $('#mentor-form, .close-modal').show().addClass('animated fadeIn')
 
-    
   closeModal: ->
     $('.modal-overlay-container').hide()
 
@@ -58,11 +52,6 @@ Home =
     $('.modal-sub-header').text("We'll send you an email when we're ready to launch")
     $('.modal-header-container').css('border-bottom', 'none')
 
-
-
-
-
-
   validateAndThankUser: ->
     noDreamSchool = $('#user_dream_school').val() == ""
     noMajor = $('#user_major').val() == ""
@@ -82,10 +71,6 @@ Home =
       $('#apply-mentor').addClass('applied')
       $('.modal-sub-header').text("We'll send you an email when we're ready to launch")
       $('.modal-header-container').css('border-bottom', 'none')
-
-
-
-
 
 ready = ->
   Home.init()
