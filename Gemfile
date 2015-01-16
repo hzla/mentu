@@ -29,15 +29,23 @@ gem 'protected_attributes', '~> 1.0.5'
 gem 'browser'
 gem 'dotenv-rails' #remember to load
 gem 'pry'
+
+# Uploading 
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk'
+
+# exception notifiers
 gem 'exception_notification'
 
 
-gem "net-ssh", "~> 2.7.0"
+# Video Chatting
+gem "opentok", "~> 2.2"
+
+
 # Use unicorn as the app server
 gem 'unicorn'
 
 # Deploy with Capistrano
+gem "net-ssh", "~> 2.7.0"
 gem 'capistrano', '~> 2.15'
 gem "rvm-capistrano"

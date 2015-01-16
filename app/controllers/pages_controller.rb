@@ -22,6 +22,9 @@ class PagesController < ApplicationController
 		redirect_to root_path
 	end
 
+	def opentok
+	end
+
 	def help
 	end
 
