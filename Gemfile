@@ -20,7 +20,6 @@ gem 'spring'
 
 
 ####### commonly used
-gem 'omniauth-facebook'
 gem 'ancestry'
 gem 'geocoder'
 gem "thin"
@@ -29,6 +28,12 @@ gem 'protected_attributes', '~> 1.0.5'
 gem 'browser'
 gem 'dotenv-rails' #remember to load
 gem 'pry'
+
+
+##### Omniauth
+gem "omniauth-wechat-oauth2"
+gem 'omniauth-facebook'
+
 
 # Uploading 
 gem "paperclip", "~> 4.2"

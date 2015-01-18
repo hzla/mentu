@@ -6,6 +6,17 @@ Home =
     $('body').on 'click', '#apply-mentor', @showMentorForm
     $('body').on 'click', '.landing-user-field.submit', @saveUserInfoInSession
     $('body').on 'change', '#hidden-essay-upload', @showFile
+    $(document).scroll @fadeInHeader
+
+  fadeInHeader: ->
+    height = $(window).height()
+    currentHeight = $(document).scrollTop()
+    console.log "Scrolling"
+    if currentHeight > height
+      $('#main-header').css('background', 'rgba(0,0,0,.5)')
+    else
+      $('#main-header').attr('style', '') 
+
 
   showFile: (e) ->
     #shows the filename of the uploaded file
