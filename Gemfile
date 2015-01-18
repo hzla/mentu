@@ -31,7 +31,6 @@ gem 'pry'
 
 
 ##### Omniauth
-gem "omniauth-wechat-oauth2"
 gem 'omniauth-facebook'
 
 
