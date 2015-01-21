@@ -7,6 +7,13 @@ Home =
     $('body').on 'click', '.landing-user-field.submit', @saveUserInfoInSession
     $('body').on 'change', '#hidden-essay-upload', @showFile
     $(document).scroll @fadeInHeader
+    $('body').on 'mouseenter', '.OT_mirrored', @draggableVideos
+    @dragged = false
+
+  draggableVideos: ->
+    if !Home.dragged
+      $('.OT_mirrored').draggable()
+      Home.dragged = true
 
   fadeInHeader: ->
     height = $(window).height()

@@ -3,8 +3,8 @@
   // Think of a session as a room, and a token as the key to get in to the room
   // Sessions and tokens are generated on your server and passed down to the client
   var apiKey = "45130702";
-  var sessionId = "1_MX40NTEzMDcwMn5-MTQyMTM4OTQzMDQ1OH5tUWpYSEFSby9YRGFacGx4RUZ5K1pSaDR-fg";
-  var token = "T1==cGFydG5lcl9pZD00NTEzMDcwMiZzaWc9MTRjMTg4MGZkYjUwNGRiY2I2YTBmYWQ3OWVlMWY0NjcwYTIyMmM4Nzpyb2xlPXB1Ymxpc2hlciZzZXNzaW9uX2lkPTFfTVg0ME5URXpNRGN3TW41LU1UUXlNVE00T1RRek1EUTFPSDV0VVdwWVNFRlNieTlZUkdGYWNHeDRSVVo1SzFwU2FEUi1mZyZjcmVhdGVfdGltZT0xNDIxMzg5NzMyJm5vbmNlPTAuMDcxMzQ1MDQxNjg3MzQzNDY=";
+  var sessionId = "1_MX40NTEzMDcwMn5-MTQyMTgxNDQ1NjQwNH4xaFRrN0JVZTZYMzV0VytnQ1RrNzRNNGV-UH4";
+  var token = "<%= @token %>"
 
   // Initialize session, set up event listeners, and connect
   var session = OT.initSession(apiKey, sessionId);
@@ -18,5 +18,5 @@
     session.publish(publisher);
   });
 </script>
-<h1>Awesome video feed!</h1>
-<div id="myPublisherDiv"></div>
+<h1 id="demo-title">WebRTC Demo</h1>
+<div id="demo-bg"></div>

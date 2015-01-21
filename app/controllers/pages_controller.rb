@@ -23,7 +23,10 @@ class PagesController < ApplicationController
 	end
 
 	def opentok
-	end
+		@opentok = OpenTok::OpenTok.new ENV['OPEN_TOK_KEY'], ENV['OPEN_TOK_SECRET']
+		session_id = "1_MX40NTEzMDcwMn5-MTQyMTgxNDQ1NjQwNH4xaFRrN0JVZTZYMzV0VytnQ1RrNzRNNGV-UH4"
+  	@token = @opentok.generate_token session_id 
+  end
 
 	def help
 	end
