@@ -20,6 +20,8 @@ set :branch, "master"
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
+set :shared_children, shared_children + %w{public/uploads}
+
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 namespace :deploy do
@@ -55,8 +57,31 @@ namespace :deploy do
   before "deploy", "deploy:check_revision"
 end
 
+namespace :rails do
+  desc "Open the rails console on one of the remote servers"
+  task :console, :roles => :app do
+    hostname = find_servers_for_task(current_task).first
+    port = exists?(:port) ? fetch(:port) : 22
+    exec "ssh -l #{user} #{hostname} -p #{port} -t 'source ~/.profile && #{current_path}/script/rails c #{rails_env}'"
+  end
+end
+
+
 namespace :custom do
   task :setup do
     run "cd #{current_path} && bundle exec rake db:create db:migrate RAILS_ENV=#{rails_env}"
+  end
+end
+
+namespace :logs do
+  desc "tail production log files"
+  task :tail, roles: :app do
+    file = fetch(:file, 'production') # uses 'production' as default
+    trap("INT") { puts 'Interupted'; exit 0; }
+    run "tail -f #{shared_path}/log/#{file}.log" do |channel, stream, data|
+      puts  # for an extra line break before the host name
+      puts "#{channel[:host]}: #{data}"
+      break if stream == :err
+    end
   end
 end

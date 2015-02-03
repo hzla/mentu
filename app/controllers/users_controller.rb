@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
 	def update
 		current_user.update_attributes params[:user]
-		render nothing: true
+		redirect_to root_path(sign_in: true)
 	end
 
 end

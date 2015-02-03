@@ -11,10 +11,16 @@
 
 
 	<div id="main-header-actions-right">
-		<%= link_to '/auth/facebook' do %>
+		<% if current_user %>
 			<div class="main-header-action sign-up yellow">
-				Log in with Facebook
+				Signed in as <%= current_user.name %>
 			</div>
+		<% else %>
+			<%= link_to '/auth/facebook' do %>
+				<div class="main-header-action sign-up yellow">
+					Log in with Facebook
+				</div>
+			<% end %>
 		<% end %>
 	</div>
 </div>

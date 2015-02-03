@@ -1,6 +1,10 @@
 @import 'shared/variables';
 
 /*** Main Layout ***/
+#full-page {
+	overflow-x: hidden;
+}
+
 
 #video {
 	position: fixed;

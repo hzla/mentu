@@ -1,0 +1,26 @@
+<div id="admin-panel-container">
+	<%= image_tag @user.profile_pic_url, :class => "user-pic" %>
+	
+	<ul class="user-attrs">
+		<li class="user-attr">Name: <%= @user.name %></li>
+		<li class="user-attr">Email: <%= @user.email %></li>
+		<li class="user-attr">School: <%= @user.school %></li>
+		<li class="user-attr">Dream School: <%= @user.dream_school %></li>
+		<li class="user-attr">Major: <%= @user.major %></li>
+	</ul>
+
+	<% if @user.is_mentor %>
+		<div class="app-info">
+			<div class="app-question">Why he/she wants to be a mentor</div>
+			<div class="app-response"><%= @user.app_response %></div>
+
+			<div class="app-question">Video Url</div>
+			<%= link_to @user.video_url, @user.video_url, :class => "app-response blue underline" %>
+
+			<% if @user.document %>
+				<div class="app-question">Essay</div>
+				<%= link_to 'Click Here for Essay', @user.document.url.gsub("s3.", "s3-ap-northeast-1."), :class => "app-response blue underline" %>
+			<% end %>
+		</div>
+	<% end %>
+</div>

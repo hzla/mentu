@@ -1,0 +1,22 @@
+<script type="text/javascript">
+  // Initialize API key, session, and token...
+  // Think of a session as a room, and a token as the key to get in to the room
+  // Sessions and tokens are generated on your server and passed down to the client
+  var apiKey = "45130702";
+  var sessionId = "1_MX40NTEzMDcwMn5-MTQyMTgxNDQ1NjQwNH4xaFRrN0JVZTZYMzV0VytnQ1RrNzRNNGV-UH4";
+  var token = "<%= @token %>"
+
+  // Initialize session, set up event listeners, and connect
+  var session = OT.initSession(apiKey, sessionId);
+
+  session.on("streamCreated", function(event) {
+    session.subscribe(event.stream);
+  });
+ 
+  session.connect(token, function(error) {
+    var publisher = OT.initPublisher();
+    session.publish(publisher);
+  });
+</script>
+<h1 id="demo-title">WebRTC Demo</h1>
+<div id="demo-bg"></div>

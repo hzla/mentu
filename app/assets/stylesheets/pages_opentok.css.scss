@@ -1,0 +1,35 @@
+@import 'shared/variables';
+
+#demo-title {
+	font-size: 48px;
+	margin: 20px;
+}
+
+#demo-bg {
+	position: fixed;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: $yellow;
+}
+
+body .OT_subscriber {
+	display: inline-block;
+	min-height: 320px;
+	min-width: 480px;
+	margin: 20px;
+	video {
+		height: 100%;
+		width: 100%;
+	}
+}
+
+body .OT_publisher {
+	position: fixed;
+	max-height: 120px;
+	max-width: 160px;
+	bottom: 20px;
+	right: 20px;
+}

@@ -1,6 +1,6 @@
 <%= render partial: "main_header" %>
 
-<%= video_tag "mentu.webm", id: "video", autoplay: true, :loop => true %>
+<%= video_tag "mentu2.webm", id: "video", autoplay: true, :loop => true %>
 <div id="full-page">
 	<div class="section1">
 		<div class="section1-text-content">
@@ -134,7 +134,7 @@
 </div>
  -->
 
-<% if current_user %>
+<% if @show_modal %>
 	<%= render partial: 'sign_up_modal' %>
 <% end %>
 

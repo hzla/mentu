@@ -1,0 +1,71 @@
+@import 'shared/variables';
+
+#admin-panel-container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.admin-header {
+	font-size: 32px;
+	font-weight: 700;
+	margin: 20px 0px;
+}
+
+.admin-subheader {
+	font-size: 24px;
+	font-weight: 600;
+	margin: 10px 0px;
+}
+
+.panel-user {
+	padding: 10px 0px;
+	border-bottom: 1px solid $greylight;
+	width: 100%;
+	float: left;
+
+}
+
+.panel-pic {
+	height: 40px; 
+	width: 40px;
+	float: left;
+}
+
+.panel-info {
+	height: 40px;
+	float: left;
+	margin-left: 20px;
+}
+
+.panel-field {
+	font-size: 16px;
+	font-weight: 400;
+	margin-right: 10px;
+}
+
+/////////////////////////////////////
+
+.user-pic {
+	margin: 20px 0px;
+}
+
+.user-attr {
+	margin: 10px 0px;
+	font-size: 24px;
+}
+
+.app-info {
+	margin-top: 40px;
+	border-top: 1px solid $greylight;
+}
+
+.app-question {
+	font-size: 24px;
+	margin: 10px 0px;
+}
+
+.app-response {
+	font-size: 24px;
+	margin-bottom: 40px;
+	display: block;
+}

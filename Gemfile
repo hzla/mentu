@@ -12,6 +12,7 @@ group :assets do
   gem 'sprockets'
 end
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0'
@@ -20,7 +21,6 @@ gem 'spring'
 
 
 ####### commonly used
-gem 'omniauth-facebook'
 gem 'ancestry'
 gem 'geocoder'
 gem "thin"
@@ -31,10 +31,26 @@ gem 'dotenv-rails' #remember to load
 gem 'pry'
 
 
-gem "net-ssh", "~> 2.7.0"
+##### Omniauth
+gem 'omniauth-facebook'
+
+
+# Uploading 
+gem "paperclip", "~> 4.2"
+gem 'aws-sdk'
+
+# exception notifiers
+gem 'exception_notification'
+
+
+# Video Chatting
+gem "opentok", "~> 2.2"
+
+
 # Use unicorn as the app server
 gem 'unicorn'
 
 # Deploy with Capistrano
+gem "net-ssh", "~> 2.7.0"
 gem 'capistrano', '~> 2.15'
 gem "rvm-capistrano"

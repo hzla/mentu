@@ -5,10 +5,29 @@ Home =
     $('body').on 'click', '.close-modal', @closeModal
     $('body').on 'click', '#apply-mentor', @showMentorForm
     $('body').on 'click', '.landing-user-field.submit', @saveUserInfoInSession
-    $('body').on 'click', '#mentors-link', @showMentorsSection
+    $('body').on 'change', '#hidden-essay-upload', @showFile
+    $(document).scroll @fadeInHeader
+    $('body').on 'mouseenter', '.OT_mirrored', @draggableVideos
+    @dragged = false
 
-  showMentorsSection: ->
-    $.fn.fullpage.moveTo(2)
+  draggableVideos: ->
+    if !Home.dragged
+      $('.OT_mirrored').draggable()
+      Home.dragged = true
+
+  fadeInHeader: ->
+    height = $(window).height()
+    currentHeight = $(document).scrollTop()
+    console.log "Scrolling"
+    if currentHeight > height
+      $('#main-header').css('background', 'rgba(0,0,0,.5)')
+    else
+      $('#main-header').attr('style', '') 
+
+
+  showFile: (e) ->
+    #shows the filename of the uploaded file
+    $('#shown-essay-upload').text($('#hidden-essay-upload').val().split("\\").slice(2))
 
   saveUserInfoInSession: ->
     form = $(@).parents('form')
@@ -16,7 +35,6 @@ Home =
     form.find('input').each ->
       empty = $(@).val() == ""
       isEmpty = true if empty
-      console.log isEmpty
       $(@).css('border', '1px solid red') if empty
     return false if isEmpty
     $(@).parents('form').submit()
@@ -25,9 +43,8 @@ Home =
     $('.modal-header').text('Glad to have you on board!')
     $('.modal-sub-header').text('Please complete the two tasks below:')
     $('#apply-mentor, .hide-on-submit, .animate-on-submit').hide()
-    $('#mentor-form').show().addClass('animated fadeIn')
+    $('#mentor-form, .close-modal').show().addClass('animated fadeIn')
 
-    
   closeModal: ->
     $('.modal-overlay-container').hide()
 
@@ -38,6 +55,8 @@ Home =
       empty = $(@).val() == ""
       isEmpty = true if empty
       $(@).css('border', '1px solid red') if empty
+      if $(@).attr('id') == "hidden-essay-upload"
+        $('#shown-essay-upload').css('border', '1px solid red') if empty
     return false if isEmpty
   
     $('#mentor-form').animate
@@ -50,11 +69,6 @@ Home =
     $('#apply-mentor').addClass('applied')
     $('.modal-sub-header').text("We'll send you an email when we're ready to launch")
     $('.modal-header-container').css('border-bottom', 'none')
-
-
-
-
-
 
   validateAndThankUser: ->
     noDreamSchool = $('#user_dream_school').val() == ""
@@ -75,10 +89,6 @@ Home =
       $('#apply-mentor').addClass('applied')
       $('.modal-sub-header').text("We'll send you an email when we're ready to launch")
       $('.modal-header-container').css('border-bottom', 'none')
-
-
-
-
 
 ready = ->
   Home.init()

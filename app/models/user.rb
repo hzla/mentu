@@ -1,7 +1,10 @@
 class User < ActiveRecord::Base
 	has_many :authorizations
+	# mount_uploader :essay, EssayUploader
+	has_attached_file :document
+	validates_attachment :document, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
 
-	attr_accessible :name, :email, :profile_pic_url, :school, :dream_school, :timezone, :major, :app_response, :video_url
+	attr_accessible :document, :role, :essay, :name, :email, :profile_pic_url, :school, :dream_school, :timezone, :major, :app_response, :video_url
 
 	def self.create_with_facebook auth_hash
 		timezone = auth_hash.extra.raw_info.timezone
@@ -14,6 +17,10 @@ class User < ActiveRecord::Base
 
 	def has_filled_out_basic_info
 		(email.to_s != "" && dream_school.to_s != "" && major.to_s != "") || (email.to_s != "" && app_response.to_s != "")
+	end
+
+	def is_mentor
+		app_response != nil
 	end
 end
 
