@@ -1,30 +1,35 @@
-$white: #FCFCFC;
-$red: #e8425e;
-$black: #1B1B1B;
-$grey: #9C9C9C;
-$light-grey: #EEEEEE;
-$turq: #1dcfac;
-
 $fb: #3F6ACA;
 $fb-h: #2F4F98;
+
+$red: #FF5353;
+$red-h: #DE4747;
+
+$green: #43C993;
 
 $yellow: #FFE68F;
 $yellow-h: #FFDA58;
 $yellow-d: #564d2c;
+$yellow-l: rgba(255,230,143,0.3);
 
 $greylight: #f7f7f7;
 $greymid: #939393;
 $greydark: #414141;
-$greybtn: #bebebe;
 
-$t-big: normal normal 400 44px/normal "sanchez", sans-serif;
-$t-title: normal normal 600 30px/normal "futura-pt", sans-serif;
-$t-bigsub: normal normal 400 20px/normal "futura-pt", sans-serif;
-$t-normal: normal normal 400 16px/normal "futura-pt", sans-serif;
-$t-admin: normal normal 400 14px/normal "futura-pt", sans-serif;
+$t-big: normal normal 400 40px/normal "sanchez", sans-serif;
+$t-title: normal normal 600 30px/normal "arial", sans-serif;
+$t-bigsub: normal normal 400 20px/normal "arial", sans-serif;
+$t-normal: normal normal 400 16px/normal "arial", sans-serif;
+$t-admin: normal normal 400 14px/normal "arial", sans-serif;
+
+$m-big: normal normal 400 20px/normal "sanchez", sans-serif;
+$m-bigsub: normal normal 400 17px/normal "arial", sans-serif;
+$m-normal: normal normal 400 15px/normal "arial", sans-serif;
+$m-admin: normal normal 400 12px/normal "arial", sans-serif;
 
 $g: 20px;
 $c: 60px;
+
+$m-g: 10px;
 
 @mixin muscle {
   display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
