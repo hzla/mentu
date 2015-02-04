@@ -1,6 +1,6 @@
 
 time = Time.now
-user_id = User.last.id
+user_id = User.where(name: "Andy Lee").last.id
 categories = ["all", "biz", "sci", "art", "inv", "ent"]
 
 
