@@ -67,7 +67,7 @@ end
 namespace :deploy do 
   task :console do 
     desc "Open the rails console on one of the remote servers"
-    run "cd #{current_path}; bundle exec rails c RAILS_ENV=#{rails_env}"
+    run "cd #{current_path}; bundle exec rails c production"
   end
 end
 
