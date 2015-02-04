@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="110px" height="36px" viewBox="0 0 110 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>火花 + Polygon 3 + Rectangle 144 + Polygon 3 + Triangle 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M9.58917588,8.05863679 L12.0116385,0.325887955 L0.162451051,0.325887955 L2.58491362,8.05863679 L9.58917588,8.05863679 Z" id="path-1"></path>
+    </defs>
+    <g id="Main-Attraction" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-16" sketch:type="MSArtboardGroup" transform="translate(-21.000000, -10.000000)">
+            <g id="Group" sketch:type="MSLayerGroup">
+                <g transform="translate(20.000000, 10.000000)" id="火花-+-Polygon-3-+-Rectangle-144-+-Polygon-3-+-Triangle-3">
+                    <g>
+                        <text id="火花" sketch:type="MSTextLayer" font-family="Heiti TC" font-size="31.5789474" font-weight="bold" sketch:alignment="middle" fill="#FFE68F">
+                            <tspan x="49.1921794" y="30.1372549">火花</tspan>
+                        </text>
+                        <g id="Polygon-3-+-Rectangle-144-+-Polygon-3-+-Triangle-3" transform="translate(0.750487, 0.000000)">
+                            <polygon id="Polygon-3" fill="#FFE68F" sketch:type="MSShapeGroup" points="19.7944476 0.767654528 38.4496199 14.1077092 31.3239781 35.6923711 8.26491715 35.6923711 1.13927542 14.1077092 "></polygon>
+                            <g id="Rectangle-144-+-Polygon-3" transform="translate(19.855024, 18.946807) rotate(-180.000000) translate(-19.855024, -18.946807) translate(9.907841, 9.535042)" fill="#FF5353" sketch:type="MSShapeGroup">
+                                <path d="M10.0077596,18.1349617 L0.489814621,11.3288114 L4.12534611,0.316228778 L15.8901732,0.316228778 L19.5257046,11.3288114 L10.0077596,18.1349617 L10.0077596,18.1349617 Z" id="Polygon-2"></path>
+                            </g>
+                            <g id="Rectangle-199" transform="translate(13.707408, 27.627638)">
+                                <mask id="mask-2" sketch:name="asd" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <use id="asd" fill="#FFA12F" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,155 +1,111 @@
 <%= render partial: "main_header" %>
 
 <%= video_tag "mentu2.webm", id: "video", autoplay: true, :loop => true %>
-<div id="full-page">
-	<div class="section1">
-		<div class="section1-text-content">
-			<div id="section1-title-text">
-				Get Matched with Your Personal Mentors
-			</div>
-			<div id="section1-sub-text">
-				Learn from 1000+ top college students
-			</div>
+
+<section id="landing-main">
+	<div class="landing-message">
+		<div class="big m-full">
+			Ask and get your questions answered.
 		</div>
-		<div class="mentor-sign-up-container">
-			<div class="mentor-sign-up-text">
-				We're currently taking mentor applications
-			</div>
-			<%= link_to '/auth/facebook' do %>
-				<div class="btn mentor-apply-btn sign-up">
-					<%= image_tag 'fbiconyellow.svg', :class => "fb-icon" %>
-					<div id="mentor-apply-btn-text">Sign up to Apply</div>
-				</div>
-			<% end %>
-		</div>
-		<div class="student-signup no-mobile">
-			<%= form_for @user do |f| %>
-				<%= f.text_field :dream_school, :class => "landing-user-field", placeholder: "Dream School" %>
-				<%= f.text_field :major, :class => "landing-user-field", placeholder: "Major" %>
-				<%= f.text_field :email, :class => "landing-user-field", placeholder: "Email" %>
-				<div class="landing-user-field submit">
-						<%= image_tag 'fbicon.svg', :class=> "fb-icon" %> Sign Up
-				</div>
-			<% end %>
+		<div class="bigsub m-full">
+			3 new mentors everyday.
+			Ask them anything.
 		</div>
 	</div>
 
-	<div class="section2">
-		<div class="section2-title">
-			Our mentors come from all over. Many from prestigious institutes.
+	<div id="past-mentors">
+		<div id="past-mentors-title" class="bold title yellow m-bottom-big">Past Mentors</div>
+		<div class="past-mentor">
+			<%= image_tag "school1.png", :class => "past-mentor-pic m-full" %>
+			<div class="past-mentor-desc m-full">I am Rosa Zhou, I am in my second year studying Corporate Law at Stanford, and would like to become UN Secretary General some day. </div>
 		</div>
-		<div id="places">
-			<% (1..6).each do |place| %>
-				<%= image_tag "school#{place}.png", :class => "place" %>
-			<% end %>
+		<div class="past-mentor">
+			<%= image_tag "school2.png", :class => "past-mentor-pic m-full" %>
+			<div class="past-mentor-desc m-full">I am Rosa Zhou, I am in my second year studying Corporate Law at Stanford, and would like to become UN Secretary General some day. </div>
 		</div>
-	</div>
-
-	<div class="section3">
-		<div class="section3-title">
-			Here's how it works.
+		<div class="past-mentor no-mobile">
+			<%= image_tag "school2.png", :class => "past-mentor-pic m-full" %>
+			<div class="past-mentor-desc m-full">I am Rosa Zhou, I am in my second year studying Corporate Law at Stanford, and would like to become UN Secretary General some day. </div>
 		</div>
-		<div class="col-3-container">
-			<div class="col-3">
-				<%= image_tag 'howitworks1.svg', :class => "step-pic" %>
-				<div class="step-title">1. Choose Your Interests</div>
-				<div class="step-desc">Tell us what you're passionate about. You can get help for a TOEFL test, a job interview, or a startup pitch.</div>
-			</div>
-			<div class="col-3">
-				<%= image_tag 'howitworks2.svg', :class => "step-pic" %>
-				<div class="step-title">2. Select Your Mentor</div>
-				<div class="step-desc">Select mentors you like most based on their strengths, backgrounds, and availability. You can choose as many mentors as you like.</div>
-			</div>
-			<div class="col-3">
-				<%= image_tag 'howitworks3.svg', :class => "step-pic" %>
-				<div class="step-title">3. Start Your Learning</div>
-				<div class="step-desc">Log in when the session starts, and connect with your mentors as you go through your fully personalized curriculum.
-				</div>
-			</div>
+		<div class="past-mentor no-mobile">
+			<%= image_tag "school2.png", :class => "past-mentor-pic m-full" %>
+			<div class="past-mentor-desc m-full">I am Rosa Zhou, I am in my second year studying Corporate Law at Stanford, and would like to become UN Secretary General some day. </div>
 		</div>
 	</div>
 
-	<div class="section4">
-		<div class="section-title">Interested in becoming a mentor?</div>
-		<div class="col-3-container">
-			<div class="col-3">
-				<div class="mentor-info-header">Responsibilities</div>
-				<div class="mentor-info">
-					College Search Advice<br>Experience Sharing<br>Essay Writing<br>Personal Growth
-				</div>
-			</div>
-			<div class="col-3">
-				<div class="mentor-info-header">Benefits</div>
-				<div class="mentor-info">
-					Training<br>We pay $40/hr<br>$20 for every mentor you refer that gets accepted
-				</div>
-			</div>
-			<div class="col-3">
-				<div class="mentor-info-header">Requirements</div>
-				<div class="mentor-info">
-					A paragraph summary about why you'd like to become a mentor<br>A 1 minute video telling us about yourself
-				</div>
-			</div>
-		</div>
-		<%= link_to '/auth/facebook' do %>
-			<div class="btn get-started sign-up">
-				<%= image_tag 'fbiconyellow.svg', :class => "fb-icon" %>Sign up to apply
-			</div>
-		<% end %>
+	<div class="no-mobile yellow" id="mentors-tomorrow">
+		Read the profiles for tomorrow's upcoming mentors >>
 	</div>
+</section>
 
-	<div class="section5 no-mobile">
-		<div class="section5-title">Get help applying to college</div>
-		<div class="section5-sub-text">Tell us a bit about yourself so we can keep you in the loop when we launch.</div>
-		<%= form_for @user do |f| %>
-			<%= f.text_field :dream_school, :class => "landing-user-field", placeholder: "Dream School" %>
-			<%= f.text_field :major, :class => "landing-user-field", placeholder: "Major" %>
-			<%= f.text_field :email, :class => "landing-user-field", placeholder: "Email" %>
-			<div class="landing-user-field submit">
-					<%= image_tag 'fbicon.svg', :class=> "fb-icon" %> Sign Up
+
+<section id="landing-ama">
+	<div id="ama-header" class="inline-container">
+		<div id="ama-header-content">
+			<div class="title greylight no-mobile m-vert" id="ama-header-title">
+				AMA
 			</div>
-		<% end %>
+
+			<div id="ama-header-tabs" class="inline-container no-desk">
+				<%= link_to amas_path(category: "all"), remote: true, :class => "ama-header-link" do %>
+					<div class="ama-header-tab active" id="all">
+						ALL
+					</div>
+				<% end %>
+				<%= link_to amas_path(category: "sci"), remote: true, :class => "ama-header-link" do %>
+					<div class="ama-header-tab" id="sci">
+						SCI
+					</div>
+				<% end %>
+				<%= link_to amas_path(category: "biz"), remote: true, :class => "ama-header-link" do %>
+					<div class="ama-header-tab" id="biz">
+						BIZ
+					</div>
+				<% end %>
+				<%= link_to amas_path(category: "art"), remote: true, :class => "ama-header-link" do %>
+					<div class="ama-header-tab" id="art">
+						ART
+					</div>
+				<% end %>
+			</div>
+			<div id="ama-header-tabs" class="inline-container no-mobile">
+
+				<%= link_to amas_path(category: "all"), remote: true, :class => "ama-header-link" do %>
+					<div class="ama-header-tab active" id="all">
+						ALL
+					</div>
+				<% end %>
+				<%= link_to amas_path(category: "sci"), remote: true, :class => "ama-header-link" do %>
+					<div class="ama-header-tab" id="sci">
+						SCIENTIST
+					</div>
+				<% end %>
+				<%= link_to amas_path(category: "biz"), remote: true, :class => "ama-header-link" do %>
+					<div class="ama-header-tab" id="biz">
+						CORPORATE
+					</div>
+				<% end %>
+				<%= link_to amas_path(category: "art"), remote: true, :class => "ama-header-link" do %>
+					<div class="ama-header-tab" id="art">
+						ARTIST
+					</div>
+				<% end %>
+				<%= link_to amas_path(category: "inv"), remote: true, :class => "ama-header-link" do %>
+					<div class="ama-header-tab" id="inv">
+						INVENTOR
+					</div>
+				<% end %>
+				<%= link_to amas_path(category: "ent"), remote: true, :class => "ama-header-link" do %>
+					<div class="ama-header-tab" id="ent">
+						ENTREPERNEUR
+					</div>
+				<% end %>
+			</div>
+		</div>
 	</div>
-
-	<div class="section6">
-		<div class="section6-links">
-			<div class="section6-link">About</div>
-			<div class="section6-link">Terms & Conditions</div>
-			<div class="section6-link">Privacy</div>
-			<div class="section6-link">Contact Us</div>
-		</div>
-		<div class="about">
-			Mentu helps students Umami Blue Bottle direct trade, cliche leggings keffiyeh crucifix art party sriracha food truck aesthetic fixie occupy +1. Selfies American Apparel Shoreditch, ennui XOXO twee four loko literally. Banjo meditation pop-up, wolf Marfa lumbersexual ugh Bushwick tofu 8-bit occupy semiotics. Cornhole crucifix lumbersexual Pitchfork mlkshk freegan.
-		</div>
-		<div class="copyright">
-			©2014 Mentu. All Rights Reserved.
+	<div class="amas-container p-bottom">
+		<div id="amas-content">
+			<%= render partial: "amas/index" %>
 		</div>
 	</div>
-</div>
-
-<!-- <div class="side-dots">
-	<div class="circle active" id="full-1"></div>
-	<div class="circle" id="full-2"></div>
-	<div class="circle" id="full-3"></div>
-</div>
- -->
-
-<% if @show_modal %>
-	<%= render partial: 'sign_up_modal' %>
-<% end %>
-
-<% if !@browser.mobile? %>
-	<script>
-		// $(document).ready(function() {
-		// 	$('#full-page').fullpage({
-		//       onLeave: function(index, nextIndex, direction){
-		//        	console.log($($('.circle')[nextIndex - 1]).addClass('active'))
-		//         $('.circle').removeClass('active')
-		// 				$($('.circle')[nextIndex - 1]).addClass('active')
-		// 				return false
-		//       },
-		//       normalScrollElements: '.modal-overlay-container'
-		//   });
-		// })
-	</script>
-<% end %>
+</section> 

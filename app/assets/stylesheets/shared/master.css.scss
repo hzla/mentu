@@ -1,127 +1,175 @@
 @import 'variables';
 
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 /** Buttons and Form Elements **/
-.yellow-btn {
-	background: $yellow;
-	color: $yellow-d;
-}
-
-.yellow-btn:hover{
-	background: $yellow-h;
-}
-
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-  outline: none;
-}
 
 input, textarea {
 	border: none;
-	padding: none;
-	margin: none;
-	outline: none;
-  -webkit-appearance: none;
-  box-sizing: border-box;
+	padding: 0px 5px;
+	box-sizing: border-box;
+	height: 31px;
+	line-height: 31px;
+	font-size: 16px;
 }
 
-div, input, textarea {
-	-webkit-transition: background .3s;
-	font-size: 16px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box; 
+img {
 	box-sizing: border-box;
 }
 
-/** Backgrounds **/
-
-.white-back {
-	background: white;
+.btn {
+	height: 31px;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 31px;
 }
 
-.light-grey-back {
-	background: $light-grey;
-}
-
-.yellow-back {
+.yellow-btn {
 	background: $yellow;
+	color: $greydark
+}
+
+.yellow-btn:hover {
+	background: $yellow-hover;
+}
+
+.red-btn {
+	background: $red;
+	color: white;
+}
+
+.red-btn:hover {
+	background: $red-hover;
+}
+
+@media (min-width: 1024px) {
+	body {
+		.btn {
+			height: 40px;
+			line-height: 40px;
+		}
+	}	
+}
+/** Text Formatting **/
+
+a {
+	color: $greydark;
+}
+body div {
+	.bold {
+		font-weight: 700;
+	}
+}
+
+.yellow {
+	color: $yellow;
+}
+
+.green {
+	color: $green;
+}
+
+.red {
+	color: $red;
+}
+
+.white {
+	color: white;
+}
+
+.grey {
+	color: $greymid;
+}
+
+.greylight {
+	color: $greylight;
+}
+
+.greydark {
+	color: $greydark;
+}
+
+@media (min-width: 1024px) {
+	body {
+		.big {
+			font: normal normal 400 40px/normal "sanchez", sans-serif;
+			line-height: 1.4;
+		}
+
+		.title {
+			font: normal normal 600 30px/normal "arial", sans-serif;	
+			line-height: 1.4;
+		}
+
+		.bigsub {
+			font: normal normal 400 20px/normal "arial", sans-serif;
+		}
+
+		.normal {
+			font: normal normal 400 16px/normal "arial", sans-serif;
+		}
+
+		.admin {
+			font: normal normal 400 14px/normal "arial", sans-serif;
+		}
+	}
+}
+
+.big {
+	font: normal normal 400 20px/normal "sanchez", sans-serif;
+	line-height: 1.4;
+}
+
+.title {
+	font: normal normal 400 17px/normal "arial", sans-serif;
+	line-height: 1.4;
+}
+
+.bigsub {
+	font: normal normal 400 17px/normal "arial", sans-serif;
+	line-height: 1.4;
+}
+
+.normal {
+	font: normal normal 400 15px/normal "arial", sans-serif;
+}
+
+.admin {
+	font: normal normal 400 12px/normal "arial", sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+/******  Desktop/Mobile ********/
+
+.no-mobile {
+	display: none;
 }
 
 .hidden {
 	display: none;
 }
 
-/** Text Formatting **/
 
-a {
-	text-decoration: none;
-	color: $black;
-}
 
-.bold {
-	font-weight: 700;
-}
-
-.underline {
-	text-decoration: underline;
-}
-
-.huge-text {
-	font-size: 30px;
-}
-
-.large-text {
-	font-size: 24px;
-}
-
-.med-text{
-	font-size: 16px;
-}
-
-.small-text {
-	font-size: 14px;
-}
-
-.text-left {
-	text-align: left;
-}
-
-.text-middle {
-	text-align: center;
-}
-
-.text-right {
-	text-align: right;
-}
-
-.mobile {
-	display: none;
-}
-
-/****** Colors ******/
-
-.yellow {
-	color: $yellow;
-}
-
-.grey {
-	color: $grey;
-}
-
-.blue {
-	color: blue;
-}
-
-/***********  Media Queries *******************/
-
-/************** elements with the class mobile shown, no-mobile are hidden  *****************/
-
-@media (max-width: 1023px) {
-	.no-mobile {
-		display: none;
-	}
-	.mobile {
-		display: inline-block;
+@media( min-width: 1024px) {
+	body {
+		.no-mobile {
+			display: inline-block;
+		}
+		.no-desk {
+			display: none;
+		}
 	}
 }
+
+
+
+

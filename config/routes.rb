@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     get "/#{page}", to: ("pages#" + "#{page}"), as: page 
   end
 
+  resources :amas
+  resources :comments
+  get '/comments/:id/upvote', to: 'comments#upvote', as: 'comment_upvote'
 
 
 

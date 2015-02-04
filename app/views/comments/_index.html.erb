@@ -1,0 +1,91 @@
+<% @questions.each do |question| %>
+	<div class="question-thread p-full">
+		<div class="question p-vert">
+			<div class="question-body bold">
+				<%= question.body %>
+			</div>
+			<%= link_to comment_upvote_path(question), remote: true, :class => "upvote-link" do %>
+				<%= image_tag "userupvote.svg", :class => "upvote-arrow" %>
+			<% end %>
+			<div class="upvote-value red">
+				<%= question.score %>
+			</div>
+		</div>
+		<div class="question-timestamp grey p-vert-big">
+			<%= question.timestamp %>
+		</div>
+		<% if @current_mentor %>
+			<div class="mentor-reply-form">
+				<%= form_for Comment.new, remote: true, html: {:class => "reply-form"} do |f| %>
+					<%= image_tag current_user.profile_pic_url, :class => "comment-pic" %>
+					<%= f.hidden_field :comment_type, value: "reply" %>
+					<%= f.hidden_field :ama_id, value: @ama.id %>
+					<%= f.hidden_field :parent_id, value: question.id %>
+					<%= f.text_area :body, :class => "m-left-big reply-box inline", :placeholder => "Answer this question..." %>
+					<%= f.submit "Post", id: "submit-reply", :class => "btn red-btn hidden" %>
+				<% end %>
+			</div>
+		<% end %>
+		
+		<% question.children.each do |reply| %>
+			<div class="reply">
+				<div class="comment-header">
+					<%= image_tag reply.user.profile_pic_url, :class => "comment-pic m-top" %>
+					<div class="header-text-info p-full inline">
+						<div class="bold green header-name inline"><%= reply.user.name %></div>
+						<div class="header-heat inline p-hor">432 heat</div>
+						<div class="header-school grey p-vert"><%= reply.user.school[0..30] %></div>
+						<%= link_to comment_upvote_path(reply), remote: true, :class => "upvote-link" do %>
+							<%= image_tag "mentorupvote.svg", :class => "upvote-arrow" %>
+						<% end %>
+						<div class="upvote-value green">
+							<%= reply.score %>
+						</div>
+					</div>
+				</div>
+				<div class="reply-body">
+					<%= reply.body %>
+					<div class="comment-timestamp grey p-vert-big">
+						<%= reply.timestamp %>
+					</div>
+				</div>
+			</div>
+			<% reply.children.each do |comment| %>
+				<div class="comment">
+					<div class="comment-header">
+						<%= image_tag comment.user.profile_pic_url, :class => "comment-pic m-top" %>
+						<div class="header-text-info p-full inline">
+							<div class="bold green header-name inline"><%= comment.user.name %></div>
+							<div class="header-heat inline p-hor">432 heat</div>
+							<div class="header-school grey p-vert"><%= comment.user.school[0..30] %></div>
+							<%= link_to comment_upvote_path(comment), remote: true, :class => "upvote-link" do %>
+								<%= image_tag "mentorupvote.svg", :class => "upvote-arrow" %>
+							<% end %>
+							<div class="upvote-value green">
+								<%= comment.score %>
+							</div>
+						</div>
+					</div>
+					<div class="reply-body">
+						<%= comment.body %>
+						<div class="comment-timestamp grey p-vert-big">
+							<%= comment.timestamp %>
+						</div>
+					</div>
+				</div>
+			<% end %>
+			<% if !@current_mentor %>
+				<div class="user-comment-form">
+					<%= form_for Comment.new, remote: true, html: {:class => "comment-form"} do |f| %>
+						<%= image_tag current_user.profile_pic_url, :class => "comment-pic" %>
+						<%= f.hidden_field :comment_type, value: "comment" %>
+						<%= f.hidden_field :ama_id, value: @ama.id %>
+						<%= f.hidden_field :parent_id, value: reply.id %>
+						<%= f.text_area :body, :class => "m-left-big reply-box inline", :placeholder => "Reply to this answer..." %>
+						<%= f.submit "Post", id: "submit-reply", :class => "btn red-btn hidden" %>
+					<% end %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+<% end %>

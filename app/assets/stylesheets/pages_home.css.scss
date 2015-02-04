@@ -1,407 +1,172 @@
 @import 'shared/variables';
 
-/*** Main Layout ***/
-#full-page {
-	overflow-x: hidden;
-}
-
-
+/***************** Landing Main *******************/
 #video {
-	position: fixed;
+	position: fixed; right: 0; bottom: 0;
+	min-width: 100%; min-height: 100%;
+	width: auto; height: auto; z-index: -100;
 	background-size: cover;
-	background-position: center;
-	z-index: -1;
-	background: $greydark;
-	min-width: 100%;
-	min-height: 100%;
 }
 
-.student-signup {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	background: $greydark;
-}
-
-/***************** Signup Box *******************/
-
-.student-signup, .section5 {
-	#new_user {
-			height: 40px;
-			width: 720px;
-			margin: 40px calc(50% - 360px);
-		}
-	.landing-user-field {
-		height: 100%;
-		width: 180px;
-		border-right: 1px solid $greydark;
-		padding: 0px 10px;
-		float: left;
-		font-size: 16px;
-	}
-	.landing-user-field.submit {
-		background: $fb;
-		color: white;
-		text-align: center;
-		line-height: 40px;
-		cursor: pointer;
-		border: none;
-	}
-	.landing-user-field.submit:hover {
-		background: $fb-h;
-	}
-	.fb-icon {
-		float: left;
-		position: relative;
-		top: calc(50% - 10px);
-		left: 35px;
-		height: 20px;
-		width: 20px;
-	}
-}
-
-.section5{
-	.landing-user-field{
-		border-right: 1px solid $yellow;
-	}
-}
-
-
-
-/***************** Section 1 *******************/
-
-.section1 {
-	background: rgba(0,0,0,.05);
+#landing-main { 
 	height: 100vh;
 	width: 100vw;
+	color: white;
 	text-align: center;
 }
 
-.section1-text-content{
-	position: relative;
-	top: 30vh;
+.landing-message {
+	position: absolute;
 	width: 100%;
-	height: auto;
+	top: 20vh;
 }
-	#section1-title-text {
-		font: $t-big;
-		color: white;
-	}
-	#section1-sub-text{
-		margin-top: 10px;
-		font: $t-bigsub;
-		color: white;
-	}
 
+#past-mentors {
+	width: 90vw;
+	left: 5vw;
+	position: absolute;
+	bottom: 50px;
+}
 
-.mentor-sign-up-container {
+#past-mentors-title {
+}
+
+.past-mentor {
 	display: inline-block;
-	margin-top: 35vh;
-	text-align: center;
-	.mentor-sign-up-text{
-		font: $t-normal;
-		color: $yellow;
-		margin-bottom: 10px;
-	}
-	.mentor-apply-btn {
-		background: $yellow;
-		font: $t-bigsub;
-		width: 240px;
-		height: 60px;
-		color: $yellow-d;
-		position: relative;
-		display: inline-block;
-		#mentor-apply-btn-text{
-			float: right;
-			line-height: 60px;
-			position: relative;
-			right: 40px;
-		}
-		.fb-icon {
-			float: left;
-			position: relative;
-			top: calc(50% - 10px);
-			left: 40px;
-			height: 20px;
-			width: 20px;
-		}
-	}
-	.mentor-apply-btn:hover{
-		background: $yellow-h;
-	}
+	vertical-align: top;
+	width: 49%;
 }
 
-/***************** Section 2 *******************/
-
-.section2 {
-	background: white;
-	text-align: center;
-	padding: 60px;
-	.section2-title {
-		font: $t-bigsub;
-		font-family: 'sanchez', sans-serif;
-		margin-top: 25px;
-		color: $greymid;
-		margin: 0;
-	}
-	#places {
-		height: 100px;
-		margin-top: 40px;
-	}
-	.place {
-		width: 110px;
-		margin: 0 20px;
-		display: inline;
-		vertical-align: middle;
-	}
+.past-mentor-pic {
+	width: 40px;
+	height: 40px;
+	border-radius: 100px;
+	border: 2px solid $yellow;
 }
 
-/***************** Section 3 *******************/
-
-.section3 {
-	background: $yellow;
-	padding: 60px 0 80px 0;
-	text-align: center;
-	.section3-title {
-		font: $t-title;
-		color: $yellow-d;
-	}
-	.col-3-container {
-		width: 960px;
-		margin: 0 auto;
-		margin-top: 60px;
-		height: 100%;
-		@include muscle;
-		color: $yellow-d;
-	}
-	.col-3 {
-		width: 33%;
-		margin: 0 20px;
-	}
-	.step-title {
-		font-size: 24px;
-		width: 100%;
-		margin: 40px 0px;
-		font-weight: 400;
-	}
-	.step-desc {
-		font-size: 17px;
-		width: 100%;
-		font-weight: 300;
-		line-height: 1.2;
-	}
-}
-
-/***************** Section 4 *******************/
-
-.section4 {
-	background: white;
-	padding: 60px;
-	text-align: center;
-	.section-title {
-		font: $t-title;
-		color: $greydark;
-	}
-	.col-3-container {
-		width: 960px;
-		margin: 0 auto;
-		margin-top: 60px;
-		@include muscle;
-	}
-	.col-3 {
-		width: 33%;
-		color: $greydark;
-		margin: 0 50px;
-	}
-	.mentor-info-header {
-		border-bottom: 1px solid $yellow;
-		font: $t-bigsub;
-		font-family: 'sanchez', sans-serif;
-		padding-bottom: 10px;
-	}
-	.mentor-info {
-		margin: 20px 0px;
-		font: $t-normal;
-		line-height: 30px;
-	}
-	.get-started {
-		height: 60px;
-		width: 320px;
-		margin: 40px auto;
-		margin-bottom: 0;
-		background: $yellow;
-		color: $yellow-d;
-		padding: 17px;
-		cursor: pointer;
-		font: $t-bigsub;
-		position: relative;
-		.fb-icon{
-			position: absolute;
-			left: 70px;
-			top: calc(50% - 10px);
-		}
-	}
-	.get-started:hover{
-		background: $yellow-h;
-	}
-}
-
-/***************** Section 5 *******************/
-
-.section5 {
-	background: $yellow;
-	padding: 60px;
-	text-align: center;
-	.section5-title {
-		font: $t-title;
-		color: $yellow-d;
-	}
-	.section5-sub-text {
-		margin-top: 10px;
-		font: $t-normal;
-		color: $yellow-d;
-	}
-}
-
-/***************** Section 6 *******************/
-
-.section6{
-	width: 100%;
-	background: $greydark;
-	padding: 60px 0;
-	text-align: left;
-	@include muscle;
-	padding: 120px 160px 180px 160px;
-	position: relative;
-	.section6-links{
-		width: 33%;
-	}
-	.section6-link{
-		font: $t-bigsub;
-		font-family: 'sanchez', sans-serif;
-		margin: 15px 0;
-		color: $greylight;
-	}
-	.about{
-		width: 67%;
-		font: $t-normal;
-		color: $greylight;
-		margin-top: 15px;
-	}
-	.copyright{
-		position: absolute;
-		width: 100%;
-		font: $t-normal;
-		color: $greymid;
-		bottom: 60px;
-		left: 160px;
-	}
-}
-
-
-/***************** Media Queries *******************/
-
-
-@media (max-width: 1023px) {
-
+@media (min-width: 1024px) {
 	body {
-		.landing-section {
-			display: inline-block;
-			width: 100vw;
-			height: auto;
-			min-height: 100vh
+		#past-mentors {
+			bottom: 10vh;
 		}
-		#section-1 {
-			.sign-up-container {
-				bottom: 0;
-				width: 100%;
-				left: 0;
-				.get-started {
-					margin: 0px;
-					margin-top: 10px;
-				}
-			}
-			.section-main-text {
-				font-size: 24px;
-			}
+		.past-mentor {
+			width: 24%;
 		}
-		.section-content {
-			min-height: calc(100vh - 80px);
-			padding-top: 0px;
+		.past-mentor-pic {
+			width: 80px;
+			height: 80px;
+			border: 2px solid $yellow;
 		}
-		.section-text {
-			width: calc(100% - 20px);
-			padding: 0px 10px;
-			margin: 0px;
-		}
-		.side-dots {
-			display: none;
-		}
-		#section-2 {
-			.section-content-top, .section-content-bottom {
-				min-height: 100vh;
-				position: static;
-				height: auto;
-			}
-			.section-main-text {
-				margin-top: 20px;
-				font-size: 24px;
-			}
-			.col-3-container {
-				width: 100%;
-			}
-			.col-3 {
-				float: none;
-			}
-			.col-3:first-child {
-				margin-top: 20px;
-			}
-			.step-number{
-				margin-top: 40px;
-			}
-			.step-title{
-				margin: 20px 0;
-			}
-			.step-desc{
-				margin-bottom: 10px;
-			}
-			.col-3 {
-				width: 100%;
-				position: static;
-				margin-bottom: 20px;
-				margin-top: 40px;
-			}
-			.place {
-				margin: 10px;
-			}
-		}
-		#section-4 {
-			.col-3-container {
-				width: 100%;
-			}
-			.col-3 {
-				float: none;
-				width: 100%;
-			}
-			.section-main-text {
-				margin-top: 25vh;
-			}
-			.get-started {
-				margin-bottom: 0px;
-			}
-			.section-content-top, .section-content-bottom {
-				min-height: 100vh;
-				position: static;
-				height: auto;
-			}
-			.section-main-text {
-				margin-top: 20px;
-				font-size: 24px;
-			}
-			.mentor-info-header {
-				border-top: 1px solid $yellow;
-				padding: 10px 0px;
-			}
+		#mentors-tomorrow {
+			position: absolute;
+			bottom: 10px;
+			text-align: center;
+			width: 100%;
+			left: 0;
+			cursor: pointer;
 		}
 	}
 }
+
+/***************  Landing AMA **********************/
+
+#landing-ama {
+	background: white;
+}
+
+.ama {
+	background: $greylight;
+	cursor: pointer;
+}
+
+.amas {
+	cursor: pointer;
+}
+
+#ama-header {
+	height: 31px;
+	background: $yellow;
+	color: $greydark;
+}
+
+.ama-header-tab {
+	height: 100%;
+	width: 62px;
+	text-align: center;
+	line-height: 31px;
+	cursor: pointer;
+	height: 31px;
+}
+
+.ama-header-tab.active {
+	background: white;
+}
+
+@media (min-width: 1024px) {
+	body {
+		#ama-header {
+			height: 120px;
+			position: relative;
+		}
+		#ama-header-title {
+			display: block;
+			color: rgba(0,0,0,.5);
+		}
+		#ama-header-content {
+			width: 960px;
+			margin-left: calc(50% - 480px);
+		}
+		#ama-header-tabs {
+			position: absolute;
+			bottom: 0;
+
+		}
+		.ama-header-tab {
+			height: 40px;
+			width: 120px;
+			line-height: 40px;
+		}
+	}
+}
+
+.amas-date {
+	color: $red;
+	text-align: center;
+}
+
+.ama-pic {
+	height: 40px;
+	width: 40px;
+	border-radius: 100px;
+	border: 1px solid $yellow;
+}
+
+.ama-mentor-info {
+	max-width: calc(100% - 60px);
+}
+
+@media (min-width: 1024px) {
+	body {
+		.amas-date {
+			text-align: left;
+		}
+		#amas-content {
+			width: 960px;
+			margin-left: calc(50% - 480px);
+		}
+		.ama-pic {
+			width: 100px;
+			height: 100px;
+		}
+		.ama-mentor-info {
+			max-width: calc(100% - 160px);
+		}
+		.ama-add-info {
+			text-align: right;
+		}
+		.ama:hover {
+			background: $yellowlight;
+		}
+	}
+}
+

@@ -1,0 +1,20 @@
+<% @amas.each do |date, amas| %>
+	<div class="amas-date m-vert-big title bold"><%= date %></div>
+	<div class="amas">
+		<% amas.each do |ama| %>
+			<%= link_to ama_path(ama) do %>
+				<div class="ama m-vert">
+					<div class="ama-main-info inline-container p-full">
+						<%= image_tag ama.user.profile_pic_url, :class => "ama-pic" %>
+						<div class="ama-mentor-info m-left-big m-top"><%= ama.user.app_response %></div>
+					</div>
+					<div class="ama-add-info inline-container p-full">
+						<div class="answer-count"><%= ama.answer_count %> answers</div>
+						<div class="question-count m-hor-big"><%= ama.question_count %> questions</div>
+						<div class="like-count"><%= ama.like_count %> likes</div>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+<% end %>

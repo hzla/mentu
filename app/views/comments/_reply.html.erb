@@ -1,0 +1,20 @@
+<div class="reply">
+	<div class="comment-header">
+		<%= image_tag reply.user.profile_pic_url, :class => "comment-pic m-top" %>
+		<div class="header-text-info p-full inline">
+			<div class="bold green header-name inline"><%= reply.user.name %></div>
+			<div class="header-heat inline p-hor">432 heat</div>
+			<div class="header-school grey p-vert"><%= reply.user.school[0..30] %></div>
+			<%= image_tag "mentorupvote.svg", :class => "upvote-arrow" %>
+			<div class="upvote-value green">
+				<%= reply.score %>
+			</div>
+		</div>
+	</div>
+	<div class="reply-body">
+		<%= reply.body %>
+		<div class="comment-timestamp grey p-vert-big">
+			<%= reply.timestamp %>
+		</div>
+	</div>
+</div>

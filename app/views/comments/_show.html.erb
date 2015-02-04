@@ -1,0 +1,15 @@
+<div class="question-thread p-full">
+	<div class="question bold p-vert">
+		<div class="question-body">
+			<%= question.body %>
+		</div>
+		<%= image_tag "userupvote.svg", :class => "upvote-arrow" %>
+		<div class="upvote-value red">
+			<%= question.score %>
+		</div>
+	</div>
+	<div class="question-timestamp grey p-vert-big">
+		<%= question.timestamp %>
+	</div>
+</div>
+	

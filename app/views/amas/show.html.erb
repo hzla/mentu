@@ -1,0 +1,100 @@
+<%= render partial: "pages/main_header" %>
+
+<%= link_to root_path do %>
+	<%= image_tag 'closebutton.svg', :class => "close no-desk" %>
+<% end %>
+
+<section id="ama-cover">
+	<div id="ama-countdown" class="big white no-mobile">
+		<div id="countdown">00:00:00</div>
+		<div>until answering begins!</div>
+
+	</div>
+
+	<div id="ama-mentor">
+		<%= image_tag @mentor.profile_pic_url, id: "ama-mentor-pic", :class => "m-vert" %>
+		<div class="ama-mentor-intro yellow m-vert-very-big big bold">
+			<%= @mentor.app_response %>
+		</div>
+		<div class="ama-mentor-desc m-vert-big bigsub white">
+			<%= @mentor.app_response %> Ask me anything!
+		</div>
+	</div>
+
+	<div id="ama-stats" class="inline-container white">
+		<div class="bold bigsub">
+			<%= @ama.like_count %> LIKES
+		</div>
+		<div class="bold bigsub m-hor">
+			<%= @ama.answer_count %> ANSWERS
+		</div>
+		<div class="bold bigsub yellow">
+			<%= @ama.like_count %> REC<span class="no-mobile">OMMENDATION</span>S
+		</div>
+	</div>
+</section>
+
+
+<section id="ama-questions">
+	<div id="question-form-container">
+		<div id="question-form-content">
+			<div class="title greylight no-mobile p-vert" id="ama-header-title">
+				AMA
+			</div>
+			<%= form_for @question, remote: true, html: {id: "question-form"} do |f| %>
+				<%= f.hidden_field :comment_type, value: "question" %>
+				<%= f.hidden_field :ama_id, value: @ama.id %>
+				<%= image_tag current_user.profile_pic_url, :class => "comment-pic no-mobile" %>
+				<%= f.text_field :body, :placeholder => "Ask a question..." %>
+				<%= f.submit "Post", id: "submit-comment", :class => "btn red-btn" %>
+			<% end %>
+		</div>
+		<div id="questions-sort-bar" class="inline-container no-mobile bigsub">
+			<div>Sort questions by:</div>
+			<div class="sort-option active m-hor-big p-hor">New</div>
+			<div class="sort-option p-hor">Popular</div>
+		</div>
+	</div>
+	<div id="questions">
+		<%= render partial: "comments/index" %>
+	</div>
+	<div id="right-sidebar-container" class="no-mobile">
+		<div class="background-container m-top-very-big">
+			<div class="bold">MY BACKGROUND</div>
+			<div class="background m-vert">
+				<%= @mentor.app_response %>
+			<div>
+		</div>
+		<div class="featured m-top-very-big">
+			<div class="bold m-vert-big">AMAS OF THE DAY</div>
+			<% (1..2).each do |ama| %>
+				<div class="featured-ama">
+					<%= image_tag current_user.profile_pic_url, :class => "comment-pic" %>
+					<div class="featured-desc inline m-bottom-big">
+						<%= current_user.app_response %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="sidebar-footer">
+			<div id="feedback" class="m-vert"> 
+				Send Feedback
+			</div>
+
+			<div id="site-info-box" class="inline-container grey">
+				<div class="site-info">
+					Support
+				</div>
+				<div class="site-info">
+					Privacy
+				</div>
+				<div class="site-info">
+					Terms
+				</div>
+				<div class="site-info last">
+					© 2014 KickSpark
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,16 +1,17 @@
 $fb: #3F6ACA;
-$fb-h: #2F4F98;
+$fb-hover: #2F4F98;
 
 $red: #FF5353;
-$red-h: #DE4747;
+$red-hover: #DE4747;
 
 $green: #43C993;
 
 $yellow: #FFE68F;
-$yellow-h: #FFDA58;
-$yellow-d: #564d2c;
-$yellow-l: rgba(255,230,143,0.3);
+$yellow-hover: #FFDA58;
+$yellowdark: #564d2c;
+$yellowlight: rgba(255,230,143,0.3);
 
+$bordergrey: #bebebe;
 $greylight: #f7f7f7;
 $greymid: #939393;
 $greydark: #414141;
@@ -21,10 +22,10 @@ $t-bigsub: normal normal 400 20px/normal "arial", sans-serif;
 $t-normal: normal normal 400 16px/normal "arial", sans-serif;
 $t-admin: normal normal 400 14px/normal "arial", sans-serif;
 
-$m-big: normal normal 400 20px/normal "sanchez", sans-serif;
-$m-bigsub: normal normal 400 17px/normal "arial", sans-serif;
-$m-normal: normal normal 400 15px/normal "arial", sans-serif;
-$m-admin: normal normal 400 12px/normal "arial", sans-serif;
+$big: normal normal 400 20px/normal "sanchez", sans-serif;
+$bigsub: normal normal 400 17px/normal "arial", sans-serif;
+$normal: normal normal 400 15px/normal "arial", sans-serif;
+$admin: normal normal 400 12px/normal "arial", sans-serif;
 
 $g: 20px;
 $c: 60px;
