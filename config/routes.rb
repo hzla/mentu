@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/comments/:id/upvote', to: 'comments#upvote', as: 'comment_upvote'
 
 
+  mount RailsWebConsole::Engine => '/inspect1119yacademY'
+
 
   get '/auth/facebook/callback', :to => 'sessions#create'
   get '/auth/failure', :to => 'sessions#failure'

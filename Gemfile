@@ -54,3 +54,4 @@ gem 'unicorn'
 gem "net-ssh", "~> 2.7.0"
 gem 'capistrano', '~> 2.15'
 gem "rvm-capistrano"
+gem 'rails-web-console', require: 'rails_web_console/engine'
