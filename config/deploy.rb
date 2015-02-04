@@ -67,8 +67,14 @@ end
 namespace :deploy do 
   task :console do 
     desc "Open the rails console on one of the remote servers"
-    run "cd #{current_path}; bundle exec rails c production"
+    run_interactively "cd #{current_path}; bundle exec rails c production"
   end
+end
+
+def run_interactively(command)
+  server ||= find_servers_for_task(current_task).first
+  myproductionhost = "106.185.29.68"
+  exec %Q(ssh #{user}@#{myproductionhost} -t '#{command}')
 end
 
 namespace :rails do
