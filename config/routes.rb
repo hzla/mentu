@@ -13,8 +13,8 @@ Rails.application.routes.draw do
 
   mount RailsWebConsole::Engine => '/inspect1119yacademY'
 
-
-  get '/auth/facebook/callback', :to => 'sessions#create'
+  resources :sessions, only: [:create]
+  get '/auth/facebook/callback', :to => 'sessions#facebook_create'
   get '/auth/failure', :to => 'sessions#failure'
   get '/logout', :to => 'sessions#destroy'
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204093834) do
+ActiveRecord::Schema.define(version: 20150205083057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,11 @@ ActiveRecord::Schema.define(version: 20150204093834) do
     t.string   "category",       default: "all"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "mentor_url"
+    t.string   "mentor_code"
+    t.string   "one_liner"
+    t.text     "description"
+    t.string   "background"
   end
 
   create_table "authorizations", force: true do |t|
@@ -94,7 +99,7 @@ ActiveRecord::Schema.define(version: 20150204093834) do
     t.text     "app_response"
     t.string   "role"
     t.string   "essay"
-    t.integer  "sign_in_count",         default: 0, null: false
+    t.integer  "sign_in_count",                     default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -103,8 +108,16 @@ ActiveRecord::Schema.define(version: 20150204093834) do
     t.string   "document_content_type"
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
+    t.string   "encrypted_password",    limit: 128
+    t.string   "confirmation_token",    limit: 128
+    t.string   "remember_token",        limit: 128
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

@@ -2,15 +2,17 @@ class UsersController < ApplicationController
 	include SessionsHelper
 
 	def create
-		session[:dream_school] = params[:user][:dream_school]
-		session[:major] = params[:user][:major]
-		session[:email] = params[:user][:email]
-		redirect_to '/auth/facebook'
+		@user = User.create params[:user]
+		session[:user_id] = @user.id
+		redirect_to root_path(sign_in: true, sign_up: true)
 	end
 
 	def update
 		current_user.update_attributes params[:user]
-		redirect_to root_path(sign_in: true)
+		if params[:ama]
+			ama = Ama.find params[:ama]
+			redirect_to ama_path(id: ama.id, code: ama.mentor_code)
+		end
 	end
 
 end

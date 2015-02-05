@@ -3,8 +3,28 @@
 <%= link_to root_path do %>
 	<%= image_tag 'closebutton.svg', :class => "close no-desk" %>
 <% end %>
-
 <section id="ama-cover">
+	<div id="mentor-prompts">
+		<div class="mentor-prompt">
+			Welcome this will be your AMA page.
+			Click any text to edit it.
+		</div> 
+
+		<div class="mentor-prompt m-vert-very-big" id="photo-prompt">
+			Upload a photo of yourself.
+			Click the photo to upload a photo.
+		</div> 
+
+		<div class="mentor-prompt m-vert-very-big">
+			Write a short one liner that tells people about yourself. Click here to edit.
+		</div> 
+
+		<div class="mentor-prompt m-vert-very-big">
+			Write a longer description that gives an idea of what your background is. Click here to edit.
+		</div> 
+
+	</div>
+
 	<div id="ama-countdown" class="big white no-mobile">
 		<div id="countdown">00:00:00</div>
 		<div>until answering begins!</div>
@@ -12,12 +32,19 @@
 	</div>
 
 	<div id="ama-mentor">
+
+		<%= form_for @mentor, multipart: true, html: {id: "avatar-form"} do |f| %>
+			<%= f.file_field :avatar %>
+			<%= hidden_field_tag :ama, @ama.id %>
+			<%= f.submit "Upload Photo", :class => "upload-photo" %>
+		<% end %>
+		<img id="preview" src="#" alt="preview failed to load" class="hidden" /> 
 		<%= image_tag @mentor.avatar_url, id: "ama-mentor-pic", :class => "m-vert" %>
 		<div class="ama-mentor-intro yellow m-vert-very-big big bold">
-			<%= @ama.one_liner %>
+			<%= best_in_place @ama, :one_liner, type: :input, place_holder: "Write a short one liner that tells people about yourself. Click here to edit." %>
 		</div>
 		<div class="ama-mentor-desc m-vert-big bigsub white">
-			<%= @ama.description %>
+			<%= best_in_place @ama, :description, type: :textarea, place_holder: "Write a longer description that gives an idea of what your background is. Click here to edit." %>
 		</div>
 	</div>
 
@@ -44,8 +71,8 @@
 			<%= form_for @question, remote: true, html: {id: "question-form"} do |f| %>
 				<%= f.hidden_field :comment_type, value: "question" %>
 				<%= f.hidden_field :ama_id, value: @ama.id %>
-				<%= image_tag current_user.avatar_url, :class => "comment-pic no-mobile" %>
-				<%= f.text_field :body, :placeholder => "Ask a question...", :class => "no-submit-on-enter" %>
+				<%= image_tag current_user.profile_pic_url, :class => "comment-pic no-mobile" %>
+				<%= f.text_field :body, :placeholder => "Ask a question..." %>
 				<%= f.submit "Post", id: "submit-comment", :class => "btn red-btn" %>
 			<% end %>
 		</div>
@@ -56,20 +83,27 @@
 		</div>
 	</div>
 	<div id="questions">
+		<div id="comment-prompt" class="mentor-prompt">
+			This is where the magic will happen, you’ll be able to see the questions come in, but answering won’t be open until 8AM, feel free to answer more if you like after an hour has past!
+		</div>
+
+		<div id="bg-prompt" class="mentor-prompt">
+			Put in any links if you’d like to promote yourself. feel free to plug anything!
+		</div>
 		<%= render partial: "comments/index" %>
 	</div>
 	<div id="right-sidebar-container" class="no-mobile">
 		<div class="background-container m-top-very-big">
 			<div class="bold">MY BACKGROUND</div>
 			<div class="background m-vert">
-				<%= @ama.background %>
+				<%= best_in_place @ama, :background, type: :textarea, place_holder: "Click to add background info." %>
 			<div>
 		</div>
 		<div class="featured m-top-very-big">
 			<div class="bold m-vert-big">AMAS OF THE DAY</div>
 			<% (1..2).each do |ama| %>
 				<div class="featured-ama">
-					<%= image_tag current_user.avatar_url, :class => "comment-pic" %>
+					<%= image_tag current_user.profile_pic_url, :class => "comment-pic" %>
 					<div class="featured-desc inline m-bottom-big">
 						<%= current_user.app_response %>
 					</div>
@@ -98,3 +132,25 @@
 		</div>
 	</div>
 </section>
+
+
+<script>
+
+	function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        
+        reader.onload = function (e) {
+            $('#preview').show()
+            $('#preview').attr('src', e.target.result);
+        }
+        
+        reader.readAsDataURL(input.files[0]);
+    }
+  }
+    
+  $("#user_avatar").change(function(){
+      readURL(this);
+  });
+
+</script>

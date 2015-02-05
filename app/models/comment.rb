@@ -6,7 +6,6 @@ class Comment < ActiveRecord::Base
 
 	def timestamp
 		elapsed_time_in_minutes = (Time.now - created_at) / 60
-		if elapsed_time_in_minutes < 60
 			if elapsed_time_in_minutes.floor < 60
 				"#{elapsed_time_in_minutes.floor} minutes ago by #{user.name}"
 			elsif elapsed_time_in_minutes < 1440
@@ -15,7 +14,10 @@ class Comment < ActiveRecord::Base
 			else
 				"#{created_at.strftime("%b %-d")} by #{user.name}"
 			end
-		end
+	end
+
+	def elapsed_time
+		(Time.now - created_at).floor
 	end
 
 	def attempt_upvote_from user #test

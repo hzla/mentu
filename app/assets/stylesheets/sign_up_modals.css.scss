@@ -1,0 +1,137 @@
+@import 'shared/variables';
+
+
+/**************** SignUp/ Login*********************/
+
+.signup-overlay-container, .login-overlay-container, #welcome {
+	position: fixed;
+	z-index: 2;
+	background: image_url("signupmodalbg.jpg");
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.modal-content {
+	width: calc(100% - 20px);
+	margin-left: 10px;
+	text-align: center;
+	height: 100%;
+}
+
+#signup-message {
+	padding-top: 40px;
+}
+
+#close-modal, #close-login {
+	position: absolute;
+	z-index: 3;
+	cursor: pointer;
+	top: 10px;
+	right: 10px;
+	height: 20px;
+	width: 20px;
+}
+
+#mobile-separator {
+	width: calc(100% - 40px);
+	margin: 20px 20px;
+	height: 1px;
+	background: $yellow; 
+}
+
+.sign-up-btn {
+	width: 100%;
+	height: 44px;
+	color: white;
+	line-height: 44px;
+}
+
+.wechat {
+	background: $wechat-green;
+}
+
+.signup-field {
+	width: 100%;
+	height: 44px;
+}
+
+@media (min-width: 1024px) {
+	body {
+		#close-modal, #close-login {
+			height: 40px;
+			width: 40px;
+			top: 40px;
+			right: 80px;
+		}
+		#signup-buttons {
+			width: 293px;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.sign-up-btn {
+			height: 60px;
+			line-height: 60px;
+			font-size: 20px;
+		}
+		#signup-form {
+			width: 293px;
+			display: inline-block;
+			vertical-align: top;
+			margin-left: 35px;
+		}
+		#signup-content {
+			width: 626px;
+			margin: 0 auto;
+			position: relative;
+		}
+		#desk-separator {
+			height: 300px;
+			width: 1px;
+			position: absolute;
+			background: $yellow;
+			left: 313px;
+		}
+		#facebook {
+			margin-top: 0;
+		}
+		.signup-field {
+			height: 60px;
+			font-size: 20px;
+		}
+		#user_email {
+			margin-top: 0px;
+		}
+		#create-user {
+			background: $yellow;
+			color: $greydark;
+		}
+	}
+}
+
+
+/**************** How it Works *********************/
+
+
+
+@media (min-width: 1024px) {
+	#welcome-info {
+		width: 780px;
+		margin: 20px auto;
+	}
+	#how-it-works, #guidelines {
+		width: 380px;
+		text-align: left;
+
+	}
+	#guidlines {
+		margin-left: 20px;
+	}
+
+	#got-it {
+		width: 300px;
+		height: 60px;
+		line-height: 60px;
+		margin: 40px auto;
+	}
+}

@@ -4,6 +4,48 @@ Ama =
     $('body').on 'ajax:success', '.reply-form', @addReply
     $('body').on 'ajax:success', '.comment-form', @addComment
     $('body').on 'ajax:success', '.upvote-link', @upvoteComment
+    $(".best_in_place").best_in_place()
+    $('body').on 'click', '#sort-new', @sortCommentsByDate
+    $('body').on 'click', '#sort-popular', @sortCommentsByScore
+
+  sortCommentsByDate: ->
+    $people = $('#questions')
+    $peopleli = $people.children('.question-thread')
+
+    $peopleli.sort (a,b) -> 
+      an = parseInt(a.getAttribute('data-time'))
+      bn = parseInt(b.getAttribute('data-time'))
+
+      if an > bn
+        return 1
+      if an < bn
+        return -1
+      return 0
+    $peopleli.detach().appendTo($people);
+
+    $('.question-thread').addClass('animated fadeIn')
+    $('.sort-option').removeClass('active')
+    $(@).addClass('active')
+
+  sortCommentsByScore: ->
+    $people = $('#questions')
+    $peopleli = $people.children('.question-thread')
+
+    $peopleli.sort (a,b) -> 
+      an = parseInt(a.getAttribute('data-score'))
+      bn = parseInt(b.getAttribute('data-score'))
+
+      if an < bn
+        return 1
+      if an > bn
+        return -1
+      return 0
+    $peopleli.detach().appendTo($people);
+
+    $('.question-thread').addClass('animated fadeIn')
+    $('.sort-option').removeClass('active')
+    $(@).addClass('active')
+
 
   upvoteComment: (event, data) ->
     $(@).parent().find('.upvote-value').text(data.score)

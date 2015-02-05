@@ -5,8 +5,8 @@
 			<%= link_to ama_path(ama) do %>
 				<div class="ama m-vert">
 					<div class="ama-main-info inline-container p-full">
-						<%= image_tag ama.user.profile_pic_url, :class => "ama-pic" %>
-						<div class="ama-mentor-info m-left-big m-top"><%= ama.user.app_response %></div>
+						<%= image_tag ama.user.avatar_url, :class => "ama-pic" %>
+						<div class="ama-mentor-info m-left-big m-top"><%= ama.description %></div>
 					</div>
 					<div class="ama-add-info inline-container p-full">
 						<div class="answer-count"><%= ama.answer_count %> answers</div>

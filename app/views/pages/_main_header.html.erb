@@ -4,17 +4,27 @@
 	<% end %>
 	
 		<div id="main-header-actions-right" class="normal inline-container">
+			<div class="main-header-action no-mobile m-full">
+				BLOG
+			</div>
+			<div class="main-header-action no-mobile m-full">
+				HOW IT WORKS
+			</div>
+			<div class="main-header-action no-mobile m-full">
+				ARCHIVE
+			</div>
 			<% if !current_user %>
-				<%= link_to 'auth/facebook' do %>
-					<div class="main-header-action btn yellow-btn m-full" id="sign-up">
-						Sign Up
-					</div>
-				<% end %>
+				<div class="main-header-action no-mobile m-full" id="login">
+					LOG IN
+				</div>
+				<div class="main-header-action btn yellow-btn m-full" id="sign-up">
+					Sign Up
+				</div>
 			<% else %>
 				<div class="no-mobile current-user-name">
 					<%= current_user.name %>
 				</div>
-				<%= image_tag current_user.profile_pic_url, :class => "current-user-pic m-full no-mobile" %>
+				<%= image_tag current_user.avatar_url, :class => "current-user-pic m-full no-mobile" %>
 			<% end %>
 		</div>
 	

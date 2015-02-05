@@ -4,6 +4,8 @@ class PagesController < ApplicationController
 
 	def home
 		@amas = Ama.date_grouped_amas "all"
+		@user = User.new
+		@new_user = params[:sign_up] == "true"
 	end
 
 	def faq

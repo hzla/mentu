@@ -1,0 +1,31 @@
+<div class="login-overlay-container hidden">
+	<div class="modal-content">
+		<%= image_tag "close.svg", id: "close-login" %>
+		<div class="yellow p-vert-very-big big">Login</div>
+
+		<div id="signup-content">
+			<div id="signup-buttons">
+				<%= link_to '/auth/facebook' do %>
+					<div class="btn blue-btn sign-up-btn m-vert-big" id="facebook">
+						Login with Facebook
+					</div>
+				<% end %>
+				<div class="btn sign-up-btn m-vert-big wechat">
+					Login with Wechat
+				</div>
+				<div class="btn sign-up-btn no-mobile wechat">
+					Login with Weibo
+				</div>
+			</div>
+			<div id="mobile-separator" class="no-desk"></div>
+			<div id="desk-separator" class="no-mobile"></div>
+			<div id="signup-form">
+				<%= form_for :session, url: sessions_path do |f| %>
+					<%= f.text_field :email, :class => "signup-field m-bottom", placeholder:"Email" %>
+					<%= f.password_field :password, :class => "signup-field m-vert", placeholder: "Password" %>
+					<%= f.submit "Login", :class => "signup-field m-vert red-btn", id: "create-user"  %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

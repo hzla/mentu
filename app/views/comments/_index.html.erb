@@ -1,5 +1,5 @@
 <% @questions.each do |question| %>
-	<div class="question-thread p-full">
+	<div class="question-thread p-full" data-score="<%= question.score %>" data-time="<%= question.elapsed_time %>" >
 		<div class="question p-vert">
 			<div class="question-body bold">
 				<%= question.body %>

@@ -25,6 +25,7 @@
 #sign-up {
 	width: 67px;
 	cursor: pointer;
+	color: $greydark;
 }
 
 @media (min-width: 1024px) {
@@ -38,6 +39,17 @@
 		}
 		#sign-up {
 			width: 106px;
+		}
+		.main-header-action {
+			color: white;
+			cursor: pointer;
+			height: 40px;
+			line-height: 40px;
+			padding: 0px 10px;
+		}
+		.main-header-action:hover {
+			background: $yellow;
+			color: $greydark;
 		}
 		.current-user-pic {
 			height: 40px;

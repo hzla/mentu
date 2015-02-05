@@ -5,6 +5,8 @@
     display: none; 
 }
 
+
+
 /** Buttons and Form Elements **/
 
 input, textarea {
@@ -25,6 +27,7 @@ img {
 	box-sizing: border-box;
 	text-align: center;
 	line-height: 31px;
+	cursor: pointer;
 }
 
 .yellow-btn {
@@ -43,6 +46,14 @@ img {
 
 .red-btn:hover {
 	background: $red-hover;
+}
+
+.green-btn {
+	background: $green;
+}
+
+.blue-btn {
+	background: $blue;
 }
 
 @media (min-width: 1024px) {
@@ -92,8 +103,12 @@ body div {
 	color: $greydark;
 }
 
+
 @media (min-width: 1024px) {
 	body {
+		div {
+			line-height: 1.4;
+		}
 		.big {
 			font: normal normal 400 40px/normal "sanchez", sans-serif;
 			line-height: 1.4;
@@ -106,10 +121,12 @@ body div {
 
 		.bigsub {
 			font: normal normal 400 20px/normal "arial", sans-serif;
+			line-height: 1.4;
 		}
 
 		.normal {
 			font: normal normal 400 16px/normal "arial", sans-serif;
+			line-height: 1.4;
 		}
 
 		.admin {

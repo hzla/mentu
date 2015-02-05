@@ -1,6 +1,11 @@
 <%= render partial: "main_header" %>
 
 <%= video_tag "mentu2.webm", id: "video", autoplay: true, :loop => true %>
+<%= render partial: "sign_up_modal" %>
+<%= render partial: "login_modal" %>
+<% if @new_user %>
+	<%= render partial: "welcome" %>
+<% end %>
 
 <section id="landing-main">
 	<div class="landing-message">
@@ -45,7 +50,6 @@
 			<div class="title greylight no-mobile m-vert" id="ama-header-title">
 				AMA
 			</div>
-
 			<div id="ama-header-tabs" class="inline-container no-desk">
 				<%= link_to amas_path(category: "all"), remote: true, :class => "ama-header-link" do %>
 					<div class="ama-header-tab active" id="all">
