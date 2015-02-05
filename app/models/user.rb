@@ -7,6 +7,7 @@ include Clearance::User
 	has_attached_file :document
 	has_attached_file :avatar
 	validates_attachment :document, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
+	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 	attr_accessible :avatar, :password, :document, :role, :essay, :name, :email, :profile_pic_url, :school, :dream_school, :timezone, :major, :app_response, :video_url
 
