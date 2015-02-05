@@ -4,7 +4,7 @@
 		<div class="header-text-info p-full inline">
 			<div class="bold green header-name inline"><%= reply.user.name %></div>
 			<div class="header-heat inline p-hor">432 heat</div>
-			<div class="header-school grey p-vert"><%= reply.user.school[0..30] %></div>
+			<div class="header-school grey p-vert"><%= reply.user.school[0..30] if reply.user.school %></div>
 			<%= image_tag "mentorupvote.svg", :class => "upvote-arrow" %>
 			<div class="upvote-value green">
 				<%= reply.score %>

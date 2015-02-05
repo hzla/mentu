@@ -24,8 +24,10 @@ Home =
     $('.login-overlay-container').hide()
 
   submitComment: (e) ->
-  	if e.keyCode == 13
-  		$(@).parents('form').submit()
+    console.log e.keyCode
+    if e.keyCode == 13
+      console.log "hey"
+      $(@).parents('form').submit()
   	
 
   showAmas: (event, data) ->
