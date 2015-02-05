@@ -15,8 +15,9 @@ include Clearance::User
 		timezone = auth_hash.extra.raw_info.timezone
 		profile = auth_hash['info']
 		fb_token = auth_hash.credentials.token
-		user = User.new name: profile["name"], profile_pic_url: profile["image"], timezone: timezone 
+		user = User.new name: profile["name"], profile_pic_url: profile["image"], timezone: timezone, email: profile["email"], password: rand(1213920) 
     user.authorizations.build :uid => auth_hash["uid"]
+    binding.pry
     user if user.save
 	end
 
