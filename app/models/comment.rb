@@ -7,17 +7,23 @@ class Comment < ActiveRecord::Base
 	def timestamp
 		elapsed_time_in_minutes = (Time.now - created_at) / 60
 			if elapsed_time_in_minutes.floor < 60
-				"#{elapsed_time_in_minutes.floor} minutes ago by #{user.name}"
+				stamp = "#{elapsed_time_in_minutes.floor} minutes ago"
 			elsif elapsed_time_in_minutes < 1440
 				elapsed_time_in_hours = (elapsed_time_in_minutes / 60).floor
-				"#{elapsed_time_in_hours} hours ago by #{user.name}"
+				stamp = "#{elapsed_time_in_hours} hours ago"
 			else
-				"#{created_at.strftime("%b %-d")} by #{user.name}"
+				stamp = "#{created_at.strftime("%b %-d")}"
 			end
+			stamp += " by #{user.name}" if comment_type == "question"
+			stamp
 	end
 
 	def elapsed_time
 		(Time.now - created_at).floor
+	end
+
+	def upvoted_by? user
+		voter_list && voter_list.include?(user.id)
 	end
 
 	def attempt_upvote_from user #test

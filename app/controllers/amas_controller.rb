@@ -3,6 +3,7 @@ class AmasController < ApplicationController
 
 	def show
 		@ama = Ama.find(params[:id])
+		@user = User.new
 		@mentor = @ama.user
 		@question = Comment.new(ama_id: @ama.id, comment_type: "question")
 		@questions = @ama.questions

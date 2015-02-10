@@ -1,0 +1,4 @@
+<%= form_for @comment do |f| %>
+	<%= f.text_area :body, :class => "admin-edit-field" %>
+	<%= f.submit "Edit", :class => "admin-edit-submit btn green-btn" %>
+<% end %>

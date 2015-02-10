@@ -6,19 +6,33 @@
 	min-width: 100%; min-height: 100%;
 	width: auto; height: auto; z-index: -100;
 	background-size: cover;
+	display: none;
+}
+
+.signed-in-ama {
+	margin-top: 44px;
+}
+
+#landing-main.signed-in-main {
+	height: auto;
+	.landing-message {
+		position: static;
+		margin-top: 60px;
+	}
 }
 
 #landing-main { 
 	height: 100vh;
 	width: 100vw;
-	color: white;
+	color: $greydark;
 	text-align: center;
+	overflow-x: hidden;
 }
 
 .landing-message {
 	position: absolute;
 	width: 100%;
-	top: 20vh;
+	top: 15vh;
 }
 
 #past-mentors {
@@ -41,11 +55,19 @@
 	width: 40px;
 	height: 40px;
 	border-radius: 100px;
-	border: 2px solid $yellow;
 }
 
 @media (min-width: 1024px) {
 	body {
+		#video {
+			display: block;
+		}
+		#landing-main {
+			background: rgba(255,255,255,.8);
+		}
+		#landing-main.signed-in-main .landing-message {
+			margin-left: 0px;
+		}
 		#past-mentors {
 			bottom: 10vh;
 		}
@@ -55,7 +77,7 @@
 		.past-mentor-pic {
 			width: 80px;
 			height: 80px;
-			border: 2px solid $yellow;
+			border: 4px solid $yellow;
 		}
 		#mentors-tomorrow {
 			position: absolute;
@@ -72,10 +94,17 @@
 
 #landing-ama {
 	background: white;
+	z-index: 2;
+	position: relative;
+	height: 100vh;
+}
+
+.amas-container {
+	height: calc(100% - 44px);
+	overflow-y: hidden;
 }
 
 .ama {
-	background: $greylight;
 	cursor: pointer;
 }
 
@@ -84,47 +113,46 @@
 }
 
 #ama-header {
-	height: 31px;
-	background: $yellow;
+	height: 44px;
+	background: $headergrey;
 	color: $greydark;
 }
 
 .ama-header-tab {
-	height: 100%;
-	width: 62px;
+	height: 31px;
+	padding: 0px 5px;
+	margin: 0px 10px;
 	text-align: center;
 	line-height: 31px;
 	cursor: pointer;
 	height: 31px;
+	margin-top: 6.5px;
+	border-radius: 5px;
 }
 
 .ama-header-tab.active {
-	background: white;
+	background: $red;
+	color: white;
 }
 
 @media (min-width: 1024px) {
 	body {
 		#ama-header {
-			height: 120px;
+			height: 40px;
 			position: relative;
-		}
-		#ama-header-title {
-			display: block;
-			color: rgba(0,0,0,.5);
 		}
 		#ama-header-content {
 			width: 960px;
 			margin-left: calc(50% - 480px);
 		}
 		#ama-header-tabs {
-			position: absolute;
-			bottom: 0;
-
+			height: 30px;
+			margin-top: 5px;
 		}
 		.ama-header-tab {
-			height: 40px;
-			width: 120px;
-			line-height: 40px;
+			height: 30px;
+			line-height: 30px;
+			margin-top: 0px;
 		}
 	}
 }
@@ -145,24 +173,80 @@
 	max-width: calc(100% - 60px);
 }
 
+.info-icon {
+	height: 12px;
+}
+
 @media (min-width: 1024px) {
 	body {
+
+		.ama {
+			position: relative;
+		}
+		.today-amas {
+			text-align: center;
+		}
+		.today-ama {
+			width: 33%;
+			box-sizing: border-box;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.today-ama.mid {
+			border-left: 1px solid $bordergrey;
+			border-right: 1px solid $bordergrey;
+		}
 		.amas-date {
-			text-align: left;
+			text-align: center;
 		}
 		#amas-content {
 			width: 960px;
 			margin-left: calc(50% - 480px);
 		}
 		.ama-pic {
-			width: 100px;
-			height: 100px;
+			width: 80px;
+			height: 80px;
+			border: none;
+		}
+		.ama-main-info.p-full {
+			width: calc(100% - 115px);
+			padding-bottom: 0px;
+		}
+		.ama-sub-info.p-full {
+			padding-top: 0px;
+			padding-bottom: 0px;
+			margin-left: 100px;
+		}
+		.ama-recommendations.p-full {
+			margin-left: 100px;
+			padding-top: 10px;
+			padding-bottom: 10px
 		}
 		.ama-mentor-info {
 			max-width: calc(100% - 160px);
 		}
-		.ama-add-info {
-			text-align: right;
+		.today-ama-add-info {
+			text-align: left;
+			width: 120px;
+			margin: 0 auto;
+			img {
+				height: 20px;
+			}
+		}
+		.ama-add-info.p-full {
+			margin-left: 100px;
+			padding: 0px 20px;
+		}
+		.like-count {
+			position: absolute;
+			right: 0px;
+			top: 30px;
+			font-size: 16px;
+		}
+		.like-count .info-icon {
+			height: 20px;
+			float: right;
+			margin-left: 10px;
 		}
 		.ama:hover {
 			background: $yellowlight;

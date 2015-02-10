@@ -1,8 +1,8 @@
 <div class="signup-overlay-container hidden">
 	<div class="modal-content">
 		<%= image_tag "close.svg", id: "close-modal" %>
-		<div class="bold yellow p-bottom-very-big big" id="signup-message">Sign up to start contributing!</div>
-		<div class="yellow p-vert-very-big big">Get in the heads of people who've done it.</div>
+		<div class="bold p-bottom-very-big big" id="signup-message">Sign up to start contributing!</div>
+		<div class="p-vert-very-big big">Get in the heads of people who've done it.</div>
 
 		<div id="signup-content">
 			<div id="signup-buttons">
@@ -25,7 +25,7 @@
 					<%= f.text_field :name, :class => "signup-field m-bottom-big", placeholder:"Name" %>
 					<%= f.text_field :email, :class => "signup-field m-vert", placeholder:"Email", type: "email" %>
 					<%= f.password_field :password, :class => "signup-field m-vert", placeholder: "Password" %>
-					<%= f.submit "Create Account", :class => "signup-field m-vert red-btn", id: "create-user"  %>
+					<%= f.submit "Create Account", :class => "signup-field m-vert blue-btn", id: "create-user"  %>
 				<% end %>
 			</div>
 		</div>

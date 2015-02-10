@@ -1,15 +1,40 @@
 <% @questions.each do |question| %>
 	<div class="question-thread p-full" data-score="<%= question.score %>" data-time="<%= question.elapsed_time %>" >
+		<% if current_admin %>
+			<div class="admin-actions">
+				<%= link_to comment_path(question), method: "delete", remote: true, :class => "admin-delete", data: {confirm: "yo you sure?"} do  %>
+					<div class="delete-thread red">
+						Delete Thread	
+					</div>
+				<% end %>
+				<%= link_to edit_comment_path(question) do  %>
+					<div class="delete-thread green">
+						Edit Question	
+					</div>
+				<% end %>
+			</div>
+		<% end %>
+
 		<div class="question p-vert">
 			<div class="question-body bold">
 				<%= question.body %>
 			</div>
-			<%= link_to comment_upvote_path(question), remote: true, :class => "upvote-link" do %>
-				<%= image_tag "userupvote.svg", :class => "upvote-arrow" %>
+
+			<% if current_user && question.upvoted_by?(current_user) %>
+				<%= link_to comment_upvote_path(question), remote: true, :class => "upvote-link" do %>
+					<%= image_tag "upvoteclick.svg", :class => "upvote-arrow" %>
+				<% end %>
+				<div class="upvote-value white">
+					<%= question.score %>
+				</div>
+			<% else %>
+				<%= link_to comment_upvote_path(question), remote: true, :class => "upvote-link" do %>
+					<%= image_tag "upvoteempty.svg", :class => "upvote-arrow" %>
+				<% end %>
+				<div class="upvote-value grey">
+					<%= question.score %>
+				</div>
 			<% end %>
-			<div class="upvote-value red">
-				<%= question.score %>
-			</div>
 		</div>
 		<div class="question-timestamp grey p-vert-big">
 			<%= question.timestamp %>
@@ -17,7 +42,7 @@
 		<% if @current_mentor %>
 			<div class="mentor-reply-form">
 				<%= form_for Comment.new, remote: true, html: {:class => "reply-form"} do |f| %>
-					<%= image_tag current_user.profile_pic_url, :class => "comment-pic" %>
+					<%= image_tag current_avatar, :class => "comment-pic" %>
 					<%= f.hidden_field :comment_type, value: "reply" %>
 					<%= f.hidden_field :ama_id, value: @ama.id %>
 					<%= f.hidden_field :parent_id, value: question.id %>
@@ -29,16 +54,25 @@
 		
 		<% question.children.each do |reply| %>
 			<div class="reply">
+				<% if current_admin %>
+					<div class="admin-actions">
+						<%= link_to comment_path(reply), method: "delete", remote: true, :class => "admin-delete", data: {confirm: "yo you sure?"} do  %>
+							<div class="delete-thread red">
+								Delete Reply
+							</div>
+						<% end %>
+					</div>
+				<% end %>
 				<div class="comment-header">
-					<%= image_tag reply.user.profile_pic_url, :class => "comment-pic m-top" %>
+					<%= image_tag reply.user.avatar_url, :class => "comment-pic m-top" %>
 					<div class="header-text-info p-full inline">
-						<div class="bold green header-name inline"><%= reply.user.name %></div>
+						<div class="bold blue header-name inline"><%= reply.user.name %></div>
 						<div class="header-heat inline p-hor">432 heat</div>
 						<div class="header-school grey p-vert"><%= reply.user.school[0..30] if reply.user.school %></div>
 						<%= link_to comment_upvote_path(reply), remote: true, :class => "upvote-link" do %>
-							<%= image_tag "mentorupvote.svg", :class => "upvote-arrow" %>
+							<%= image_tag "upvoteempty.svg", :class => "upvote-arrow" %>
 						<% end %>
-						<div class="upvote-value green">
+						<div class="upvote-value grey">
 							<%= reply.score %>
 						</div>
 					</div>
@@ -52,8 +86,17 @@
 			</div>
 			<% reply.children.each do |comment| %>
 				<div class="comment">
+					<% if current_admin %>
+						<div class="admin-actions">
+							<%= link_to comment_path(comment), method: "delete", remote: true, :class => "admin-delete", data: {confirm: "yo you sure?"} do  %>
+								<div class="delete-thread red">
+									Delete Comment
+								</div>
+							<% end %>
+					</div>
+					<% end %>
 					<div class="comment-header">
-						<%= image_tag comment.user.profile_pic_url, :class => "comment-pic m-top" %>
+						<%= image_tag comment.user.avatar_url, :class => "comment-pic m-top" %>
 						<div class="header-text-info p-full inline">
 							<div class="bold green header-name inline"><%= comment.user.name %></div>
 							<div class="header-heat inline p-hor">432 heat</div>
@@ -77,7 +120,7 @@
 			<% if !@current_mentor %>
 				<div class="user-comment-form">
 					<%= form_for Comment.new, remote: true, html: {:class => "comment-form"} do |f| %>
-						<%= image_tag current_user.profile_pic_url, :class => "comment-pic" %>
+						<%= image_tag current_avatar, :class => "comment-pic" %>
 						<%= f.hidden_field :comment_type, value: "comment" %>
 						<%= f.hidden_field :ama_id, value: @ama.id %>
 						<%= f.hidden_field :parent_id, value: reply.id %>

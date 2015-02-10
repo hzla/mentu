@@ -1,20 +1,67 @@
 <% @amas.each do |date, amas| %>
-	<div class="amas-date m-vert-big title bold"><%= date %></div>
-	<div class="amas">
-		<% amas.each do |ama| %>
-			<%= link_to ama_path(ama) do %>
-				<div class="ama m-vert">
-					<div class="ama-main-info inline-container p-full">
-						<%= image_tag ama.user.avatar_url, :class => "ama-pic" %>
-						<div class="ama-mentor-info m-left-big m-top"><%= ama.description %></div>
+	<% if (date == "Today" || date == "February 8") && !@browser.mobile? %>
+		<div class="amas-date p-vert-big title bold"><%= date %></div>
+		<div class="today-amas">
+			<% count = 0 %>
+			<% amas.each do |ama| %>
+				<% count += 1 %>
+				<%= link_to ama_path(ama) do %>
+					<div class="today-ama m-vert <%= "mid" if count  == 2 %>">
+						<div class="today-ama-main-info p-full">
+							<%= image_tag ama.user.avatar_url, :class => "ama-pic m-vert" %>
+							<div class="today-ama-mentor-line m-vert">Impressive Clickbait #1</div>
+							<div class="today-ama-mentor-line m-very">Impressive Clickbait #2</div>
+							<div class="today-ama-mentor-info m-left-big m-top-big bold"><%= ama.description %><br> AMA!</div>
+						</div>
+						<div class="today-ama-add-info p-full">
+							<div class="answer-count m-vert">
+								<%= image_tag "answer.svg", :class => "info-icon" %> 
+								<%= ama.answer_count %> answers</div>
+							<div class="question-count m-vert">
+								<%= image_tag "question.svg", :class => "info-icon" %>
+								<%= ama.question_count %> questions
+							</div>
+							<div class="today-like-count red m-vert">
+								<%= image_tag "heat.svg", :class => "info-icon" %>
+								<%= ama.like_count %> heat
+							</div>
+						</div>
 					</div>
-					<div class="ama-add-info inline-container p-full">
-						<div class="answer-count"><%= ama.answer_count %> answers</div>
-						<div class="question-count m-hor-big"><%= ama.question_count %> questions</div>
-						<div class="like-count"><%= ama.like_count %> likes</div>
-					</div>
-				</div>
+				<% end %>
 			<% end %>
-		<% end %>
-	</div>
+		</div>
+	<% else %>
+		<div class="amas-date p-vert-big title bold"><%= date %></div>
+		<div class="amas">
+			<% amas.each do |ama| %>
+				<%= link_to ama_path(ama) do %>
+					<div class="ama m-vert">
+						<div class="ama-main-info inline-container p-full">
+							<%= image_tag ama.user.avatar_url, :class => "ama-pic" %>
+							<div class="ama-mentor-info m-left-big m-top bold"><%= ama.one_liner %></div>
+						</div>
+						<div class="ama-sub-info p-full">
+							<%= ama.description %>
+						</div>
+						<div class="ama-recommendations p-full blue small">
+							Recommended by Andy Lee, Roger Elf<span class="no-mobile">, Bob Fitzgerald</span>... + 4
+						</div>
+						<div class="ama-add-info inline-container p-full small">
+							<div class="answer-count">
+								<%= image_tag "answergrey.svg", :class => "info-icon" %> 
+								<%= ama.answer_count %> answers</div>
+							<div class="question-count m-hor-big">
+								<%= image_tag "questiongrey.svg", :class => "info-icon" %>
+								<%= ama.question_count %> questions
+							</div>
+							<div class="like-count red">
+								<%= image_tag "heat.svg", :class => "info-icon" %>
+								<%= ama.like_count %> heat
+							</div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	<% end %>
 <% end %>

@@ -25,10 +25,8 @@
 
 	</div>
 
-	<div id="ama-countdown" class="big white no-mobile">
-		<div id="countdown">00:00:00</div>
-		<div>until answering begins!</div>
-
+	<div id="ama-countdown" class="white no-mobile">
+		 <span>Countdown to answering</span> <span id="countdown" data-countdown="<%= (@ama.start_time - (Time.now + 8.hours)).floor %>">00:00:00</span>
 	</div>
 
 	<div id="ama-mentor">
@@ -40,7 +38,7 @@
 		<% end %>
 		<img id="preview" src="#" alt="preview failed to load" class="hidden" /> 
 		<%= image_tag @mentor.avatar_url, id: "ama-mentor-pic", :class => "m-vert" %>
-		<div class="ama-mentor-intro yellow m-vert-very-big big bold">
+		<div class="ama-mentor-intro white m-vert-very-big big bold">
 			<%= best_in_place @ama, :one_liner, type: :input, place_holder: "Write a short one liner that tells people about yourself. Click here to edit." %>
 		</div>
 		<div class="ama-mentor-desc m-vert-big bigsub white">
@@ -48,15 +46,21 @@
 		</div>
 	</div>
 
-	<div id="ama-stats" class="inline-container white">
-		<div class="bold bigsub">
-			<%= @ama.like_count %> LIKES
+	<div id="ama-stats" class="inline-container small">
+		<div class="white m-hor-big">
+			<%= image_tag "answer.svg", :class => "info-icon" %>
+			<%= @ama.answer_count %> answers
 		</div>
-		<div class="bold bigsub m-hor">
-			<%= @ama.answer_count %> ANSWERS
+		<div class="no-mobile m-hor-big white">
+			<%= image_tag "question.svg", :class => "info-icon" %>
+			<%= @ama.question_count %> questions
 		</div>
-		<div class="bold bigsub yellow">
-			<%= @ama.like_count %> REC<span class="no-mobile">OMMENDATION</span>S
+		<div class="m-hor-big white">
+			<%= image_tag "heat.svg", :class => "info-icon" %>
+			<%= @ama.like_count %> heat
+		</div>
+		<div class="white m-hor-big bold">
+			<%= @ama.like_count %> Rec<span class="no-mobile">ommendation</span>s
 		</div>
 	</div>
 </section>
@@ -65,23 +69,23 @@
 <section id="ama-questions">
 	<div id="question-form-container">
 		<div id="question-form-content">
-			<div class="title greylight no-mobile p-vert" id="ama-header-title">
-				AMA
-			</div>
 			<%= form_for @question, remote: true, html: {id: "question-form"} do |f| %>
 				<%= f.hidden_field :comment_type, value: "question" %>
 				<%= f.hidden_field :ama_id, value: @ama.id %>
-				<%= image_tag current_user.profile_pic_url, :class => "comment-pic no-mobile" %>
-				<%= f.text_field :body, :placeholder => "Ask a question..." %>
+				
+				<%= image_tag current_avatar, :class => "comment-pic no-mobile" %>
+				
+				<%= f.text_field :body, :placeholder => "Ask a question...", :class => "no-submit-on-enter" %>
 				<%= f.submit "Post", id: "submit-comment", :class => "btn red-btn" %>
 			<% end %>
 		</div>
 		<div id="questions-sort-bar" class="inline-container no-mobile bigsub">
 			<div>Sort questions by:</div>
-			<div class="sort-option m-hor-big p-hor" id="sort-new">New</div>
-			<div class="sort-option active p-hor" id="sort-popular">Popular</div>
+			<div class="sort-option m-hor-big p-hor bold" id="sort-new">New</div>
+			<div class="sort-option active p-hor bold" id="sort-popular">Popular</div>
 		</div>
 	</div>
+
 	<div id="questions">
 		<div id="comment-prompt" class="mentor-prompt">
 			This is where the magic will happen, you’ll be able to see the questions come in, but answering won’t be open until 8AM, feel free to answer more if you like after an hour has past!
@@ -94,18 +98,20 @@
 	</div>
 	<div id="right-sidebar-container" class="no-mobile">
 		<div class="background-container m-top-very-big">
-			<div class="bold">MY BACKGROUND</div>
-			<div class="background m-vert">
-				<%= best_in_place @ama, :background, type: :textarea, place_holder: "Click to add background info." %>
-			<div>
+			<div class="bold">FOLLOW ME</div>
+			<div class="background m-vert inline-container">
+				<% ["lightgrey", "beige", "lightblue", "green", "blue"].each do |color| %>
+					<div class="follow-box <%= color + "-bg" %>"></div>
+				<% end %>
+			</div>
 		</div>
 		<div class="featured m-top-very-big">
 			<div class="bold m-vert-big">AMAS OF THE DAY</div>
 			<% (1..2).each do |ama| %>
 				<div class="featured-ama">
-					<%= image_tag current_user.profile_pic_url, :class => "comment-pic" %>
+					<%= image_tag current_avatar, :class => "comment-pic" %>
 					<div class="featured-desc inline m-bottom-big">
-						<%= current_user.app_response %>
+						<%= "asdf " * 20 %>
 					</div>
 				</div>
 			<% end %>

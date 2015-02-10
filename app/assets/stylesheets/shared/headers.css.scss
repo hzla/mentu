@@ -1,11 +1,16 @@
 @import 'variables';
 
 #main-header {
-	position: absolute;
+	position: fixed;
 	height: 40px;
 	top: 0;
 	left: 0;
 	width: 100%;
+}
+#main-header.outlined {
+	background: white;
+	box-shadow: 0px -16px 64px 1px;
+	z-index: 3;
 }
 
 .logo {
@@ -25,7 +30,6 @@
 #sign-up {
 	width: 67px;
 	cursor: pointer;
-	color: $greydark;
 }
 
 @media (min-width: 1024px) {
@@ -33,23 +37,31 @@
 		#main-header {
 			height: 60px;
 		}
-		.logo {
+		#main-header-actions-right {
+			margin-right: calc(50% - 480px);
+		}
+		.logo.m-half {
 			height: 40px;
 			width: 115px;
+			margin-left: calc(50% - 480px);
+			margin-top: 10px;
 		}
 		#sign-up {
 			width: 106px;
 		}
 		.main-header-action {
-			color: white;
 			cursor: pointer;
 			height: 40px;
 			line-height: 40px;
 			padding: 0px 10px;
+			border-radius: 5px;
+		}
+		.main-header-action.m-full {
+			margin-top: 10px;
 		}
 		.main-header-action:hover {
-			background: $yellow;
-			color: $greydark;
+			background: $blue;
+			color: white;
 		}
 		.current-user-pic {
 			height: 40px;
@@ -57,7 +69,6 @@
 			border-radius: 40px;
 		}
 		.current-user-name {
-			color: white;
 			height: 80px;
 			line-height: 80px;
 		}

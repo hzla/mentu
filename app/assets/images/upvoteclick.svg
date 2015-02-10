@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="61px" viewBox="0 0 30 61" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Oval 144 + 32 + Triangle 36</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Main-Attraction" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="user-view" sketch:type="MSArtboardGroup" transform="translate(-745.000000, -841.000000)">
+            <g id="Oval-144-+-32-+-Triangle-36" sketch:type="MSLayerGroup" transform="translate(745.000000, 841.584000)">
+                <text id="32" sketch:type="MSTextLayer" font-family="Open Sans" font-size="15" font-weight="260" fill="#FFFFFF">
+                    <tspan x="6" y="46">32</tspan>
+                </text>
+                <g id="Oval-144-+-Triangle-36" sketch:type="MSShapeGroup">
+                    <path d="M30,15 C30,6.71572875 23.2842712,0 15,0 C6.71572875,0 0,6.71572875 0,15 L0,45 C0,53.2842712 6.71572875,60 15,60 C23.2842712,60 30,53.2842712 30,45 L30,15 Z" id="Oval-144" fill="#F35C5C"></path>
+                    <path d="M21.7312799,19.7484901 C22.9700026,22.2146701 21.7431987,24.2139039 18.9784284,24.2139039 L10.7755715,24.2139039 C8.0164909,24.2139039 6.78813067,22.2064409 8.02272006,19.7484901 L12.634094,10.5676802 C13.8728168,8.10150027 15.8853165,8.10972941 17.1199059,10.5676802 L21.7312799,19.7484901 Z" id="Triangle-36" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

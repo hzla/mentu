@@ -7,6 +7,49 @@ Ama =
     $(".best_in_place").best_in_place()
     $('body').on 'click', '#sort-new', @sortCommentsByDate
     $('body').on 'click', '#sort-popular', @sortCommentsByScore
+    $('body').on 'ajax:success', '.admin-delete', @deleteComments
+    $(window).on 'scroll', @makeCommentsScrollable if $('#questions').length > 0
+    $('#questions textarea').focus @glow
+    $('#questions textarea').blur @removeGlow
+    @initCountdown()
+
+  glow: ->
+    console.log $(@)
+    $(@).addClass('glower')
+
+  removeGlow: ->
+    $(@).removeClass('glower')
+
+  makeCommentsScrollable: ->
+    if $(window).scrollTop() + 1 > $(window).height() 
+      $('#questions').css 'overflow-y', 'scroll'
+      $('#main-header').addClass('outlined')
+    else
+      $('#questions').css 'overflow-y', 'hidden'
+      $('#main-header').removeClass('outlined')
+
+  deleteComments: (event, data) ->
+    $(@).parents(".admin-actions").parent().hide()
+
+
+  initCountdown: ->
+    if $('#countdown').length > 0
+      count = parseInt($('#countdown').attr('data-countdown'))
+      counter = setInterval ->
+        count = count - 1
+
+        seconds = count % 60
+        minutes = Math.floor(count / 60)
+        hours = Math.floor(minutes / 60)
+        minutes %= 60
+
+        if seconds < 10
+          seconds = "0" + seconds
+        if minutes < 10
+          minutes = "0" + minutes
+
+        $('#countdown').text("#{hours}:#{minutes}:#{seconds}")
+      , 1000
 
   sortCommentsByDate: ->
     $people = $('#questions')

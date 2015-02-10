@@ -5,29 +5,36 @@ $red: #FF5353;
 $red-hover: #DE4747;
 
 $green: #43C993;
-$blue: #1F53A0;
+$light-blue: #5FBDFF;
+$blue: #308DFF;
 $wechat-green: #24B253;
 
+
+$beige: #EAE5AA;
 $yellow: #FFE68F;
 $yellow-hover: #FFDA58;
 $yellowdark: #564d2c;
 $yellowlight: rgba(255,230,143,0.3);
 
 $bordergrey: #bebebe;
+$headergrey: #F5F5F5;
+
+
+
 $greylight: #f7f7f7;
 $greymid: #939393;
 $greydark: #414141;
 
 $t-big: normal normal 400 40px/normal "sanchez", sans-serif;
-$t-title: normal normal 600 30px/normal "arial", sans-serif;
-$t-bigsub: normal normal 400 20px/normal "arial", sans-serif;
-$t-normal: normal normal 400 16px/normal "arial", sans-serif;
-$t-admin: normal normal 400 14px/normal "arial", sans-serif;
+$t-title: normal normal 600 30px/normal "open sans", sans-serif;
+$t-bigsub: normal normal 400 20px/normal "open sans", sans-serif;
+$t-normal: normal normal 400 16px/normal "open sans", sans-serif;
+$t-small: normal normal 400 14px/normal "open sans", sans-serif;
 
 $big: normal normal 400 20px/normal "sanchez", sans-serif;
-$bigsub: normal normal 400 17px/normal "arial", sans-serif;
-$normal: normal normal 400 15px/normal "arial", sans-serif;
-$admin: normal normal 400 12px/normal "arial", sans-serif;
+$bigsub: normal normal 400 17px/normal "open sans", sans-serif;
+$normal: normal normal 400 15px/normal "open sans", sans-serif;
+$small: normal normal 400 12px/normal "open sans", sans-serif;
 
 $g: 20px;
 $c: 60px;

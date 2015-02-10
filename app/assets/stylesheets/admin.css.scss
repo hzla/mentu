@@ -69,3 +69,24 @@
 	margin-bottom: 40px;
 	display: block;
 }
+
+/////////////////////////////////////////
+
+.admin-edit-field {
+	border: 1px solid $greydark;
+	height: 500px;
+	width: 1000px;
+	margin-left: calc(50% - 500px);
+	font-size: 48px;
+	line-height: 48px;
+}
+
+.admin-edit-submit {
+	width: 200px;
+	display: block;
+	color: white;
+	margin-left: calc(50% - 100px);
+
+}
+
+

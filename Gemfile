@@ -57,3 +57,21 @@ gem "net-ssh", "~> 2.7.0"
 gem 'capistrano', '~> 2.15'
 gem "rvm-capistrano"
 gem 'rails-web-console', require: 'rails_web_console/engine'
+
+
+#testing 
+
+group :development, :test do
+	gem 'rspec-rails'
+	gem 'factory_girl_rails'
+end
+
+group :test do 
+	gem 'faker'
+	gem 'capybara'
+	gem 'database_cleaner'
+	gem 'selenium-webdriver'
+	gem 'shoulda-matchers'
+	gem 'mocha'
+end
+

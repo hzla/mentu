@@ -21,16 +21,13 @@ include Clearance::User
     user if user.save
 	end
 
-	def has_filled_out_basic_info
-		(email.to_s != "" && dream_school.to_s != "" && major.to_s != "") || (email.to_s != "" && app_response.to_s != "")
-	end
-
 	def is_mentor
-		app_response != nil
+		role == "mentor"
 	end
 
 	def avatar_url
 		avatar.url.gsub("s3.", "s3-ap-northeast-1.")
 	end
+
 end
 

@@ -7,6 +7,20 @@ Home =
     $('body').on 'click', '#close-modal', @closeSignUpModal
     $('body').on 'click', '#close-login', @closeLogInModal
     $('body').on 'click', '#got-it', @closeWelcome
+    $(window).on 'scroll', @makeAmasScrollable if $('.amas-container').length > 0
+    
+    if $('.signed-in-main').length > 0
+      @startScrollHeight = $('.signed-in-main').height()
+    else
+      @startScrollHeight = $(window).height()    
+
+
+  makeAmasScrollable: ->
+    console.log Home.startScrollHeight
+    if $(window).scrollTop() + 5 > Home.startScrollHeight 
+      $('.amas-container').css 'overflow-y', 'scroll'
+    else
+      $('.amas-container').css 'overflow-y', 'hidden'
 
   closeWelcome: ->
     $('#welcome').hide()

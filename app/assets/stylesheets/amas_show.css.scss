@@ -19,9 +19,8 @@
 }
 
 #ama-mentor-pic {
-	width: 90px;
-	height: 90px;
-	border: 2px solid $yellow;
+	width: 100px;
+	height: 100px;
 	border-radius: 100px;
 }
 
@@ -44,16 +43,18 @@
 		#ama-countdown {
 			position: absolute;
 			text-align: center;
-			width: 100%;
-			top: 60px;
+			bottom: 20px;
+			left: calc(50% - 480px);
 		}
 		#ama-stats {
 			text-align: right;
-			right: 20px;
 			bottom: 20px;
+			font-size: 16px;
+			width: auto;
+			right: calc(50% - 480px);
 		}
 		#ama-mentor {
-			top: 200px;
+			top: 100px;
 			width: 720px;
 			left: calc(50% - 360px);
 		}
@@ -65,9 +66,6 @@
 		.ama-mentor-intro.big {
 			font-size: 26px;
 		}
-		#ama-stats div {
-			margin: 0px 40px; 
-		}
 	}
 	
 
@@ -78,7 +76,7 @@
 
 #question-form-container {
 	height: 44px;
-	background: $yellow;
+	background: $greylight;
 }
 
 #question-form {
@@ -105,7 +103,11 @@
 @media (min-width: 1024px) {
 	body {
 		#question-form-container {
-			height: 120px;
+			height: 60px;
+		}
+		#question-form {
+			margin-top: 10px;
+			height: 30px;
 		}
 		#question-form-content {
 			width: 600px;
@@ -122,9 +124,10 @@
 		}
 		.sort-option {
 			cursor: pointer;
+			border-radius: 5px;
 		}
 		.sort-option.active {
-			background: rgba(0,0,0,.5);
+			background: $red;
 			color: white;
 		}
 		#question-form #comment_body {
@@ -156,10 +159,10 @@ body {
 
 .upvote-arrow {
 	position: absolute;
-	right: 0;
+	right: -2px;
 	top: 15px;
-	height: 15px;
-	width: 15px;
+	height: 40px;
+	width: 20px;
 }
 
 .upvote-value {
@@ -169,6 +172,7 @@ body {
 	height: 15px;
 	width: 15px;
 	text-align: center;
+	font-size: 12px;
 	cursor: pointer;
 }
 
@@ -189,24 +193,31 @@ body {
 }
 
 .reply-body, .comment, .user-comment-form {
-	padding-left: 50px;
+	padding-left: 55px;
 }
 
 @media (min-width: 1024px) {
 	body {
 		#questions {
 			width: 600px;
-			margin-left: calc(50% - 480px);
-			margin-right: 10px;
+			padding-left: calc(50% - 480px);
+			padding-right: 10px;
 			display: inline-block;
 			vertical-align: top;
 			height: calc(100vh - 90px);
-			overflow-y: scroll;
+			overflow-y: hidden;
 		}
 		.reply-box {
 			width: calc(100% - 65px);
 			height: 80px;
 			margin-bottom: 20px;
+		}
+		.follow-box {
+			border-radius: 5px;
+			height: 40px;
+			width: 40px;
+			margin-right: 10px;
+			cursor: pointer;
 		}
 		#right-sidebar-container {
 			display: inline-block;
@@ -247,6 +258,7 @@ body {
 @media (min-width: 1024px) {
 	#ama-questions {
 		position: relative;
+		height: 100vh;
 	}
 	.ama-mentor-intro .form_in_place {
 		width: 100%;
@@ -326,6 +338,25 @@ body {
 	}
 }
 
+/********  Admin Tools ************/
 
+.admin-actions {
+	display: none;
+}
+
+@media (min-width: 1024px) {
+	body {
+		.question-thread, .reply, .comment {
+			position: relative;
+		}
+		.admin-actions {
+			display: block;
+			position: absolute;
+			left: -100px;
+			top: 40px;
+			z-index: 10;
+		}
+	}
+}
 
 

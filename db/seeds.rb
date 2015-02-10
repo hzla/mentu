@@ -1,10 +1,12 @@
 
-time = Time.now
+time = Time.now - 5.days
 user_id = User.where(name: "Andy Lee").last.id
-categories = ["all", "biz", "sci", "art", "inv", "ent"]
+categories = ["all", "biz", "sci", "art", "inv", "ent", "fin"]
 
 
-5.times do 
+
+
+10.times do 
 	3.times do 
 		ama = Ama.create user_id: user_id, start_time: time, category: categories.sample
 		3.times do 

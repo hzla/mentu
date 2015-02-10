@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="119px" height="38px" viewBox="0 0 119 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>火花 + Polygon 3 + Rectangle 144 + Polygon 3 + Triangle 3 + Spark</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Main-Attraction" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="SIGNED-IN" sketch:type="MSArtboardGroup" transform="translate(-169.000000, -11.000000)">
+            <g id="火花-+-Polygon-3-+-Rectangle-144-+-Polygon-3-+-Triangle-3-+-Spark" sketch:type="MSLayerGroup" transform="translate(170.000000, 11.000000)">
+                <g id="火花-+-Polygon-3-+-Rectangle-144-+-Polygon-3-+-Triangle-3" sketch:type="MSShapeGroup">
+                    <g id="Spark-+-Polygon-4-+-Triangle-26-+-Triangle-27">
+                        <g id="Polygon-4-+-Triangle-26-+-Triangle-27" transform="translate(0.750487, 0.000000)">
+                            <polygon id="Polygon-4" fill="#F35C5C" points="17.9739144 0 36.9702358 13.8016354 29.7142867 36.1331506 6.23354208 36.1331506 -1.02240705 13.8016354 "></polygon>
+                            <polygon id="Triangle-26" fill="#FFFFFF" points="17.9721324 0 29.6758361 36.1296296 6.26842868 36.1296296 "></polygon>
+                            <polygon id="Triangle-27" fill="#F35C5C" points="18.0443066 24 25.2693885 36.1446562 10.8192246 36.1446562 "></polygon>
+                        </g>
+                    </g>
+                </g>
+                <text id="Spark" sketch:type="MSTextLayer" font-family="Lobster Two" font-size="30" font-style="italic" font-weight="normal" fill="#F35C5C">
+                    <tspan x="52" y="30">Spark</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

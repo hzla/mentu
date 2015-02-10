@@ -23,4 +23,20 @@ class CommentsController < ApplicationController
 		render json: {score: comment.score}
 	end
 
+	def edit
+		@comment = Comment.find params[:id]
+	end
+
+	def update
+		@comment = Comment.find params[:id]
+		@comment.update_attributes params[:comment]
+		redirect_to ama_path(@comment.ama)
+	end
+
+	def destroy
+		@comment = Comment.find(params[:id])
+		@comment.destroy
+		render nothing: true
+	end
+
 end

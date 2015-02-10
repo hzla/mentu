@@ -1,6 +1,6 @@
 class Ama < ActiveRecord::Base
 	belongs_to :user
-	has_many :comments, dependent: :destroy
+	has_many :comments
 	attr_accessible(:mentor_code, :mentor_url, :category, :user_id, :start_time,
 	 :question_count, :like_count, :answer_count, :desc, :one_liner, :description, :background)
 	after_create :generate_mentor_url
