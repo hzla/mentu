@@ -11,10 +11,13 @@ Ama =
     $(window).on 'scroll', @makeCommentsScrollable
     $('#questions textarea').focus @glow
     $('#questions textarea').blur @removeGlow
+    $('body').on 'ajax:success', '#approval-link', @showApproving
     @initCountdown()
 
+  showApproving: ->
+    $(@).find('#submit-ama').text("Pending approval...")
+
   glow: ->
-    console.log $(@)
     $(@).addClass('glower')
 
   removeGlow: ->

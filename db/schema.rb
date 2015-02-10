@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150205083057) do
+ActiveRecord::Schema.define(version: 20150210125644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,10 +53,10 @@ ActiveRecord::Schema.define(version: 20150205083057) do
     t.string   "user_id"
     t.string   "desc"
     t.datetime "start_time"
-    t.integer  "answer_count",   default: 0
-    t.integer  "like_count",     default: 0
-    t.integer  "question_count", default: 0
-    t.string   "category",       default: "all"
+    t.integer  "answer_count",      default: 0
+    t.integer  "like_count",        default: 0
+    t.integer  "question_count",    default: 0
+    t.string   "category",          default: "all"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "mentor_url"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 20150205083057) do
     t.string   "one_liner"
     t.text     "description"
     t.string   "background"
+    t.boolean  "checking_approval"
+    t.boolean  "approved"
   end
 
   create_table "authorizations", force: true do |t|
