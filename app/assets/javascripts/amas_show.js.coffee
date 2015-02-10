@@ -8,7 +8,7 @@ Ama =
     $('body').on 'click', '#sort-new', @sortCommentsByDate
     $('body').on 'click', '#sort-popular', @sortCommentsByScore
     $('body').on 'ajax:success', '.admin-delete', @deleteComments
-    $(window).on 'scroll', @makeCommentsScrollable if $('#questions').length > 0
+    $(window).on 'scroll', @makeCommentsScrollable
     $('#questions textarea').focus @glow
     $('#questions textarea').blur @removeGlow
     @initCountdown()
@@ -21,6 +21,7 @@ Ama =
     $(@).removeClass('glower')
 
   makeCommentsScrollable: ->
+   if $('#questions').length > 0
     if $(window).scrollTop() + 1 > $(window).height() 
       $('#questions').css 'overflow-y', 'scroll'
       $('#main-header').addClass('outlined')

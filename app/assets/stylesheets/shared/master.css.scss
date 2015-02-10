@@ -4,7 +4,6 @@
 // repeating non list elements have their padding and margins set in scss
 // padding and margin changes from mobile to desktop are done in scss media queries
 
-
 ::-webkit-scrollbar { 
     display: none; 
 }
@@ -12,8 +11,6 @@
 #dp_swf_engine {
 	display: none;
 }
-
-
 
 /** Buttons and Form Elements **/
 
@@ -26,8 +23,6 @@ input, textarea {
 	font-size: 16px;
 }
 
-
- 
 input[type=text]:focus, textarea:focus {
 	outline: none;
 }
@@ -226,10 +221,6 @@ a {
 .lightblue-bg {
 	background: $light-blue;
 }
-
-
-
-
 
 /******  Desktop/Mobile ********/
 

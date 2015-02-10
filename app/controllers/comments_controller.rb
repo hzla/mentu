@@ -6,14 +6,16 @@ class CommentsController < ApplicationController
 
 
 	def create #test this
-		comment = Comment.create params[:comment]
-		current_user.comments << comment
-		if comment.comment_type == "question" #top level question
-			render partial: "show", locals: {question: comment} and return
-		elsif comment.comment_type == "reply" #reply from mentor
-			render partial: "reply", locals: {reply: comment} and return
-		else #response to the reply from mentor
-			render partial: 'comment', locals: {comment: comment} and return
+		if current_user 
+			comment = Comment.create params[:comment]
+			current_user.comments << comment
+			if comment.comment_type == "question" #top level question
+				render partial: "show", locals: {question: comment} and return
+			elsif comment.comment_type == "reply" #reply from mentor
+				render partial: "reply", locals: {reply: comment} and return
+			else #response to the reply from mentor
+				render partial: 'comment', locals: {comment: comment} and return
+			end
 		end
 	end
 
