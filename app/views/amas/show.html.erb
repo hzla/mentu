@@ -22,19 +22,19 @@
 	</div>
 
 	<div id="ama-stats" class="inline-container small">
-		<div class="white m-hor-big">
+		<div class="m-hor-big">
 			<%= image_tag "answer.svg", :class => "info-icon" %>
 			<%= @ama.answer_count %> answers
 		</div>
-		<div class="no-mobile m-hor-big white">
+		<div class="no-mobile m-hor-big">
 			<%= image_tag "question.svg", :class => "info-icon" %>
 			<%= @ama.question_count %> questions
 		</div>
-		<div class="m-hor-big white">
+		<div class="m-hor-big">
 			<%= image_tag "heat.svg", :class => "info-icon" %>
 			<%= @ama.like_count %> heat
 		</div>
-		<div class="white m-hor-big bold">
+		<div class="m-hor-big bold">
 			<%= @ama.like_count %> Rec<span class="no-mobile">ommendation</span>s
 		</div>
 	</div>

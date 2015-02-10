@@ -9,11 +9,7 @@ Home =
     $('body').on 'click', '#got-it', @closeWelcome
     $(window).on 'scroll', @makeAmasScrollable if $('.amas-container').length > 0
     
-    if $('.signed-in-main').length > 0
-      @startScrollHeight = $('.signed-in-main').height()
-    else
-      @startScrollHeight = $(window).height()    
-
+    @startScrollHeight = $('#landing-main').height()
 
   makeAmasScrollable: ->
     console.log Home.startScrollHeight

@@ -1,0 +1,32 @@
+<%= render partial: 'pages/main_header' %>
+
+
+<div id="user-container">
+	<div id="user-main" class="inline-container p-full">
+		<%= image_tag @user.avatar_url, :class => "user-profile-pic" %>
+
+		<div class="user-main-info">
+			<div id="user-name" class="bold"><%= @user.name %></div>
+			<div id="user-one-liner" class="m-vert"><%= @user.one_liner %></div>
+		</div>		
+
+	</div>
+
+	<div id="user-stats">
+		<div class="no-mobile m-hor white">
+			<%= image_tag "question.svg", :class => "info-icon" %>
+			<%= @user.question_count %> questions
+		</div>
+		<div class="white m-hor">
+			<%= image_tag "answer.svg", :class => "info-icon" %>
+			<%= @user.answer_count %> answers
+		</div>
+		<div class="m-hor white">
+			<%= image_tag "heat.svg", :class => "info-icon" %>
+			<%= @user.like_count %> heat
+		</div>
+		<div class="white m-hor bold">
+			<%= @user.like_count %> Rec<span class="no-mobile">ommendation</span>s
+		</div>
+	</div>
+</div>

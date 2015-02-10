@@ -13,6 +13,7 @@ Ama =
     $('#questions textarea').blur @removeGlow
     $('body').on 'ajax:success', '#approval-link', @showApproving
     @initCountdown()
+    @startScrollHeight = $('#ama-cover').height()
 
   showApproving: ->
     $(@).find('#submit-ama').text("Pending approval...")
@@ -25,7 +26,7 @@ Ama =
 
   makeCommentsScrollable: ->
    if $('#questions').length > 0
-    if $(window).scrollTop() + 1 > $(window).height() 
+    if $(window).scrollTop() + 1 > Ama.startScrollHeight
       $('#questions').css 'overflow-y', 'scroll'
       $('#main-header').addClass('outlined')
     else

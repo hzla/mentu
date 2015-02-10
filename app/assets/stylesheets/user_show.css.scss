@@ -1,0 +1,21 @@
+@import 'shared/variables';
+
+#user-container {
+	padding-top: 44px;
+}
+
+/******* User Main ******/
+
+.user-profile-pic {
+	height: 60px;
+	width: 60px;
+	border-radius: 60px;
+}
+
+#user-main {
+	background: $greylight;
+}
+
+.user-main-info {
+	max-width: calc(100% - 100px);
+}

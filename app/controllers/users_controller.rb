@@ -7,6 +7,10 @@ class UsersController < ApplicationController
 		redirect_to root_path(sign_in: true, sign_up: true)
 	end
 
+	def show
+		@user = User.find params[:id]
+	end
+
 	def update
 		current_user.update_attributes params[:user]
 		if params[:ama]

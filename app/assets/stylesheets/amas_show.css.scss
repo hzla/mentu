@@ -40,6 +40,9 @@
 
 @media (min-width: 1024px) {
 	body {
+		#ama-cover {
+			height: 80vh;
+		}
 		#ama-countdown {
 			position: absolute;
 			text-align: center;
@@ -324,6 +327,7 @@ body {
 		left: calc(50% - 200px);
 		text-align: center;
 		top: 40px;
+		bottom: auto;
 	}
 	#photo-prompt {
 		margin-top: 100px;

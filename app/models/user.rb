@@ -9,7 +9,7 @@ include Clearance::User
 	validates_attachment :document, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
 	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
-	attr_accessible :avatar, :password, :document, :role, :essay, :name, :email, :profile_pic_url, :school, :dream_school, :timezone, :major, :app_response, :video_url
+	attr_accessible :one_liner, :background, :avatar, :password, :document, :role, :essay, :name, :email, :profile_pic_url, :school, :dream_school, :timezone, :major, :app_response, :video_url
 
 	def self.create_with_facebook auth_hash
 		timezone = auth_hash.extra.raw_info.timezone
@@ -27,6 +27,18 @@ include Clearance::User
 
 	def avatar_url
 		avatar.url.gsub("s3.", "s3-ap-northeast-1.")
+	end
+
+	def question_count
+		amas.pluck(:question_count).reduce(:+)
+	end
+
+	def answer_count
+		amas.pluck(:answer_count).reduce(:+)
+	end
+
+	def like_count
+		amas.pluck(:like_count).reduce(:+)
 	end
 
 end
