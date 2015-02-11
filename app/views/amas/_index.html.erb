@@ -4,25 +4,25 @@
 		<% amas.each do |ama| %>
 			<%= link_to ama_path(ama) do %>
 				<div class="ama m-vert-very-big">
-					<div class="ama-main-info inline-container p-hor-big">
+					<div class="ama-main-info inline-container p-bottom p-hor-big">
 						<%= image_tag ama.user.avatar_url, :class => "ama-pic" %>
 						<div class="ama-mentor-info m-left-big bold"><%= ama.one_liner %></div>
 					</div>
-					<div class="ama-sub-info p-full">
+					<div class="ama-sub-info p-hor-big p-vert">
 						<%= ama.description %>
 					</div>
-					<div class="ama-recommendations p-hor-big p-vert blue small">
+					<div class="ama-recommendations p-hor-big p-vert blue">
 						Recommended by Andy Lee, Roger Elf<span class="no-mobile">, Bob Fitzgerald</span>... + 4
 					</div>
-					<div class="ama-add-info inline-container p-hor-big p-vert">
-						<div class="answer-count small grey">
+					<div class="ama-add-info inline-container p-hor-big p-vert grey">
+						<div class="answer-count">
 							<%= image_tag "answergrey.svg", :class => "info-icon" %>
 							<%= ama.answer_count %> answers</div>
-						<div class="question-count m-hor-big small grey">
+						<div class="question-count m-hor-big">
 							<%= image_tag "questiongrey.svg", :class => "info-icon" %>
 							<%= ama.question_count %> questions
 						</div>
-						<div class="like-count red small">
+						<div class="like-count red">
 							<%= image_tag "heat.svg", :class => "info-icon" %>
 							<%= ama.like_count %> heat
 						</div>

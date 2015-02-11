@@ -68,6 +68,19 @@ img {
   color: $greymid;
 }
 
+.m-answer-field{
+  height: 40px;
+  box-sizing: border-box;
+  text-align: left;
+  line-height: 31px;
+  padding-left: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Open sans', sans-serif;
+  font-weight: 300;
+  color: $greymid;
+}
+
 .yellow-btn {
 	background: $yellow;
 	color: $greydark
@@ -127,20 +140,40 @@ body div {
 	}
 }
 
+.bold div {
+  font-weight: 700;
+}
+
 .yellow {
-	color: $yellow;
+  color: $yellow;
 }
 
 .green {
-	color: $green;
+  color: $green;
 }
 
 .red {
-	color: $red;
+  color: $red;
+}
+
+.red div {
+  color: $red;
 }
 
 .white {
-	color: white;
+  color: white;
+}
+
+.blue {
+  color: $blue;
+}
+
+.blue div {
+  color: $blue;
+}
+
+.white div {
+  color: white;
 }
 
 .grey {
@@ -151,13 +184,18 @@ body div {
 	color: $greylight;
 }
 
+.grey div{
+  color: $greymid;
+}
+
+.greylight div{
+  color: $greylight;
+}
+
 .greydark {
 	color: $greydark;
 }
 
-.blue {
-	color: $blue;
-}
 
 
 @media (min-width: 1024px) {
