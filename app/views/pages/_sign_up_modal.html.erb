@@ -22,10 +22,10 @@
 			<div id="desk-separator" class="no-mobile"></div>
 			<div id="signup-form">
 				<%= form_for @user do |f| %>
-					<%= f.text_field :name, :class => "signup-field m-bottom-big", placeholder:"Name" %>
-					<%= f.text_field :email, :class => "signup-field m-vert", placeholder:"Email", type: "email" %>
-					<%= f.password_field :password, :class => "signup-field m-vert", placeholder: "Password" %>
-					<%= f.submit "Create Account", :class => "signup-field m-vert blue-btn", id: "create-user"  %>
+					<%= f.text_field :name, :class => "signup-field field m-bottom-big", placeholder:"Name" %>
+					<%= f.text_field :email, :class => "signup-field field m-vert", placeholder:"Email", type: "email" %>
+					<%= f.password_field :password, :class => "signup-field field m-vert", placeholder: "Password" %>
+					<%= f.submit "Create Account", :class => "signup-field field m-vert blue-btn", id: "create-user"  %>
 				<% end %>
 			</div>
 		</div>

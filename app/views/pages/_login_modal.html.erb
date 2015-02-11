@@ -21,9 +21,9 @@
 			<div id="desk-separator" class="no-mobile login-separator"></div>
 			<div id="signup-form">
 				<%= form_for :session, url: sessions_path do |f| %>
-					<%= f.text_field :email, :class => "signup-field m-bottom", placeholder:"Email" %>
-					<%= f.password_field :password, :class => "signup-field m-vert", placeholder: "Password" %>
-					<%= f.submit "Login", :class => "signup-field m-vert blue-btn", id: "create-user"  %>
+					<%= f.text_field :email, :class => "signup-field field m-bottom", placeholder:"Email" %>
+					<%= f.password_field :password, :class => "signup-field field m-vert", placeholder: "Password" %>
+					<%= f.submit "Login", :class => "signup-field field m-vert blue-btn", id: "create-user"  %>
 				<% end %>
 			</div>
 		</div>
