@@ -9,7 +9,9 @@ include Clearance::User
 	validates_attachment :document, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
 	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
-	attr_accessible :one_liner, :background, :avatar, :password, :document, :role, :essay, :name, :email, :profile_pic_url, :school, :dream_school, :timezone, :major, :app_response, :video_url
+	attr_accessible(:one_liner, :background, :avatar, :password, :document, :role, :essay,
+	:name, :email, :profile_pic_url, :school, :dream_school, :timezone, 
+	:major, :app_response, :video_url, :twitter, :weibo, :facebook, :wechat, :github)
 
 	def self.create_with_facebook auth_hash
 		timezone = auth_hash.extra.raw_info.timezone
@@ -30,15 +32,15 @@ include Clearance::User
 	end
 
 	def question_count
-		amas.pluck(:question_count).reduce(:+)
+		!amas.empty? ? amas.pluck(:question_count).reduce(:+) : 0
 	end
 
 	def answer_count
-		amas.pluck(:answer_count).reduce(:+)
+		!amas.empty? ? amas.pluck(:answer_count).reduce(:+) : 0
 	end
 
 	def like_count
-		amas.pluck(:like_count).reduce(:+)
+		!amas.empty? ? amas.pluck(:like_count).reduce(:+) : 0
 	end
 
 end

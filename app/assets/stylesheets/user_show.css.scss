@@ -2,6 +2,7 @@
 
 #user-container {
 	padding-top: 44px;
+	position: relative;
 }
 
 /******* User Main ******/
@@ -18,4 +19,75 @@
 
 .user-main-info {
 	max-width: calc(100% - 100px);
+}
+
+#user-container #user-stats {
+	text-align: center;
+}
+
+.user-links {
+	.follow-box {
+		height: 40px;
+		width: 40px;
+		border-radius: 5px;
+	}
+	.user-link-text {
+		height: 40px;
+		line-height: 40px;
+	}
+}
+
+@media (min-width: 1024px) {
+	body {
+		#user-main{
+			padding-left: calc(50% - 480px);
+			padding-right: calc(50% - 480px);
+		}
+		#user-sub-info {
+			padding-left: calc(50% - 480px);
+			display: inline-block;
+			vertical-align: top;
+			width: 620px;
+		}
+		#user-follow-me {
+			display: inline-block;
+			vertical-align: top;
+			padding-left: 20px;
+			width: 320px;
+		}
+		#user-name {
+			font-size: 20px;
+		}
+		.user-profile-pic {
+			height: 120px;
+			width: 120px;
+			border-radius: 120px;
+		}
+		#user-stats > * {
+			display: block;
+		}
+		#user-container #user-stats {
+			position: absolute;
+			right: calc(50% - 480px);
+			top: 80px;
+			text-align: left;
+		}
+		#user-info-body {
+
+		}
+	}
+}
+
+
+/********** User Editing ***********/
+
+.edit-text {
+	font-weight: 400;
+	cursor: pointer;
+}
+
+.user-main-info .form_in_place {
+	input {
+		width: 240px;
+	}
 }

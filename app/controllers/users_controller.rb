@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find params[:id]
+		@edit_mode = @user == current_user
 	end
 
 	def update

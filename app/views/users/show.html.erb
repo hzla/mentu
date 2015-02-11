@@ -2,31 +2,89 @@
 
 
 <div id="user-container">
-	<div id="user-main" class="inline-container p-full">
-		<%= image_tag @user.avatar_url, :class => "user-profile-pic" %>
+	<div id="user-main" class="inline-container p-full-big m-vert">
+		<%= image_tag @user.avatar_url, :class => "user-profile-pic m-hor" %>
 
-		<div class="user-main-info">
+		<div class="user-main-info m-hor">
 			<div id="user-name" class="bold"><%= @user.name %></div>
-			<div id="user-one-liner" class="m-vert"><%= @user.one_liner %></div>
+			<% if @edit_mode %>
+				<div id="user-one-liner" class="m-vert"><%= best_in_place @user, :one_liner, type: :input, place_holder: "Write a short one liner that tells people about yourself.", activator: '#edit-one-liner' %></div>
+				<div class="red m-vert edit-text" id="edit-one-liner">edit</div>
+			<% else %>
+				<div id="user-one-liner" class="m-vert"><%= @user.one_liner %></div>
+			<% end %>
 		</div>		
-
 	</div>
 
-	<div id="user-stats">
-		<div class="no-mobile m-hor white">
+	<div id="user-stats" class="inline-container m-vert">
+		<div class="m-hor-big">
 			<%= image_tag "question.svg", :class => "info-icon" %>
 			<%= @user.question_count %> questions
 		</div>
-		<div class="white m-hor">
-			<%= image_tag "answer.svg", :class => "info-icon" %>
-			<%= @user.answer_count %> answers
-		</div>
-		<div class="m-hor white">
+		<% if @user.is_mentor %>
+			<div class="m-hor-big">
+				<%= image_tag "answer.svg", :class => "info-icon" %>
+				<%= @user.answer_count %> answers
+			</div>
+		<% end %>
+		<div class="m-hor-big">
 			<%= image_tag "heat.svg", :class => "info-icon" %>
 			<%= @user.like_count %> heat
 		</div>
-		<div class="white m-hor bold">
-			<%= @user.like_count %> Rec<span class="no-mobile">ommendation</span>s
+		<div class="m-hor-big bold no-mobile">
+			<%= @user.like_count %> Recommendations
 		</div>
 	</div>
+
+<div id="user-info-body">
+	<div id="user-sub-info" class="m-vert p-full">
+		<div class="user-info-header bold m-vert-big">
+			Background 
+			<% if @edit_mode %>
+				<span class="red m-left-big edit-text" id="edit-background">edit</span>
+			<% end %>
+		</div>
+		<div class="m-vert" id="user-background">
+			<% if @edit_mode %>
+				<%= best_in_place @user, :background, type: :textarea, place_holder: "Write a longer description that gives an idea of what your background is.", activator: '#edit-background' %>
+			<% else %>
+				<%= @user.background %>
+			<% end %>
+		</div>
+		<div class="user-info-header bold m-vert-big">
+			AMAS
+		</div>
+		<div class="user-amas m-vert underlined">
+			<% @user.amas.order(:start_time).each do |ama| %>
+				<%= link_to ama_path(ama), :class => "user-ama-link blue" do %>
+					<%= ama.start_time.strftime("%B %-d") %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+	<div id="user-follow-me" class="p-full">
+		<div class="user-info-header bold m-vert-big">
+			Follow Me
+			<% if @edit_mode %>
+				<span class="red m-left-big edit-text">Tap text to edit</span>
+			<% end %>
+		</div>
+		<div class="user-links">
+			<% [["lightgrey", "github"], ["beige", "weibo"], ["lightblue", "twitter"], ["green", "wechat"], ["blue", "facebook"]].each do |color, link| %>
+				<div class="user-link-row">
+					<%= link_to @user.send(link.to_sym) do %>
+						<div class="follow-box <%= color + "-bg" %> inline m-vert"></div>
+					<% end %>
+					<div class="user-link-text inline m-full">
+						<% if @edit_mode %>
+							<%= best_in_place @user, link.to_sym, type: :input, place_holder: "#{link.capitalize} url" %>
+						<% else %>
+							<%= @user.send(link.to_sym) || "Nothing here yet." %>
+						<% end %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
 </div>
