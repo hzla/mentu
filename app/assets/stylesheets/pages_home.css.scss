@@ -21,7 +21,7 @@
 	}
 }
 
-#landing-main { 
+#landing-main {
 	height: 100vh;
 	width: 100vw;
 	color: $greydark;
@@ -39,7 +39,7 @@
 	width: 90vw;
 	left: 5vw;
 	position: absolute;
-	bottom: 50px;
+	bottom: 15%;
 }
 
 #past-mentors-title {
@@ -69,7 +69,7 @@
 			margin-left: 0px;
 		}
 		#past-mentors {
-			bottom: 10vh;
+			bottom: 30vh;
 		}
 		.past-mentor {
 			width: 24%;
@@ -116,12 +116,13 @@
 	height: 44px;
 	background: $headergrey;
 	color: $greydark;
+	padding: 0 10px;
 }
 
 .ama-header-tab {
 	height: 31px;
-	padding: 0px 5px;
-	margin: 0px 10px;
+	padding: 0px 12px;
+	margin: 0px 0px;
 	text-align: center;
 	line-height: 31px;
 	cursor: pointer;
@@ -129,6 +130,9 @@
 	margin-top: 6.5px;
 	border-radius: 5px;
 }
+
+
+
 
 .ama-header-tab.active {
 	background: $red;
@@ -140,6 +144,7 @@
 		#ama-header {
 			height: 40px;
 			position: relative;
+			padding: 0;
 		}
 		#ama-header-content {
 			width: 960px;
@@ -166,7 +171,6 @@
 	height: 40px;
 	width: 40px;
 	border-radius: 100px;
-	border: 1px solid $yellow;
 }
 
 .ama-mentor-info {
@@ -253,4 +257,3 @@
 		}
 	}
 }
-
