@@ -41,10 +41,11 @@
 	width: 90vw;
 	left: 5vw;
 	position: absolute;
-	bottom: 5%;
+	top: 35vh;
 }
 
 #past-mentors-title {
+
 }
 
 .past-mentor {
@@ -71,7 +72,7 @@
 			margin-left: 0px;
 		}
 		#past-mentors {
-			bottom: 15vh;
+			top: 35vh;
 		}
 		.landing-message{
 			top: 15vh;
@@ -182,7 +183,7 @@
 }
 
 .info-icon {
-	height: 12px;
+	height: 15px;
 }
 
 
@@ -249,7 +250,7 @@
 		.like-count {
 			position: absolute;
 			right: 0px;
-			top: 30px;
+			top: 0px;
 			font-size: 16px;
 		}
 		.like-count .info-icon {
