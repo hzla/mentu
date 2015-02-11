@@ -22,7 +22,7 @@
 }
 
 
-#landing-main { 
+#landing-main {
 	height: 80vh;
 	width: 100vw;
 	color: $greydark;
@@ -34,14 +34,14 @@
 .landing-message {
 	position: absolute;
 	width: 100%;
-	top: 15vh;
+	top: 10vh;
 }
 
 #past-mentors {
 	width: 90vw;
 	left: 5vw;
 	position: absolute;
-	bottom: 15%;
+	bottom: 5%;
 }
 
 #past-mentors-title {
@@ -65,13 +65,16 @@
 			display: block;
 		}
 		#landing-main {
-			background: rgba(255,255,255,.8);
+			background: rgba(255,255,255,.85);
 		}
 		#landing-main.signed-in-main .landing-message {
 			margin-left: 0px;
 		}
 		#past-mentors {
-			bottom: 30vh;
+			bottom: 15vh;
+		}
+		.landing-message{
+			top: 15vh;
 		}
 		.past-mentor {
 			width: 24%;
@@ -79,7 +82,6 @@
 		.past-mentor-pic {
 			width: 80px;
 			height: 80px;
-			border: 4px solid $yellow;
 		}
 		#mentors-tomorrow {
 			position: absolute;
@@ -182,6 +184,7 @@
 .info-icon {
 	height: 12px;
 }
+
 
 @media (min-width: 1024px) {
 	body {

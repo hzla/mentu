@@ -55,6 +55,19 @@ img {
 	border-radius: 5px;
 }
 
+.field{
+  height: 31px;
+  box-sizing: border-box;
+  text-align: left;
+  line-height: 31px;
+  padding-left: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'Open sans', sans-serif;
+  font-weight: 300;
+  color: $greymid;
+}
+
 .yellow-btn {
 	background: $yellow;
 	color: $greydark
@@ -89,6 +102,10 @@ img {
 			height: 40px;
 			line-height: 40px;
 		}
+    .field {
+      height: 40px;
+      line-height: 40px;
+    }
 	}
 }
 /** Text Formatting **/
