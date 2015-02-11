@@ -25,6 +25,7 @@
 	text-align: center;
 }
 
+
 .user-links {
 	.follow-box {
 		height: 40px;
@@ -42,12 +43,39 @@
 		#user-main{
 			padding-left: calc(50% - 480px);
 			padding-right: calc(50% - 480px);
+			position: relative;
+		}
+		#upload-photo-text {
+			position: absolute;
+			bottom: 0px;
+			left: calc(50% - 480px);
+			text-align: center;
+			width: 120px;
+			cursor: pointer;
 		}
 		#user-sub-info {
 			padding-left: calc(50% - 480px);
 			display: inline-block;
 			vertical-align: top;
 			width: 620px;
+		}
+		#user-container #user_avatar {
+			height: 120px;
+			width: 120px;
+			border-radius: 120px;
+			position: absolute;
+			top: 43px;
+			left: calc(50% - 470px);
+		}
+		#user-container #preview {
+			height: 120px;
+			width: 120px;
+			border-radius: 120px;
+			position: absolute;
+			top: 43px;
+			left: calc(50% - 470px);
+			display: none;
+			z-index: 2;
 		}
 		#user-follow-me {
 			display: inline-block;
@@ -65,6 +93,7 @@
 		}
 		#user-stats > * {
 			display: block;
+			margin: 10px 0px;
 		}
 		#user-container #user-stats {
 			position: absolute;

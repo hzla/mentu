@@ -4,7 +4,14 @@
 <div id="user-container">
 	<div id="user-main" class="inline-container p-full-big m-vert">
 		<%= image_tag @user.avatar_url, :class => "user-profile-pic m-hor" %>
-
+		<% if @edit_mode %>
+			<img id="preview"></img>
+			<%= form_for @user, multipart: true, html: {id: "avatar-form"} do |f| %>
+				<%= f.file_field :avatar, :class => "no-mobile" %>
+				<%= f.submit "Confirm", :class => "upload-photo hidden" %>
+			<% end %>
+			<div class="red" id="upload-photo-text">Upload Photo</div>
+		<% end %>
 		<div class="user-main-info m-hor">
 			<div id="user-name" class="bold"><%= @user.name %></div>
 			<% if @edit_mode %>
@@ -88,3 +95,26 @@
 	</div>
 </div>
 </div>
+
+
+<script>
+
+	function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        
+        reader.onload = function (e) {
+            $('#preview').show()
+            $('#upload-photo-text').text('Confirm Photo')
+            $('#preview').attr('src', e.target.result);
+        }
+        
+        reader.readAsDataURL(input.files[0]);
+    }
+  }
+    
+  $("#user_avatar").change(function(){
+      readURL(this);
+  });
+
+</script>

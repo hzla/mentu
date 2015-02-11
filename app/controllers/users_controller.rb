@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 			ama = Ama.find params[:ama]
 			redirect_to ama_path(id: ama.id, code: ama.mentor_code)
 		end
+		redirect_to user_path(current_user)
 	end
 
 end
