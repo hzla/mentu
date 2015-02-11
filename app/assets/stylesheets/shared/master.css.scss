@@ -4,8 +4,8 @@
 // repeating non list elements have their padding and margins set in scss
 // padding and margin changes from mobile to desktop are done in scss media queries
 
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
 }
 
 #dp_swf_engine {
@@ -28,18 +28,18 @@ input[type=text]:focus, textarea:focus {
 }
 
 .glower {
-	-webkit-animation: glow linear 1s infinite; 
-	    animation: glow linear 1s infinite; } 
-	@-webkit-keyframes glow { 
+	-webkit-animation: glow linear 1s infinite;
+	    animation: glow linear 1s infinite; }
+	@-webkit-keyframes glow {
 	    0% { box-shadow: 0 0 5px $red; }
 	    50% { box-shadow: 0 0 5px orange; }
-	    100% { box-shadow: 0 0 5px $red; } 
+	    100% { box-shadow: 0 0 5px $red; }
 
-	} 
-	@keyframes glow { 
+	}
+	@keyframes glow {
 	    0% { box-shadow: 0 0 5px $red; }
 	    50% { box-shadow: 0 0 5px orange; }
-	    100% { box-shadow: 0 0 5px $red; } 
+	    100% { box-shadow: 0 0 5px $red; }
 }
 
 img {
@@ -89,7 +89,7 @@ img {
 			height: 40px;
 			line-height: 40px;
 		}
-	}	
+	}
 }
 /** Text Formatting **/
 
@@ -102,6 +102,7 @@ body div {
 	font-weight: 300;
 	color: $greydark;
 	line-height: 1.4;
+  font-size: 15px;
 }
 body div {
 	.bold {
@@ -146,54 +147,55 @@ body div {
 	body {
 		div {
 			line-height: 1.4;
+      font-size: 16px;
 		}
 		.big {
-			font: normal normal 400 40px/normal "Open Sans", sans-serif;
+			font: normal normal 300 40px/normal "Sanchez", sans-serif;
 			line-height: 1.4;
 		}
 
 		.title {
-			font: normal normal 600 30px/normal "Open Sans", sans-serif;	
+			font: normal normal 600 30px/normal "Open Sans", sans-serif;
 			line-height: 1.4;
 		}
 
 		.bigsub {
-			font: normal normal 400 20px/normal "Open Sans", sans-serif;
+			font: normal normal 300 20px/normal "Open Sans", sans-serif;
 			line-height: 1.4;
 		}
 
 		.normal {
-			font: normal normal 400 16px/normal "Open Sans", sans-serif;
+			font: normal normal 300 16px/normal "Open Sans", sans-serif;
 			line-height: 1.4;
 		}
 
 		.small {
-			font: normal normal 400 14px/normal "Open Sans", sans-serif;
+			font: normal normal 300 14px/normal "Open Sans", sans-serif;
 		}
 	}
 }
 
 .big {
-	font: normal normal 400 20px/normal "Open Sans", sans-serif;
+	font: normal normal 300 20px/normal "Sanchez", sans-serif;
 	line-height: 1.4;
 }
 
 .title {
-	font: normal normal 400 17px/normal "Open Sans", sans-serif;
+	font: normal normal 300 17px/normal "Open Sans", sans-serif;
 	line-height: 1.4;
 }
 
 .bigsub {
-	font: normal normal 400 17px/normal "Open Sans", sans-serif;
+	font: normal normal 300 17px/normal "Open Sans", sans-serif;
 	line-height: 1.4;
 }
 
 .normal {
-	font: normal normal 400 15px/normal "Open Sans", sans-serif;
+	font: normal normal 300 15px/normal "Open Sans", sans-serif;
 }
 
 .small {
-	font: normal normal 400 12px/normal "Open Sans", sans-serif;
+	font: normal normal 300 12px/normal "Open Sans", sans-serif;
 }
 
 a {
@@ -244,7 +246,3 @@ a {
 		}
 	}
 }
-
-
-
-

@@ -7,9 +7,9 @@
 	<%= render partial: "welcome" %>
 <% end %>
 	<section id="landing-main" class="<%= 'signed-in-main' if current_user %>">
-	
+
 		<div class="landing-message">
-			<div class="big m-full">
+			<div class="big m-full bold">
 				Ask and get your questions answered.
 			</div>
 			<div class="bigsub m-full">
@@ -48,36 +48,36 @@
 		<div id="ama-header-content">
 			<div id="ama-header-tabs" class="inline-container no-desk">
 				<%= link_to amas_path(category: "all"), remote: true, :class => "ama-header-link" do %>
-					<div class="ama-header-tab active" id="all">
-						ALL
+					<div class="ama-header-tab active bold" id="all">
+						All
 					</div>
 				<% end %>
 				<%= link_to amas_path(category: "ent"), remote: true, :class => "ama-header-link" do %>
-					<div class="ama-header-tab" id="sci">
+					<div class="ama-header-tab bold" id="ent">
 						Entrepreneurship
 					</div>
 				<% end %>
 				<%= link_to amas_path(category: "biz"), remote: true, :class => "ama-header-link" do %>
-					<div class="ama-header-tab" id="biz">
+					<div class="ama-header-tab bold" id="biz">
 						Finance
 					</div>
 				<% end %>
 			</div>
-			<div id="ama-header-tabs" class="inline-container no-mobile">
 
+			<div id="ama-header-tabs" class="inline-container no-mobile">
 				<%= link_to amas_path(category: "all"), remote: true, :class => "ama-header-link" do %>
-					<div class="ama-header-tab active" id="all">
-						ALL
+					<div class="ama-header-tab active bold" id="all">
+						All
 					</div>
 				<% end %>
 				<%= link_to amas_path(category: "ent"), remote: true, :class => "ama-header-link" do %>
-					<div class="ama-header-tab" id="ent">
-						ENTREPERNEUR
-					</div>
+				<div class="ama-header-tab bold" id="ent">
+					Entrepreneur
+				</div>
 				<% end %>
 				<%= link_to amas_path(category: "biz"), remote: true, :class => "ama-header-link" do %>
-					<div class="ama-header-tab" id="biz">
-						FINANCE
+					<div class="ama-header-tab bold" id="biz">
+						Finance
 					</div>
 				<% end %>
 				
@@ -89,4 +89,4 @@
 			<%= render partial: "amas/index" %>
 		</div>
 	</div>
-</section> 
+</section>
