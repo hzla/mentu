@@ -201,6 +201,9 @@ body {
 
 @media (min-width: 1024px) {
 	body {
+		.reply-body {
+			padding-left: 65px;
+		}
 		#questions {
 			height: calc(100vh - 90px);
 			overflow-y: hidden;
@@ -216,6 +219,16 @@ body {
 			width: 40px;
 			margin-right: 10px;
 			cursor: pointer;
+		}
+		.upvote-arrow {
+			height: auto;
+			width: 30px;
+			right: 0;
+		}
+		.upvote-value {
+			width: 30px;
+			top: 45px;
+			font-size: 16px;
 		}
 		#right-sidebar-container {
 			background: white;

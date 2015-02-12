@@ -17,6 +17,17 @@ Home =
     emptyEmail = $('#user_email').val() == ""
     emptyPassword = $('#user_password').val() == ""
     badPassword = $('#user_password').val().length < 6
+    $('#new_user input').attr('style', '')
+
+    $('#user_name').css('border', '1px solid red') if emptyName
+    $('#user_email').css('border', '1px solid red') if emptyEmail
+    $('#user_password').css('border', '1px solid red') if emptyPassword
+    $('#user_password').css('border', '1px solid red') if badPassword
+
+    if emptyName || emptyEmail || emptyPassword || badPassword
+      return false
+
+
 
 
 

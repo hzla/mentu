@@ -3,11 +3,13 @@
 		<div class="question-body">
 			<%= question.body %>
 		</div>
-		<%= image_tag "userupvote.svg", :class => "upvote-arrow" %>
-		<div class="upvote-value red">
+		<%= link_to comment_upvote_path(question), remote: true, :class => "upvote-link" do %>
+			<%= image_tag "upvoteempty.svg", :class => "upvote-arrow" %>
+		<% end %>
+		<div class="upvote-value grey">
 			<%= question.score %>
 		</div>
-	</div>
+</div>
 	<div class="question-timestamp grey p-vert-big">
 		<%= question.timestamp %>
 	</div>
