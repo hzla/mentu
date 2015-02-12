@@ -7,9 +7,18 @@ Home =
     $('body').on 'click', '#close-modal', @closeSignUpModal
     $('body').on 'click', '#close-login', @closeLogInModal
     $('body').on 'click', '#got-it', @closeWelcome
+    $('body').on 'submit', '#new_user', @checkFields
     $(window).on 'scroll', @makeAmasScrollable if $('.amas-container').length > 0
     
     @startScrollHeight = $('#landing-main').height()
+
+  checkFields: ->
+    emptyName = $('#user_name').val() == ""
+    emptyEmail = $('#user_email').val() == ""
+    emptyPassword = $('#user_password').val() == ""
+    badPassword = $('#user_password').val().length < 6
+
+
 
   makeAmasScrollable: ->
     console.log Home.startScrollHeight

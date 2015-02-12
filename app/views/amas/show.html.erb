@@ -60,50 +60,57 @@
 			<div class="sort-option active p-hor bold" id="sort-popular">Popular</div>
 		</div>
 	</div>
-	<div id="questions">
-		<%= render partial: "comments/index" %>
-	</div>
-	<div id="right-sidebar-container" class="no-mobile">
-		<div class="background-container m-top-very-big">
-			<div class="bold">FOLLOW ME</div>
-			<div class="background m-vert inline-container">
-				<% ["lightgrey", "beige", "lightblue", "green", "blue"].each do |color| %>
-					<div class="follow-box <%= color + "-bg" %>"></div>
+
+	<div class="main">
+		<div id="questions" class="main-left">
+			<%= render partial: "comments/index" %>
+		</div>
+
+		<div id="right-sidebar-container" class="no-mobile main-right">
+			<div class="background-container m-top-very-big">
+				<div class="bold">FOLLOW ME</div>
+				<div class="background m-vert inline-container">
+					<% ["lightgrey", "beige", "lightblue", "green", "blue"].each do |color| %>
+						<div class="follow-box <%= color + "-bg" %>"></div>
+					<% end %>
+				</div>
+			</div>
+			<div class="featured m-top-very-big">
+				<div class="bold m-vert-big">AMAS OF THE DAY</div>
+				<% (1..2).each do |ama| %>
+					<div class="featured-ama">
+						<%= image_tag current_avatar, :class => "comment-pic" %>
+						<div class="featured-desc inline m-bottom-big">
+							<%= User.last.app_response %>
+						</div>
+					</div>
 				<% end %>
 			</div>
-		</div>
-		<div class="featured m-top-very-big">
-			<div class="bold m-vert-big">AMAS OF THE DAY</div>
-			<% (1..2).each do |ama| %>
-				<div class="featured-ama">
-					<%= image_tag current_avatar, :class => "comment-pic" %>
-					<div class="featured-desc inline m-bottom-big">
-						<%= User.last.app_response %>
+			<div class="sidebar-footer">
+				<div id="feedback" class="m-vert">
+					Send Feedback
+				</div>
+
+				<div id="site-info-box" class="inline-container grey">
+					<div class="site-info">
+						Support
+					</div>
+					<div class="site-info">
+						Privacy
+					</div>
+					<div class="site-info">
+						Terms
+					</div>
+					<div class="site-info last">
+						© 2014 Spark
 					</div>
 				</div>
-			<% end %>
-		</div>
-		<div class="sidebar-footer">
-			<div id="feedback" class="m-vert">
-				Send Feedback
 			</div>
+		</div>
 
-			<div id="site-info-box" class="inline-container grey">
-				<div class="site-info">
-					Support
-				</div>
-				<div class="site-info">
-					Privacy
-				</div>
-				<div class="site-info">
-					Terms
-				</div>
-				<div class="site-info last">
-					© 2014 Spark
-				</div>
-			</div>
-		</div>
 	</div>
+	
+	
 </section>
 
 <% if @browser.mobile? %>

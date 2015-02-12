@@ -20,6 +20,34 @@
 	display: flex;
 }
 
+/*********  960 Layout  ************/
+
+
+@media (min-width: 1024px) {
+	body {
+		.main {
+			width: 100vw;
+			position: relative;
+			.main-left {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 620px;
+				padding-left: calc(50% - 480px);
+				padding-right: calc(50% - 160px);
+			}
+			.main-right {
+				right: calc(50% - 480px);;
+				top: 0;
+				position: absolute;
+				width: 320px;
+			}
+		}
+	}
+}
+
+
+
 /******* Margins *******/
 
 @media (min-width: 1024px) {

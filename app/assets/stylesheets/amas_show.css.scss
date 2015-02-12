@@ -202,11 +202,6 @@ body {
 @media (min-width: 1024px) {
 	body {
 		#questions {
-			width: 600px;
-			padding-left: calc(50vw - 480px);
-			padding-right: 10px;
-			display: inline-block;
-			vertical-align: top;
 			height: calc(100vh - 90px);
 			overflow-y: hidden;
 		}
@@ -223,10 +218,6 @@ body {
 			cursor: pointer;
 		}
 		#right-sidebar-container {
-			display: inline-block;
-			vertical-align: top;
-			margin-left: 20px;
-			width: 320px;
 			background: white;
 		}
 		.featured-desc {
