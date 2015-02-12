@@ -96,7 +96,18 @@ Ama =
 
 
   upvoteComment: (event, data) ->
-    $(@).parent().find('.upvote-value').text(data.score)
+    value = $(@).parent().find('.upvote-value')
+    value.text(data.score)
+
+    if $(@).hasClass('inactive')
+      $(@).removeClass('inactive')
+      $(@).addClass('active')
+      value.css('color', 'white')
+    else 
+      $(@).removeClass('active')
+      $(@).addClass('inactive')
+      value.css('color', 'darkgrey')
+
 
   addComment: (event, data) ->
   	$(@).parents('.user-comment-form').before(data)

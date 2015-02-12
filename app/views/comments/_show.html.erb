@@ -4,7 +4,7 @@
 			<%= question.body %>
 		</div>
 		<%= link_to comment_upvote_path(question), remote: true, :class => "upvote-link" do %>
-			<%= image_tag "upvoteempty.svg", :class => "upvote-arrow" %>
+			<%= image_tag "upvoteempty.svg", :class => "upvote-arrow svg" %>
 		<% end %>
 		<div class="upvote-value grey">
 			<%= question.score %>

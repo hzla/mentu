@@ -6,7 +6,7 @@
 			<div class="header-heat inline p-hor">432 heat</div>
 			<div class="header-school grey p-vert"><%= reply.user.school[0..30] if reply.user.school %></div>
 			<%= link_to comment_upvote_path(reply), remote: true, :class => "upvote-link" do %>
-				<%= image_tag "upvoteempty.svg", :class => "upvote-arrow" %>
+				<%= image_tag "upvoteempty.svg", :class => "upvote-arrow svg" %>
 			<% end %>
 			<div class="upvote-value grey">
 				<%= reply.score %>

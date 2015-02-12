@@ -31,9 +31,12 @@ class Comment < ActiveRecord::Base
 			update_attributes voter_list: [user.id], score: 1
 		else 
 			if voter_list.include? user.id
-				return
+				new_list = voter_list.clone
+				new_list.delete(user.id)
+				new_score = score - 1
+				update_attributes voter_list: new_list, score: new_score
 			else
-				new_list = voter_list << user.id
+				new_list = voter_list.clone << user.id
 				new_score = score + 1
 				update_attributes voter_list: new_list, score: new_score
 			end

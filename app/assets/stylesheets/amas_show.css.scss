@@ -168,6 +168,24 @@ body {
 	width: 20px;
 }
 
+.upvote-link.active {
+	path:first-child {
+		fill: $red;
+	}
+	path {
+		fill: white;
+	}
+}
+
+.upvote-link.inactive {
+	path:first-child {
+		fill: $greylight;
+	}
+	path {
+		fill: $bordergrey;
+	}
+}
+
 .upvote-value {
 	position: absolute;
 	right: 0;
@@ -247,7 +265,7 @@ body {
 		.sidebar-footer {
 			position: fixed;
 			bottom: 20px;
-			right: calc(50% - 470px);
+			right: calc(50% - 480px);
 			text-align: center;
 			width: 320px;
 			z-index: -1;

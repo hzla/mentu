@@ -21,15 +21,15 @@
 			</div>
 
 			<% if current_user && question.upvoted_by?(current_user) %>
-				<%= link_to comment_upvote_path(question), remote: true, :class => "upvote-link" do %>
-					<%= image_tag "upvoteclick.svg", :class => "upvote-arrow" %>
+				<%= link_to comment_upvote_path(question), remote: true, :class => "upvote-link active" do %>
+					<%= image_tag "upvoteclick.svg", :class => "upvote-arrow svg" %>
 				<% end %>
 				<div class="upvote-value white">
 					<%= question.score %>
 				</div>
 			<% else %>
-				<%= link_to comment_upvote_path(question), remote: true, :class => "upvote-link" do %>
-					<%= image_tag "upvoteempty.svg", :class => "upvote-arrow" %>
+				<%= link_to comment_upvote_path(question), remote: true, :class => "upvote-link inactive" do %>
+					<%= image_tag "upvoteempty.svg", :class => "upvote-arrow svg" %>
 				<% end %>
 				<div class="upvote-value grey">
 					<%= question.score %>
@@ -70,15 +70,15 @@
 						<div class="header-heat inline p-hor">432 heat</div>
 						<div class="header-school grey p-vert"><%= reply.user.school[0..30] if reply.user.school %></div>
 						<% if current_user && question.upvoted_by?(current_user) %>
-							<%= link_to comment_upvote_path(reply), remote: true, :class => "upvote-link" do %>
-								<%= image_tag "upvoteclick.svg", :class => "upvote-arrow" %>
+							<%= link_to comment_upvote_path(reply), remote: true, :class => "upvote-link active" do %>
+								<%= image_tag "upvoteclick.svg", :class => "upvote-arrow svg" %>
 							<% end %>
 							<div class="upvote-value white">
 								<%= question.score %>
 							</div>
 						<% else %>
-							<%= link_to comment_upvote_path(reply), remote: true, :class => "upvote-link" do %>
-								<%= image_tag "upvoteempty.svg", :class => "upvote-arrow" %>
+							<%= link_to comment_upvote_path(reply), remote: true, :class => "upvote-link inactive" do %>
+								<%= image_tag "upvoteempty.svg", :class => "upvote-arrow svg" %>
 							<% end %>
 							<div class="upvote-value grey">
 								<%= question.score %>
@@ -111,15 +111,15 @@
 							<div class="header-heat inline p-hor">432 heat</div>
 							<div class="header-school grey p-vert"><%= comment.user.school[0..30] if comment.user.school %></div>
 							<% if current_user && question.upvoted_by?(current_user) %>
-								<%= link_to comment_upvote_path(comment), remote: true, :class => "upvote-link" do %>
-									<%= image_tag "upvoteclick.svg", :class => "upvote-arrow" %>
+								<%= link_to comment_upvote_path(comment), remote: true, :class => "upvote-link active" do %>
+									<%= image_tag "upvoteclick.svg", :class => "upvote-arrow svg" %>
 								<% end %>
 								<div class="upvote-value white">
 									<%= question.score %>
 								</div>
 							<% else %>
-								<%= link_to comment_upvote_path(comment), remote: true, :class => "upvote-link" do %>
-									<%= image_tag "upvoteempty.svg", :class => "upvote-arrow" %>
+								<%= link_to comment_upvote_path(comment), remote: true, :class => "upvote-link inactive" do %>
+									<%= image_tag "upvoteempty.svg", :class => "upvote-arrow svg" %>
 								<% end %>
 								<div class="upvote-value grey">
 									<%= comment.score %>
