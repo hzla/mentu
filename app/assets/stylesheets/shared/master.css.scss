@@ -109,6 +109,7 @@ img {
 	color: white;
 }
 
+
 @media (min-width: 1024px) {
 	body {
 		.btn {
@@ -133,6 +134,7 @@ body div {
 	color: $greydark;
 	line-height: 1.4;
   font-size: 15px;
+  box-sizing: border-box;
 }
 body div {
 	.bold {
