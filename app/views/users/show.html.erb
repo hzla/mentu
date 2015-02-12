@@ -10,7 +10,7 @@
 				<%= f.file_field :avatar, :class => "no-mobile" %>
 				<%= f.submit "Confirm", :class => "upload-photo hidden" %>
 			<% end %>
-			<div class="red" id="upload-photo-text">Upload Photo</div>
+			<div class="red no-mobile" id="upload-photo-text">Upload Photo</div>
 		<% end %>
 		<div class="user-main-info m-hor">
 			<div id="user-name" class="bold"><%= @user.name %></div>
@@ -45,7 +45,7 @@
 
 <div id="user-info-body">
 	<div id="user-sub-info" class="m-vert p-full">
-		<div class="user-info-header bold m-vert-big">
+		<div class="user-info-header bold m-bottom-big">
 			Background 
 			<% if @edit_mode %>
 				<span class="red m-left-big edit-text" id="edit-background">edit</span>
