@@ -3,7 +3,7 @@
 
 <div id="user-container">
 	<div id="user-main" class="inline-container p-full-big m-vert">
-		<%= image_tag @user.avatar_url, :class => "user-profile-pic m-hor" %>
+		<%= image_tag @user.avatar_url, :class => "user-profile-pic m-right" %>
 		<% if @edit_mode %>
 			<img id="preview"></img>
 			<%= form_for @user, multipart: true, html: {id: "avatar-form"} do |f| %>
@@ -20,28 +20,29 @@
 			<% else %>
 				<div id="user-one-liner" class="m-vert"><%= @user.one_liner %></div>
 			<% end %>
-		</div>		
+		</div>	
+			<div id="user-stats" class="inline-container m-vert-big">
+				<div class="m-hor-big">
+					<%= image_tag "question.svg", :class => "info-icon" %>
+					<%= @user.question_count %> questions
+				</div>
+				<% if @user.is_mentor %>
+					<div class="m-hor-big">
+						<%= image_tag "answer.svg", :class => "info-icon" %>
+						<%= @user.answer_count %> answers
+					</div>
+				<% end %>
+				<div class="m-hor-big">
+					<%= image_tag "heat.svg", :class => "info-icon" %>
+					<%= @user.like_count %> heat
+				</div>
+				<div class="m-hor-big bold no-mobile">
+					<%= @user.like_count %> Recommendations
+				</div>
+			</div>	
 	</div>
 
-	<div id="user-stats" class="inline-container m-vert">
-		<div class="m-hor-big">
-			<%= image_tag "question.svg", :class => "info-icon" %>
-			<%= @user.question_count %> questions
-		</div>
-		<% if @user.is_mentor %>
-			<div class="m-hor-big">
-				<%= image_tag "answer.svg", :class => "info-icon" %>
-				<%= @user.answer_count %> answers
-			</div>
-		<% end %>
-		<div class="m-hor-big">
-			<%= image_tag "heat.svg", :class => "info-icon" %>
-			<%= @user.like_count %> heat
-		</div>
-		<div class="m-hor-big bold no-mobile">
-			<%= @user.like_count %> Recommendations
-		</div>
-	</div>
+
 
 <div id="user-info-body">
 	<div id="user-sub-info" class="m-vert p-full">
@@ -82,7 +83,7 @@
 					<%= link_to @user.send(link.to_sym) do %>
 						<div class="follow-box <%= color + "-bg" %> inline m-vert"></div>
 					<% end %>
-					<div class="user-link-text inline m-full">
+					<div class="user-link-text inline m-half">
 						<% if @edit_mode %>
 							<%= best_in_place @user, link.to_sym, type: :input, place_holder: "#{link.capitalize} url" %>
 						<% else %>

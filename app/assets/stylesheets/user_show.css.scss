@@ -23,6 +23,7 @@
 
 #user-container #user-stats {
 	text-align: center;
+	width: 100%;
 }
 
 
@@ -59,6 +60,14 @@
 			vertical-align: top;
 			width: 620px;
 		}
+		.user-main-info {
+			width: calc(100% - 480px);
+		}
+		#user-container #user-stats {
+			width: 200px;
+			margin: 0px 20px;
+			position: static;
+		}
 		#user-container #user_avatar {
 			height: 120px;
 			width: 120px;
@@ -93,12 +102,11 @@
 		}
 		#user-stats > * {
 			display: block;
-			margin: 10px 0px;
+			margin-bottom: 10px;
+			margin-left: 0px;
+			margin-right: 0px;
 		}
 		#user-container #user-stats {
-			position: absolute;
-			right: calc(50% - 480px);
-			top: 80px;
 			text-align: left;
 		}
 		#user-info-body {
