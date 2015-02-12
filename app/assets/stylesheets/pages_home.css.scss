@@ -22,7 +22,7 @@
 }
 
 
-#landing-main { 
+#landing-main {
 	height: 80vh;
 	width: 100vw;
 	color: $greydark;
@@ -34,17 +34,18 @@
 .landing-message {
 	position: absolute;
 	width: 100%;
-	top: 15vh;
+	top: 10vh;
 }
 
 #past-mentors {
 	width: 90vw;
 	left: 5vw;
 	position: absolute;
-	bottom: 15%;
+	top: 35vh;
 }
 
 #past-mentors-title {
+
 }
 
 .past-mentor {
@@ -65,13 +66,16 @@
 			display: block;
 		}
 		#landing-main {
-			background: rgba(255,255,255,.8);
+			background: rgba(255,255,255,.85);
 		}
 		#landing-main.signed-in-main .landing-message {
 			margin-left: 0px;
 		}
 		#past-mentors {
-			bottom: 30vh;
+			top: 35vh;
+		}
+		.landing-message{
+			top: 15vh;
 		}
 		.past-mentor {
 			width: 24%;
@@ -79,7 +83,6 @@
 		.past-mentor-pic {
 			width: 80px;
 			height: 80px;
-			border: 4px solid $yellow;
 		}
 		#mentors-tomorrow {
 			position: absolute;
@@ -180,8 +183,9 @@
 }
 
 .info-icon {
-	height: 12px;
+	height: 15px;
 }
+
 
 @media (min-width: 1024px) {
 	body {
@@ -246,7 +250,7 @@
 		.like-count {
 			position: absolute;
 			right: 0px;
-			top: 30px;
+			top: 0px;
 			font-size: 16px;
 		}
 		.like-count .info-icon {
@@ -255,7 +259,7 @@
 			margin-left: 10px;
 		}
 		.ama:hover {
-			background: $yellowlight;
+			background: $redlight;
 		}
 	}
 }

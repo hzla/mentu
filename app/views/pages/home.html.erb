@@ -21,7 +21,7 @@
 <% if !current_user %>
 
 		<div id="past-mentors">
-			<div id="past-mentors-title" class="bold title red m-bottom-big">Past Mentors</div>
+			<div id="past-mentors-title" class="bold title greydark m-bottom-big">Past Mentors:</div>
 			<div class="past-mentor">
 				<%= image_tag "school1.png", :class => "past-mentor-pic m-full" %>
 				<div class="past-mentor-desc m-full">I am Rosa Zhou, I am in my second year studying Corporate Law at Stanford. </div>
@@ -46,41 +46,41 @@
 <section id="landing-ama">
 	<div id="ama-header" class="inline-container">
 		<div id="ama-header-content">
-			<div id="ama-header-tabs" class="inline-container no-desk">
+			<div id="ama-header-tabs" class="inline-container no-desk bold">
 				<%= link_to amas_path(category: "all"), remote: true, :class => "ama-header-link" do %>
-					<div class="ama-header-tab active bold" id="all">
+					<div class="ama-header-tab active" id="all">
 						All
 					</div>
 				<% end %>
 				<%= link_to amas_path(category: "ent"), remote: true, :class => "ama-header-link" do %>
-					<div class="ama-header-tab bold" id="ent">
+					<div class="ama-header-tab" id="ent">
 						Entrepreneurship
 					</div>
 				<% end %>
 				<%= link_to amas_path(category: "biz"), remote: true, :class => "ama-header-link" do %>
-					<div class="ama-header-tab bold" id="biz">
+					<div class="ama-header-tab" id="biz">
 						Finance
 					</div>
 				<% end %>
 			</div>
 
-			<div id="ama-header-tabs" class="inline-container no-mobile">
+			<div id="ama-header-tabs" class="inline-container no-mobile bold">
 				<%= link_to amas_path(category: "all"), remote: true, :class => "ama-header-link" do %>
-					<div class="ama-header-tab active bold" id="all">
+					<div class="ama-header-tab active" id="all">
 						All
 					</div>
 				<% end %>
 				<%= link_to amas_path(category: "ent"), remote: true, :class => "ama-header-link" do %>
-				<div class="ama-header-tab bold" id="ent">
+				<div class="ama-header-tab" id="ent">
 					Entrepreneur
 				</div>
 				<% end %>
 				<%= link_to amas_path(category: "biz"), remote: true, :class => "ama-header-link" do %>
-					<div class="ama-header-tab bold" id="biz">
+					<div class="ama-header-tab" id="biz">
 						Finance
 					</div>
 				<% end %>
-				
+
 			</div>
 		</div>
 	</div>

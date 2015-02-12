@@ -25,10 +25,11 @@
 }
 
 #ama-cover {
-	height: 100vh;
+	height: 80vh;
 	width: 100vw;
 	background: image_url('amabg.jpg');
 	background-size: cover;
+	position: relative;
 }
 
 #ama-stats {
@@ -69,7 +70,7 @@
 			font-size: 26px;
 		}
 	}
-	
+
 
 
 }
@@ -249,7 +250,7 @@ body {
 		}
 		.site-info {
 			cursor: pointer;
-			margin: 0px 7px;
+			margin: 0px 5px;
 		}
 	}
 }
@@ -387,5 +388,3 @@ body {
 		}
 	}
 }
-
-

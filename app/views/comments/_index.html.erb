@@ -4,12 +4,12 @@
 			<div class="admin-actions">
 				<%= link_to comment_path(question), method: "delete", remote: true, :class => "admin-delete", data: {confirm: "yo you sure?"} do  %>
 					<div class="delete-thread red">
-						Delete Thread	
+						Delete Thread
 					</div>
 				<% end %>
 				<%= link_to edit_comment_path(question) do  %>
 					<div class="delete-thread green">
-						Edit Question	
+						Edit Question
 					</div>
 				<% end %>
 			</div>
@@ -46,12 +46,12 @@
 					<%= f.hidden_field :comment_type, value: "reply" %>
 					<%= f.hidden_field :ama_id, value: @ama.id %>
 					<%= f.hidden_field :parent_id, value: question.id %>
-					<%= f.text_area :body, :class => "m-left-big reply-box inline", :placeholder => "Answer this question..." %>
+					<%= f.text_area :body, :class => "m-left-big reply-box inline m-answer-field", :placeholder => "Answer this question..." %>
 					<%= f.submit "Post", id: "submit-reply", :class => "btn red-btn hidden" %>
 				<% end %>
 			</div>
 		<% end %>
-		
+
 		<% question.children.each do |reply| %>
 			<div class="reply">
 				<% if current_admin %>
