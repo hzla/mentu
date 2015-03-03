@@ -45,7 +45,7 @@
 		</div>
 		<% if @current_mentor %>
 			<div class="mentor-reply-form">
-				<%= form_for Comment.new, remote: true, html: {:class => "reply-form"} do |f| %>
+				<%= form_for Comment.new, remote: true, html: {:class => "reply-form flex"} do |f| %>
 					<%= image_tag current_avatar, :class => "comment-pic" %>
 					<%= f.hidden_field :comment_type, value: "reply" %>
 					<%= f.hidden_field :ama_id, value: @ama.id %>
@@ -68,7 +68,7 @@
 						<% end %>
 					</div>
 				<% end %>
-				<div class="comment-header">
+				<div class="comment-header flex">
 					<%= image_tag reply.user.avatar_url, :class => "comment-pic m-top" %>
 					<div class="header-text-info p-full inline">
 						<div class="bold blue header-name inline"><%= reply.user.name %></div>
@@ -113,7 +113,7 @@
 							<% end %>
 					</div>
 					<% end %>
-					<div class="comment-header">
+					<div class="comment-header flex">
 						<%= image_tag comment.user.avatar_url, :class => "comment-pic m-top" %>
 						<div class="header-text-info p-full inline">
 							<div class="bold header-name inline"><%= comment.user.name %></div>
@@ -149,7 +149,7 @@
 				</div>
 			<% end %>
 				<div class="user-comment-form">
-					<%= form_for Comment.new, remote: true, html: {:class => "comment-form"} do |f| %>
+					<%= form_for Comment.new, remote: true, html: {:class => "comment-form flex"} do |f| %>
 						<%= image_tag current_avatar, :class => "comment-pic" %>
 						<%= f.hidden_field :comment_type, value: "comment" %>
 						<%= f.hidden_field :ama_id, value: @ama.id %>

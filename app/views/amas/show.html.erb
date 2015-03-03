@@ -44,7 +44,7 @@
 <section id="ama-questions">
 	<div id="question-form-container">
 		<div id="question-form-content">
-			<%= form_for @question, remote: true, html: {id: "question-form"} do |f| %>
+			<%= form_for @question, remote: true, html: {id: "question-form", :class => "flex"} do |f| %>
 				<%= f.hidden_field :comment_type, value: "question" %>
 				<%= f.hidden_field :ama_id, value: @ama.id %>
 
@@ -54,7 +54,7 @@
 				<%= f.submit "Post", id: "submit-comment", :class => "btn red-btn normal" %>
 			<% end %>
 		</div>
-		<div id="questions-sort-bar" class="inline-container no-mobile bigsub">
+		<div id="questions-sort-bar" class="hidden">
 			<div>Sort questions by:</div>
 			<div class="sort-option m-hor-big p-hor bold" id="sort-new">New</div>
 			<div class="sort-option active p-hor bold" id="sort-popular">Popular</div>
