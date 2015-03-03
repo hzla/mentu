@@ -111,6 +111,7 @@
 		#question-form {
 			margin-top: 10px;
 			height: 30px;
+			display: flex;
 		}
 		#question-form-content {
 			width: 600px;
@@ -174,7 +175,7 @@ body {
 }
 
 .header-text-info {
-	width: calc(100% - 45px);
+	width: calc(100% - 40px);
 }
 
 .upvote-arrow {
@@ -238,15 +239,28 @@ body {
 @media (min-width: 1024px) {
 	body {
 		.reply-body {
-			padding-left: 65px;
+			padding-left: 60px;
+		}
+		.header-text-info > * {
+			display: inline-block;
+		}
+		.header-text-info {
+			height: 80px;
+		}
+		.header-school {
+			width: 100%;
 		}
 		#questions {
 			height: calc(100vh - 90px);
 			overflow-y: hidden;
 		}
+		.reply-form {
+			display: flex;
+		}
 		.reply-box {
 			width: calc(100% - 65px);
 			margin-bottom: 20px;
+			padding: 5px 10px;
 		}
 		.follow-box {
 			border-radius: 5px;

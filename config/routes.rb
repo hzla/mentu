@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create]
   get '/auth/facebook/callback', :to => 'sessions#facebook_create'
   get '/auth/failure', :to => 'sessions#failure'
-  get '/logout', :to => 'sessions#destroy'
+  get '/logout', :to => 'sessions#destroy', as: "logout"
 
 
   get '/admin', to: 'admins#index'

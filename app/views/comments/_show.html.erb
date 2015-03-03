@@ -1,14 +1,16 @@
 <div class="question-thread p-full">
-	<div class="question bold p-vert">
-		<div class="question-body">
+	<div class="question p-vert">
+		<div class="question-body bold">
 			<%= question.body %>
 		</div>
-		<%= link_to comment_upvote_path(question), remote: true, :class => "upvote-link active" do %>
-			<%= image_tag "upvoteempty.svg", :class => "upvote-arrow svg" %>
-			<div class="upvote-value white">
-				<%= question.score %>
-			</div>
-		<% end %>	
+        <div class="upvote-container">
+    		<%= link_to comment_upvote_path(question), remote: true, :class => "upvote-link active" do %>
+    			<%= image_tag "upvoteempty.svg", :class => "upvote-arrow svg" %>
+    			<div class="upvote-value white">
+    				<%= question.score %>
+    			</div>
+    		<% end %>
+        </div>	
 </div>
 	<div class="question-timestamp grey p-vert-big">
 		<%= question.timestamp %>

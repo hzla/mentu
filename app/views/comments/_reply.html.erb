@@ -2,15 +2,17 @@
 	<div class="comment-header">
 		<%= image_tag reply.user.profile_pic_url, :class => "comment-pic m-top" %>
 		<div class="header-text-info p-full inline">
-			<div class="bold green header-name inline"><%= reply.user.name %></div>
+			<div class="bold blue header-name inline"><%= reply.user.name %></div>
 			<div class="header-heat inline p-hor">432 heat</div>
 			<div class="header-school grey p-vert"><%= reply.user.school[0..30] if reply.user.school %></div>
-			<%= link_to comment_upvote_path(reply), remote: true, :class => "upvote-link" do %>
-				<%= image_tag "upvoteempty.svg", :class => "upvote-arrow svg" %>
-				<div class="upvote-value grey">
-					<%= reply.score %>
-				</div>
-			<% end %>		
+			<div class="upvote-container">
+				<%= link_to comment_upvote_path(reply), remote: true, :class => "upvote-link" do %>
+					<%= image_tag "upvoteempty.svg", :class => "upvote-arrow svg" %>
+					<div class="upvote-value grey">
+						<%= reply.score %>
+					</div>
+				<% end %>
+			</div>		
 		</div>
 	</div>
 	<div class="reply-body">

@@ -30,6 +30,8 @@ gem 'browser'
 gem 'dotenv-rails' #remember to load
 gem 'pry'
 gem 'best_in_place', github: 'bernat/best_in_place'
+gem 'rails_admin'
+gem 'will_paginate'
 
 
 ##### Omniauth

@@ -31,6 +31,16 @@
 #sign-up {
 	width: 67px;
 	cursor: pointer;
+	text-align: center;
+	display: inline;
+}
+
+.menu-arrow {
+	cursor: pointer;
+}
+
+.mobile-menu {
+	height: 25px;
 }
 
 @media (min-width: 1024px) {
@@ -81,6 +91,38 @@
 		.current-user-name {
 			height: 60px;
 			line-height: 60px;
+		}
+	}
+}
+
+/********** Menu  ***************/
+
+#menu {
+	position: fixed;
+	background: white;
+	height: 100vh;
+	width: 66vw;
+	right: 0;
+	top: 0;
+}
+
+.menu-item {
+	height: 40px;
+	line-height: 40px;
+	color: $red;
+	cursor: pointer;
+	width: 100%;
+	margin: 10px 0px 10px 20px;
+}
+
+@media (min-width: 1024px) {
+	body {
+		#menu {
+			width: 160px;
+			top: 60px;
+			border-radius: 5px;
+			right: calc(50vw - 480px);
+			height: auto;
 		}
 	}
 }

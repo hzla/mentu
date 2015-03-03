@@ -23,9 +23,11 @@
 		</div>
 	</div>
 
-	<div id="got-it" class="btn yellow-btn bigsub">
-		Got it
-	</div>
+	<%= link_to user_path(current_user) do %>
+		<div id="got-it" class="btn yellow-btn bigsub">
+			Got it
+		</div>
+	<% end %>
 
 	</div>
 </div>
