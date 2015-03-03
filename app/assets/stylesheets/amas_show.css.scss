@@ -154,6 +154,23 @@ body {
 		position: relative;
 		box-sizing: border-box;
 	}
+	.question {
+		display: flex;
+		padding: 0;
+	}
+}
+
+.question-body {
+	width: calc(100% - 40px);
+}
+
+.upvote-container {
+	width: 40px;
+	position: static;
+}
+
+.comment-header {
+	display: flex;
 }
 
 .header-text-info {
@@ -207,6 +224,7 @@ body {
   width: calc(100% - 55px);
   border: 1px solid $bordergrey;
   height: 40px;
+  border-radius: 5px;
 }
 
 #submit-reply {
@@ -228,7 +246,6 @@ body {
 		}
 		.reply-box {
 			width: calc(100% - 65px);
-			height: 80px;
 			margin-bottom: 20px;
 		}
 		.follow-box {

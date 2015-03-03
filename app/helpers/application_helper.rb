@@ -16,6 +16,6 @@ module ApplicationHelper
 	end
 
 	def current_mentor
-		current_user && current_user.role == "mentor"
+		current_user && current_user.role == "mentor" || current_user && current_user.role == "admin"
 	end
 end

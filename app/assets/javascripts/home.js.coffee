@@ -27,10 +27,6 @@ Home =
     if emptyName || emptyEmail || emptyPassword || badPassword
       return false
 
-
-
-
-
   makeAmasScrollable: ->
     console.log Home.startScrollHeight
     if $(window).scrollTop() + 5 > Home.startScrollHeight 

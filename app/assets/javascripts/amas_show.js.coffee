@@ -9,11 +9,21 @@ Ama =
     $('body').on 'click', '#sort-popular', @sortCommentsByScore
     $('body').on 'ajax:success', '.admin-delete', @deleteComments
     $(window).on 'scroll', @makeCommentsScrollable
-    $('#questions textarea').focus @glow
-    $('#questions textarea').blur @removeGlow
+    $('#questions textarea').focus @expandBox
+    $('#questions textarea').blur @shrinkBox
     $('body').on 'ajax:success', '#approval-link', @showApproving
     @initCountdown()
     @startScrollHeight = $('#ama-cover').height()
+
+  expandBox: ->
+    $(@).animate
+      height: '120px'
+    , 250
+
+  shrinkBox: ->
+    $(@).animate
+      height: '40px'
+    , 250
 
   showApproving: ->
     $(@).find('#submit-ama').text("Pending approval...")
@@ -42,18 +52,22 @@ Ama =
       count = parseInt($('#countdown').attr('data-countdown'))
       counter = setInterval ->
         count = count - 1
+        if count > 0
+        
 
-        seconds = count % 60
-        minutes = Math.floor(count / 60)
-        hours = Math.floor(minutes / 60)
-        minutes %= 60
+          seconds = count % 60
+          minutes = Math.floor(count / 60)
+          hours = Math.floor(minutes / 60)
+          minutes %= 60
 
-        if seconds < 10
-          seconds = "0" + seconds
-        if minutes < 10
-          minutes = "0" + minutes
+          if seconds < 10
+            seconds = "0" + seconds
+          if minutes < 10
+            minutes = "0" + minutes
 
-        $('#countdown').text("#{hours}:#{minutes}:#{seconds}")
+          $('#countdown').text("#{hours} hours #{minutes} minutes #{seconds} seconds")
+        else
+          $('#ama-countdown').text("Ama is in session")
       , 1000
 
   sortCommentsByDate: ->

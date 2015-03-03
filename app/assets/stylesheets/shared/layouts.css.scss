@@ -1,15 +1,12 @@
 @import 'variables';
 
 /********** General Positioning ***********/
-
-.inline-container > * {
-	display: inline-block;
-	vertical-align: top;
+.inline-container {
+	display: flex;
 }
 
-.inline {
-	display: inline-block;
-	vertical-align: top;
+.inline-container > * {
+	display: inline-flex;
 }
 
 .muscle {

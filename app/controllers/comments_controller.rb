@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
 		if current_user 
 			comment = Comment.create params[:comment]
 			current_user.comments << comment
+			comment.attempt_upvote_from current_user
 			if comment.comment_type == "question" #top level question
 				render partial: "show", locals: {question: comment} and return
 			elsif comment.comment_type == "reply" #reply from mentor

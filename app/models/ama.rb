@@ -18,6 +18,15 @@ class Ama < ActiveRecord::Base
 		grouped
 	end 
 
+	def question_count
+		comments.where(comment_type: "question").count
+	end
+
+	def answer_count
+		comments.where(comment_type: "reply").count
+	end
+
+
 	def questions
 		comments.where(comment_type: "question").order('score desc')
 	end
