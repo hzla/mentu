@@ -2,7 +2,7 @@
 
 
 <div id="user-container">
-	<div id="user-main" class="inline-container p-full-big m-vert">
+	<div id="user-main" class="flex p-full-big m-vert">
 		<%= image_tag @user.avatar_url, :class => "user-profile-pic m-right" %>
 		<% if @edit_mode %>
 			<img id="preview"></img>
@@ -21,7 +21,7 @@
 				<div id="user-one-liner" class="m-vert"><%= @user.one_liner %></div>
 			<% end %>
 		</div>	
-			<div id="user-stats" class="inline-container m-vert-big">
+			<div id="user-stats" class="m-vert-big">
 				<div class="m-hor-big">
 					<%= image_tag "question.svg", :class => "info-icon" %>
 					<%= @user.question_count %> questions

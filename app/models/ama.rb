@@ -26,6 +26,10 @@ class Ama < ActiveRecord::Base
 		comments.where(comment_type: "reply").count
 	end
 
+	def heat
+		comments.pluck(:score).reduce(:+)
+	end
+
 
 	def questions
 		comments.where(comment_type: "question").order('score desc')

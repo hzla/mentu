@@ -28,7 +28,12 @@ include Clearance::User
 	end
 
 	def avatar_url
-		avatar.url.gsub("s3.", "s3-ap-northeast-1.")
+		if avatar.blank?
+			'profileplaceholder.svg'
+		else
+			# avatar.url.gsub("s3.", "s3-ap-northeast-1.")
+			'profileplaceholder.svg'
+		end
 	end
 
 	def question_count

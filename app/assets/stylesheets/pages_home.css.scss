@@ -26,10 +26,12 @@
 #landing-main {
 	height: calc(100vh - 80px);
 	width: 100vw;
-	color: $greydark;
+	color: white;
 	text-align: center;
 	position: relative;
 	overflow-x: hidden;
+	background: image-url("backgroundhorse.jpg");
+	background-size: cover;
 }
 
 #landing-content {
@@ -65,12 +67,6 @@
 
 @media (min-width: 1024px) {
 	body {
-		#video {
-			display: block;
-		}
-		#landing-main {
-			background: rgba(255,255,255,.85);
-		}
 		#landing-main.signed-in-main .landing-message {
 			margin-left: 0px;
 		}
@@ -102,9 +98,10 @@
 
 #landing-ama {
 	background: white;
-	z-index: 2;
+	z-index: 0;
 	position: relative;
 	height: 100vh;
+	margin-top: -5px;
 }
 
 .amas-container {
@@ -166,7 +163,7 @@
 		.ama-header-tab {
 			height: 30px;
 			line-height: 30px;
-			margin-top: 0px;
+			margin-top: 5px;
 		}
 	}
 }
@@ -236,7 +233,7 @@
 			width: 90%;
 		}
 		.ama-mentor-info {
-			width: calc(100% - 80px);
+			width: calc(100% - 100px);
 		}
 		.ama-sub-info.p-full {
 			padding-top: 0px;

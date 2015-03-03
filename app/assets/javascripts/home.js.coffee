@@ -8,9 +8,15 @@ Home =
     $('body').on 'click', '#close-login', @closeLogInModal
     $('body').on 'click', '#got-it', @closeWelcome
     $('body').on 'submit', '#new_user', @checkFields
+    $('body').on 'click', 'textarea, input, .upvote-container', @forceSignUp
     $(window).on 'scroll', @makeAmasScrollable if $('.amas-container').length > 0
     
     @startScrollHeight = $('#landing-main').height()
+
+  forceSignUp: ->
+    console.log "forced"
+    if $('.current-user-name').length < 1 
+      $('#sign-up').click()
 
   checkFields: ->
     emptyName = $('#user_name').val() == ""
@@ -29,10 +35,13 @@ Home =
 
   makeAmasScrollable: ->
     console.log Home.startScrollHeight
-    if $(window).scrollTop() + 5 > Home.startScrollHeight 
+    if $(window).scrollTop() + 1 > Home.startScrollHeight 
       $('.amas-container').css 'overflow-y', 'scroll'
+      $('#landing-ama').css('z-index', '2')
     else
       $('.amas-container').css 'overflow-y', 'hidden'
+      $('#landing-ama').css('z-index', '0')
+
 
   closeWelcome: ->
     $('#welcome').hide()

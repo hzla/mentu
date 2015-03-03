@@ -7,7 +7,7 @@ module ApplicationHelper
 		if current_user
 			current_user.avatar_url
 		else
-			"missing.png"
+			"profileplaceholder.svg"
 		end
 	end
 

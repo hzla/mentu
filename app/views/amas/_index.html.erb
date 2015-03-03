@@ -1,9 +1,9 @@
 <% @amas.each do |date, amas| %>
 	<div class="amas-date m-top-very-big title bold"><%= date %></div>
-	<div class="amas p-hor-big">
+	<div class="amas">
 		<% amas.each do |ama| %>
 			<%= link_to ama_path(ama) do %>
-				<div class="ama m-vert-very-big muscle">
+				<div class="ama m-vert-very-big flex">
 					<%= image_tag ama.user.avatar_url, :class => "ama-pic m-right-big" %>
 					<div class="ama-main-info p-bottom">
 						<div class="ama-mentor-info bold"><%= ama.one_liner %></div>
