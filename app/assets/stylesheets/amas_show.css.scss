@@ -167,6 +167,7 @@ body {
 
 .question-body {
 	width: calc(100% - 40px);
+	overflow-x: hidden;
 }
 
 .upvote-container {
@@ -239,6 +240,11 @@ body {
 .reply-body, .comment, .user-comment-form {
 	padding-left: 55px;
 }
+
+.reply-body, .comment-body{
+	overflow-x: hidden;
+}
+
 
 @media (min-width: 1024px) {
 	body {
