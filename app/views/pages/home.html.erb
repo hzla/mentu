@@ -42,9 +42,9 @@
 
 
 <section id="landing-ama">
-	<div id="ama-header" class="inline-container">
+	<div id="ama-header">
 		<div id="ama-header-content">
-			<div id="ama-header-tabs" class="inline-container no-desk bold">
+			<div id="ama-header-tabs" class="flex-parent no-desk bold">
 				<%= link_to amas_path(category: "all"), remote: true, :class => "ama-header-link" do %>
 					<div class="ama-header-tab active" id="all">
 						All
@@ -62,7 +62,7 @@
 				<% end %>
 			</div>
 
-			<div id="ama-header-tabs" class="inline-container no-mobile bold">
+			<div id="ama-header-tabs" class="flex-parent no-mobile bold">
 				<%= link_to amas_path(category: "all"), remote: true, :class => "ama-header-link" do %>
 					<div class="ama-header-tab active" id="all">
 						All
