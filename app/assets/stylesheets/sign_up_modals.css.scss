@@ -13,10 +13,6 @@
 	overflow-y:	scroll;
 }
 
-#welcome {
-	background: image_url('signupmodalbg.jpg');
-}
-
 .modal-content {
 	width: 100%;
 	margin: 0 auto;
@@ -24,10 +20,6 @@
 	transform: translateY(-50%);
 	position: absolute;
 	top: 50%;
-}
-
-#signup-message {
-	padding-top: 60px;
 }
 
 #close-modal, #close-login {
@@ -98,6 +90,7 @@
 			width: 660px;
 			margin: 0 auto;
 			position: relative;
+			padding: 0;
 		}
 		#desk-separator {
 			height: 300px;
@@ -122,26 +115,34 @@
 	}
 }
 
+#signup-content {
+	padding: 0 10px 0 10px;
+}
+
 /**************** How it Works *********************/
 
 @media (min-width: 1024px) {
 	#welcome-info {
 		width: 780px;
-		margin: 20px auto;
+		margin: 15px auto 20px auto;
+		display: flex;
+
+		.bigsub{
+			padding-bottom: 30px;
+		}
 	}
 	#how-it-works, #guidelines {
 		width: 380px;
 		text-align: left;
-
 	}
 	#guidlines {
-		margin-left: 20px;
+		margin: auto;
 	}
 
 	#got-it {
 		width: 300px;
 		height: 60px;
 		line-height: 60px;
-		margin: 40px auto;
+		margin: 26px auto;
 	}
 }

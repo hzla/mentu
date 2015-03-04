@@ -213,7 +213,7 @@
 			text-align: center;
 		}
 		#amas-content {
-			width: 960px;
+			width: 980px;
 			margin-left: calc(50% - 480px);
 		}
 		.ama-pic {
@@ -264,4 +264,10 @@
 			background: $redlight;
 		}
 	}
+}
+
+.ama {
+	position: relative;
+	padding: 10px;
+	box-sizing: border-box;
 }
