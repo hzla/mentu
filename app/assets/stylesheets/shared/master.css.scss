@@ -4,6 +4,10 @@
 // repeating non list elements have their padding and margins set in scss
 // padding and margin changes from mobile to desktop are done in scss media queries
 
+// body div{
+//   border: 1px solid black;
+// }
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -23,7 +27,7 @@
      font-family: open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif
 }
 
-:-ms-input-placeholder {  
+:-ms-input-placeholder {
    color: $greymid;
      font-family: open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif
 }
