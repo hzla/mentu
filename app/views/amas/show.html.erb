@@ -54,7 +54,7 @@
 				<%= f.submit "Post", id: "submit-comment", :class => "btn red-btn normal" %>
 			<% end %>
 		</div>
-		<div id="questions-sort-bar" class="hidden">
+		<div id="questions-sort-bar" class="inline-container no-mobile bigsub hidden">
 			<div>Sort questions by:</div>
 			<div class="sort-option m-hor-big p-hor bold" id="sort-new">New</div>
 			<div class="sort-option active p-hor bold" id="sort-popular">Popular</div>
@@ -69,10 +69,8 @@
 		<div id="right-sidebar-container" class="no-mobile main-right">
 			<div class="background-container m-top-very-big">
 				<div class="bold">FOLLOW ME</div>
-				<div class="background m-vert inline-container">
-					<% ["lightgrey", "beige", "lightblue", "green", "blue"].each do |color| %>
-						<div class="follow-box <%= color + "-bg" %>"></div>
-					<% end %>
+				<div class="background m-vert inline-container" data-counter="<%= @mentor.link_click_count %>" data-user-id="<%= @mentor.id %>">
+					<%= @ama.background %>
 				</div>
 			</div>
 			<div class="featured m-top-very-big">
@@ -144,4 +142,7 @@
         $img.replaceWith($svg);
     }, 'xml');
   });
+  <% if @ama.background_url %>
+	  $('#ama-cover').css('background', 'url(<%= @ama.background_url %>)').css('background-size', 'cover')
+  <% end %>
 </script>

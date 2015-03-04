@@ -27,6 +27,12 @@
 	width: 100%;
 }
 
+.code-input {
+	border: 1px solid red;
+  width: 100%;
+  border-radius: 5px;
+}
+
 
 .user-links {
 	.follow-box {
@@ -76,6 +82,10 @@
 			position: absolute;
 			top: 43px;
 			left: calc(50% - 470px);
+		}
+		.code-input {
+			width: 200px;
+			height: 40px;
 		}
 		#user-container #preview {
 			height: 120px;

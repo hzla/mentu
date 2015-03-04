@@ -56,7 +56,7 @@
 				When you’re done filling out your info, click the Submit button below and we’ll let you know once we’ve approved everything.
 			</div>
 
-			<% if @ama.checking_approval %>
+			<% if @ama.checking_approval && !@ama.approved %>
 				<div id="submit-ama" class="btn blue-btn bold"> 
 					Pending Approval...
 				</div>
@@ -68,7 +68,7 @@
 				<% end %>
 			<% else %>
 				<div id="submit-ama" class="btn blue-btn bold"> 
-					Approved!
+					Approved! (editing locked)
 				</div>
 			<% end %>
 		</div>
@@ -76,7 +76,7 @@
 			<div class="background-container m-top-very-big">
 				<div class="bold">Relevant Links</div>
 				<div class="ama-background m-vert">
-				<%= best_in_place @ama, :description, type: :textarea, place_holder: "Write a longer description that gives an idea of what your background is. Click here to edit." %>
+				<%= best_in_place @ama, :background, type: :textarea, place_holder: "Write a longer description that gives an idea of what your background is. Click here to edit." %>
 				</div>
 			</div>
 		</div>
@@ -104,5 +104,8 @@
   $("#user_avatar").change(function(){
       readURL(this);
   });
+  <% if @ama.background_url %>
+	  $('#ama-cover').css('background', 'url(<%= @ama.background_url %>)').css('background-size', 'cover')
+  <% end %>
 
 </script>

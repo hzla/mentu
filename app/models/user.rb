@@ -4,6 +4,7 @@ include Clearance::User
 	has_many :authorizations
 	has_many :amas
 	has_many :comments
+	has_many :codes
 	has_attached_file :document
 	has_attached_file :avatar
 	validates_attachment :document, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
@@ -11,7 +12,7 @@ include Clearance::User
 
 	attr_accessible(:one_liner, :background, :avatar, :password, :document, :role, :essay,
 	:name, :email, :profile_pic_url, :school, :dream_school, :timezone, 
-	:major, :app_response, :video_url, :twitter, :weibo, :facebook, :wechat, :github)
+	:major, :app_response, :video_url, :twitter, :weibo, :facebook, :wechat, :github, :follow_me, :link_click_count)
 
 	def self.create_with_facebook auth_hash
 		timezone = auth_hash.extra.raw_info.timezone
@@ -46,6 +47,12 @@ include Clearance::User
 
 	def like_count
 		!amas.empty? ? amas.pluck(:like_count).reduce(:+) : 0
+	end
+
+	def activated?
+		codes.count > 0
+		#UNCOMMENT THE LINE BELOW THIS TO TURN OFF THE CODE REQUIREMENT
+		#true
 	end
 
 end

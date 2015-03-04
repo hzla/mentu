@@ -10,22 +10,22 @@
 
 ::-webkit-input-placeholder {
    color: $greymid;
-   font-family: “open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif”
+   font-family: open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif
 }
 
 :-moz-placeholder { /* Firefox 18- */
    color: $greymid;
-     font-family: “open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif”
+     font-family: open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
    color: $greymid;
-     font-family: “open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif”
+     font-family: open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif
 }
 
 :-ms-input-placeholder {  
    color: $greymid;
-     font-family: “open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif”
+     font-family: open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif
 }
 
 #dp_swf_engine {
@@ -147,7 +147,7 @@ a {
 }
 
 body div {
-	font-family: “open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif”;
+	font-family: open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	color: $greydark;
 	line-height: 1.4;
@@ -229,22 +229,22 @@ body div {
 		}
 
 		.title {
-			font: normal normal 600 30px/normal “open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif”;
+			font: normal normal 600 30px/normal open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif;
 			line-height: 1.4;
 		}
 
 		.bigsub {
-			font: normal normal 300 20px/normal “open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif”;
+			font: normal normal 300 20px/normal open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif;
 			line-height: 1.4;
 		}
 
 		.normal {
-			font: normal normal 300 16px/normal “open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif”;
+			font: normal normal 300 16px/normal open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif;
 			line-height: 1.4;
 		}
 
 		.small {
-			font: normal normal 300 14px/normal “open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif”;
+			font: normal normal 300 14px/normal open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif;
 		}
 	}
 }
@@ -255,21 +255,21 @@ body div {
 }
 
 .title {
-	font: normal normal 300 17px/normal “open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif”;
+	font: normal normal 300 17px/normal open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif;
 	line-height: 1.4;
 }
 
 .bigsub {
-	font: normal normal 300 17px/normal “open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif”;
+	font: normal normal 300 17px/normal open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif;
 	line-height: 1.4;
 }
 
 .normal {
-	font: normal normal 300 15px/normal “open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif”;
+	font: normal normal 300 15px/normal open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif;
 }
 
 .small {
-	font: normal normal 300 12px/normal “open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif”;
+	font: normal normal 300 12px/normal open sans, 'Hiragino Sans GB', 'Microsoft YaHei', 微软黑, STHeiti, 'WenQuanYi Micro Hei', Helvetica, Arial, sans-serif;
 }
 
 a {

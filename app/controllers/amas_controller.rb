@@ -16,7 +16,7 @@ class AmasController < ApplicationController
 
 	def update
 		@ama = Ama.find(params[:id])
-		@ama.update_attributes params[:ama]
+		@ama.update_attributes params[:ama] if !@ama.approved
 		render nothing: true;
 	end
 

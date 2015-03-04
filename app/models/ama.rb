@@ -2,13 +2,14 @@ class Ama < ActiveRecord::Base
 	belongs_to :user
 	has_many :comments
 	attr_accessible(:approved, :checking_approval, :mentor_code, :mentor_url, :category, :user_id, :start_time,
-	 :question_count, :like_count, :answer_count, :desc, :one_liner, :description, :background)
+	 :question_count, :like_count, :answer_count, :desc, :one_liner, :description, :background, :show,
+	 :background_url)
 	after_create :generate_mentor_url
 
 
 	def self.date_grouped_amas category
 		amas = (category == "all") ? Ama.all : where(category: category)
-		grouped = amas.where('start_time < (?)', Time.now + 24.hours).order(:start_time).reverse.group_by do |ama| 
+		grouped = amas.where(show: true).where('start_time < (?)', Time.now + 24.hours).order(:start_time).reverse.group_by do |ama| 
 			time = ama.start_time.strftime("%B %-d") 
 			if ama.start_time.strftime("%B %-d") == Time.now.strftime("%B %-d")
 				time = "Today"

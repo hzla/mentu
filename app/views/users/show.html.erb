@@ -15,7 +15,7 @@
 		<div class="user-main-info m-hor">
 			<div id="user-name" class="bold"><%= @user.name %></div>
 			<% if @edit_mode %>
-				<div id="user-one-liner" class="m-vert"><%= best_in_place @user, :one_liner, type: :input, place_holder: "Write a short one liner that tells people about yourself.", activator: '#edit-one-liner' %></div>
+				<div id="user-one-liner" class="m-vert"><%= best_in_place @user, :one_liner, type: :input, place_holder: "What school do you go to? Or what do you do?", activator: '#edit-one-liner' %></div>
 				<div class="red m-vert edit-text" id="edit-one-liner">edit</div>
 			<% else %>
 				<div id="user-one-liner" class="m-vert"><%= @user.one_liner %></div>
@@ -54,7 +54,7 @@
 		</div>
 		<div class="m-vert" id="user-background">
 			<% if @edit_mode %>
-				<%= best_in_place @user, :background, type: :textarea, place_holder: "Write a longer description that gives an idea of what your background is.", activator: '#edit-background' %>
+				<%= best_in_place @user, :background, type: :textarea, place_holder: "Let people know a bit about who are you, your interests, or what you like to do.", activator: '#edit-background' %>
 			<% else %>
 				<%= @user.background %>
 			<% end %>
@@ -69,28 +69,32 @@
 				<% end %>
 			<% end %>
 		</div>
+
+		<% if @edit_mode && !current_user.activated? %>
+			<div class="user-activation m-vert-big">
+				<div class="activation-text bold red">
+					We are currently in a beta, your account has not yet been activated.
+					Please enter your activation code below to unlock upvoting and posting.
+				</div>
+				<%= form_tag activate_path, id: "activation-form", remote: true do %>
+					<%= text_field_tag :code, nil, placeholer: "Enter code here", :class => "code-input m-vert" %>
+					<%= submit_tag "submit", :class => "hidden" %>
+				<% end %>
+			</div>
+		<% end %>
 	</div>
 	<div id="user-follow-me" class="p-full">
 		<div class="user-info-header bold m-vert-big">
 			Follow Me
 			<% if @edit_mode %>
-				<span class="red m-left-big edit-text">Tap text to edit</span>
+				<span class="red m-left-big edit-text" id="edit-follow-me">edit</span>
 			<% end %>
 		</div>
-		<div class="user-links">
-			<% [["lightgrey", "github"], ["beige", "weibo"], ["lightblue", "twitter"], ["green", "wechat"], ["blue", "facebook"]].each do |color, link| %>
-				<div class="user-link-row">
-					<%= link_to @user.send(link.to_sym) do %>
-						<div class="follow-box <%= color + "-bg" %> inline m-vert"></div>
-					<% end %>
-					<div class="user-link-text inline m-half">
-						<% if @edit_mode %>
-							<%= best_in_place @user, link.to_sym, type: :input, place_holder: "#{link.capitalize} url" %>
-						<% else %>
-							<%= @user.send(link.to_sym) || "Nothing here yet." %>
-						<% end %>
-					</div>
-				</div>
+		<div class="user-links" data-counter="<%= @user.link_click_count %>" data-user-id="<%= @user.id %>">
+			<% if @edit_mode %>
+				<%= best_in_place @user, :follow_me, type: :textarea, place_holder: "Enter any relevant links about yourself here.",activator: '#edit-follow-me' %>
+			<% else %>
+				<%= @user.follow_me || "Nothing here yet." %>
 			<% end %>
 		</div>
 	</div>

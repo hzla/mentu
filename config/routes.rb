@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
   resources :users
+  post '/activate', to: "users#activate", as: "activate" 
 
   ['help', 'contact', 'faq', 'about', 'terms', 'opentok'].each do |page|
     get "/#{page}", to: ("pages#" + "#{page}"), as: page 
@@ -17,9 +18,6 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback', :to => 'sessions#facebook_create'
   get '/auth/failure', :to => 'sessions#failure'
   get '/logout', :to => 'sessions#destroy', as: "logout"
-
-
-  get '/admin', to: 'admins#index'
-  get '/admin/users/:id', to: "admins#show", as: 'admin_user'
+  mount Upmin::Engine => '/admin'
 
 end

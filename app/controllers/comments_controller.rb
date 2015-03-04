@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 
 
 	def create #test this
-		if current_user 
+		if current_user  && current_user.activated?
 			comment = Comment.create params[:comment]
 			current_user.comments << comment
 			comment.attempt_upvote_from current_user
@@ -17,6 +17,8 @@ class CommentsController < ApplicationController
 			else #response to the reply from mentor
 				render partial: 'comment', locals: {comment: comment} and return
 			end
+		else
+			render "not activated yet"
 		end
 	end
 

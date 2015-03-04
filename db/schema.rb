@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211073950) do
+ActiveRecord::Schema.define(version: 20150304060114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,11 +33,20 @@ ActiveRecord::Schema.define(version: 20150211073950) do
     t.string   "background"
     t.boolean  "checking_approval"
     t.boolean  "approved"
+    t.boolean  "show",              default: false
+    t.string   "background_url"
   end
 
   create_table "authorizations", force: true do |t|
     t.integer "user_id"
     t.string  "uid"
+  end
+
+  create_table "codes", force: true do |t|
+    t.string   "body"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "comments", force: true do |t|
@@ -86,6 +95,8 @@ ActiveRecord::Schema.define(version: 20150211073950) do
     t.string   "twitter"
     t.string   "wechat"
     t.string   "facebook"
+    t.string   "follow_me"
+    t.integer  "link_click_count",                  default: 0
   end
 
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
