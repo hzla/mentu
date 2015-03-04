@@ -8,6 +8,13 @@
 	width: 100%;
 	z-index: 1;
 }
+
+#main-header-content{
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+
 #main-header.outlined {
 	background: white;
 	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
@@ -15,17 +22,11 @@
 }
 
 .logo {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 85px;
 	height: 30px;
 }
 
 #main-header-actions-right {
-	position: absolute;
-	top: 0;
-	right: 0;
+	margin-left: auto;
 }
 
 #sign-up {
@@ -44,19 +45,27 @@
 	z-index: 20;
 }
 
+#login{
+	width: 70px;
+}
+
 @media (min-width: 1024px) {
 	body {
 		#main-header {
 			height: 60px;
 		}
+		#main-header-content{
+			width: 960px;
+			margin: 0 auto;
+			height: 100%;
+		}
 		#main-header-actions-right {
 			margin-right: calc(50% - 480px);
 		}
-		.logo.m-half {
+		.logo {
 			height: 40px;
-			width: 115px;
 			margin-left: calc(50% - 480px);
-			margin-top: 10px;
+
 		}
 		#sign-up {
 			width: 106px;

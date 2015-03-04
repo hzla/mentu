@@ -4,9 +4,10 @@
 // repeating non list elements have their padding and margins set in scss
 // padding and margin changes from mobile to desktop are done in scss media queries
 
-// body div{
-//   border: 1px solid black;
-// }
+body div{
+  border: 1px solid black;
+  box-sizing: border-box;
+}
 
 ::-webkit-scrollbar {
     display: none;
