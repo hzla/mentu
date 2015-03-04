@@ -38,7 +38,7 @@ gem 'omniauth-facebook'
 gem 'clearance'
 
 
-# Uploading 
+# Uploading
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk'
 
@@ -56,22 +56,21 @@ gem 'unicorn'
 # Deploy with Capistrano
 gem "net-ssh", "~> 2.7.0"
 gem 'capistrano', '~> 2.15'
-gem "rvm-capistrano", require: false
+gem "rvm-capistrano"
 gem 'rails-web-console', require: 'rails_web_console/engine'
 
 
-#testing 
+#testing
 
 group :development, :test do
 	gem 'rspec-rails'
 	gem 'factory_girl_rails'
 end
 
-group :test do 
+group :test do
 	gem 'capybara'
 	gem 'database_cleaner'
 	gem 'selenium-webdriver'
 	gem 'shoulda-matchers'
 	gem 'mocha'
 end
-
