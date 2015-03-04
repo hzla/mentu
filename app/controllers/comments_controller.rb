@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
 			if comment.comment_type == "question" #top level question
 				render partial: "show", locals: {question: comment} and return
 			elsif comment.comment_type == "reply" #reply from mentor
+				UserMailer.comment(comment.root.user, current_user, comment).deliver
 				render partial: "reply", locals: {reply: comment} and return
 			else #response to the reply from mentor
 				render partial: 'comment', locals: {comment: comment} and return

@@ -9,6 +9,7 @@ include Clearance::User
 	has_attached_file :avatar
 	validates_attachment :document, :content_type => { :content_type => %w(application/pdf application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document) }
 	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+	after_update :notify_mentorship
 
 	attr_accessible(:one_liner, :background, :avatar, :password, :document, :role, :essay,
 	:name, :email, :profile_pic_url, :school, :dream_school, :timezone, 
@@ -25,7 +26,7 @@ include Clearance::User
 	end
 
 	def is_mentor
-		role == "mentor"
+		role == "mentor" || role == "admin"
 	end
 
 	def avatar_url
@@ -54,6 +55,19 @@ include Clearance::User
 		#UNCOMMENT THE LINE BELOW THIS TO TURN OFF THE CODE REQUIREMENT
 		#true
 	end
+
+	def self.notify_all
+		all.each do |user|
+			UserMailer.daily_ama(user).deliver
+		end
+	end
+
+	def notify_mentorship
+		if role_changed? && role == "mentor"
+			UserMailer.mentor_promotion(self).deliver
+		end
+	end
+
 
 end
 

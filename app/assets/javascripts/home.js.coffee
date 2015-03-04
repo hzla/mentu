@@ -14,9 +14,8 @@ Home =
     @startScrollHeight = $('#landing-main').height()
 
   forceSignUp: ->
-    console.log "forced"
     if $('.current-user-name').length < 1 
-      $('#sign-up').click()
+      Home.showSignUpModal()
 
   checkFields: ->
     emptyName = $('#user_name').val() == ""

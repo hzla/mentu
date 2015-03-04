@@ -5,6 +5,7 @@ class Ama < ActiveRecord::Base
 	 :question_count, :like_count, :answer_count, :desc, :one_liner, :description, :background, :show,
 	 :background_url)
 	after_create :generate_mentor_url
+	after_update :send_notification_after_review
 
 
 	def self.date_grouped_amas category
@@ -19,6 +20,11 @@ class Ama < ActiveRecord::Base
 		grouped
 	end 
 
+	def self.current
+		where(show: true).select do |ama|
+			ama.start_time.day == Time.now.day
+		end
+	end
 	def question_count
 		comments.where(comment_type: "question").count
 	end
@@ -47,4 +53,16 @@ class Ama < ActiveRecord::Base
 		code = characters.map {|c| characters.sample}
 		code.join[0..15]
 	end
+
+	private
+
+	def send_notification_after_review
+		if approved_changed? && approved
+			UserMailer.ama_approval(user, self).deliver
+		end 
+		if show_changed? && show
+			UserMailer.ama_publishing(user, self).deliver
+		end
+	end
+
 end

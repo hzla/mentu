@@ -1,6 +1,7 @@
 class AmasController < ApplicationController
 	include SessionsHelper
 
+
 	def show
 		@ama = Ama.find(params[:id])
 		@user = User.new

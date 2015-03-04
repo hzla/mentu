@@ -65,7 +65,7 @@
 		<div class="user-amas m-vert underlined">
 			<% @user.amas.order(:start_time).each do |ama| %>
 				<%= link_to ama_path(ama), :class => "user-ama-link blue" do %>
-					<%= ama.start_time.strftime("%B %-d") %>
+					<%= ama.start_time.strftime("%B %-d") %><br>
 				<% end %>
 			<% end %>
 		</div>

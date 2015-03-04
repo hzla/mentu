@@ -238,7 +238,7 @@ body {
 }
 
 .reply-body, .comment, .user-comment-form {
-	padding-left: 55px;
+	padding-left: 60px;
 }
 
 .reply-body, .comment-body{
@@ -250,6 +250,7 @@ body {
 	body {
 		.reply-body {
 			padding-left: 60px;
+			padding-right: 40px;
 		}
 		.header-text-info > * {
 			display: inline-block;

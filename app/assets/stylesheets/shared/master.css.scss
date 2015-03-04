@@ -8,9 +8,19 @@
 //   border: 1px solid black;
 // }
 
-::-webkit-scrollbar {
+body {
+	overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
+}
+
+input {
+    -webkit-appearance: none;
+}
+
+div::-webkit-scrollbar {
     display: none;
 }
+
 
 ::-webkit-input-placeholder {
    color: $greymid;

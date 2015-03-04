@@ -1,8 +1,8 @@
 <div class="comment">
 	<div class="comment-header flex">
-		<%= image_tag comment.user.profile_pic_url, :class => "comment-pic m-top" %>
+		<%= image_tag comment.user.profile_pic_url, :class => "comment-pic m-top-big" %>
 		<div class="header-text-info p-full inline">
-			<div class="bold header-name inline"><%= comment.user.name %></div>
+			<div class="bold <%= 'blue' if comment.user.is_mentor %> header-name inline"><%= comment.user.name %></div>
 			<div class="header-heat inline p-hor">432 heat</div>
 			<div class="header-school grey p-vert"><%= comment.user.school[0..30] if comment.user.school %></div>
 			<div class="upvote-container">

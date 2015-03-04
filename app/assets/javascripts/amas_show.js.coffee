@@ -39,9 +39,13 @@ Ama =
     if $(window).scrollTop() + 1 > Ama.startScrollHeight
       $('#questions').css 'overflow-y', 'scroll'
       $('#main-header').addClass('outlined')
+      $('.menu-arrow.black').show()
+      $('.menu-arrow.white').hide()
     else
       $('#questions').css 'overflow-y', 'hidden'
       $('#main-header').removeClass('outlined')
+      $('.menu-arrow.black').hide()
+      $('.menu-arrow.white').show()
 
   deleteComments: (event, data) ->
     $(@).parents(".admin-actions").parent().hide()

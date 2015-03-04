@@ -24,7 +24,8 @@
 					</div>
 					<%= image_tag current_user.avatar_url, :class => "current-user-pic m-half no-mobile" %>
 				<% end %>
-				<%= image_tag "menudeskwhite.svg", :class => "m-half no-mobile menu-arrow" %>
+				<%= image_tag "menudeskwhite.svg", :class => "m-half no-mobile menu-arrow svg white" %>
+				<%= image_tag "menudeskblack.svg", :class => "m-half no-mobile menu-arrow svg black" %>
 				<%= image_tag "menumobile.svg", :class => "m-full mobile-menu no-desk" %>
 				<div id="menu" class="hidden">
 					<%= link_to user_path(current_user) do %>
@@ -38,7 +39,7 @@
 						</div>
 					<% end %>
 					<% if current_admin %>
-						<%= link_to user_path(current_user) do %>
+						<%= link_to '/admin' do %>
 							<div class="menu-item">
 								Admin Panel
 							</div>

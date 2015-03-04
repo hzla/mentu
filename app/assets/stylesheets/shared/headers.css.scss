@@ -17,7 +17,7 @@
 .logo {
 	position: absolute;
 	top: 0;
-	left: calc(50% - 480px);
+	left: 0;
 	width: 85px;
 	height: 30px;
 }
@@ -39,6 +39,12 @@
 	cursor: pointer;
 }
 
+.menu-arrow.black {
+	g, path {
+		fill: $greydark;
+	}
+}
+
 .mobile-menu {
 	height: 25px;
 	z-index: 20;
@@ -52,7 +58,7 @@
 		#main-header-actions-right {
 			margin-right: calc(50% - 480px);
 		}
-		.logo.m-half {
+		.logo.m-full {
 			height: 40px;
 			width: 115px;
 			margin-left: calc(50% - 480px);
@@ -92,6 +98,9 @@
 		.current-user-name {
 			height: 60px;
 			line-height: 60px;
+		}
+		.menu-arrow.m-half {
+			margin-top: 27px;
 		}
 	}
 }

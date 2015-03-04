@@ -54,14 +54,14 @@
 				<%= f.submit "Post", id: "submit-comment", :class => "btn red-btn normal" %>
 			<% end %>
 		</div>
-		<div id="questions-sort-bar" class="inline-container no-mobile bigsub hidden">
+	</div>
+
+	<div class="main">
+		<div id="questions-sort-bar" class="inline-container no-mobile bigsub">
 			<div>Sort questions by:</div>
 			<div class="sort-option m-hor-big p-hor bold" id="sort-new">New</div>
 			<div class="sort-option active p-hor bold" id="sort-popular">Popular</div>
 		</div>
-	</div>
-
-	<div class="main">
 		<div id="questions" class="main-left">
 			<%= render partial: "comments/index" %>
 		</div>
@@ -75,13 +75,15 @@
 			</div>
 			<div class="featured m-top-very-big">
 				<div class="bold m-vert-big">AMAS OF THE DAY</div>
-				<% (1..2).each do |ama| %>
-					<div class="featured-ama">
-						<%= image_tag current_avatar, :class => "comment-pic" %>
-						<div class="featured-desc inline m-bottom-big">
-							<%= User.last.app_response %>
+				<% Ama.current.each do |ama| %>
+					<%= link_to ama_path(ama) do %>
+						<div class="featured-ama flex">
+							<%= image_tag current_avatar, :class => "comment-pic" %>
+							<div class="featured-desc m-bottom-big m-left">
+								<%= ama.description %>
+							</div>
 						</div>
-					</div>
+					<% end %>
 				<% end %>
 			</div>
 			<div class="sidebar-footer">
