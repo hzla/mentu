@@ -12,14 +12,14 @@ include Clearance::User
 	after_update :notify_mentorship
 
 	attr_accessible(:one_liner, :background, :avatar, :password, :document, :role, :essay,
-	:name, :email, :profile_pic_url, :school, :dream_school, :timezone, 
+	:name, :email, :profile_pic_url, :school, :dream_school, :timezone,
 	:major, :app_response, :video_url, :twitter, :weibo, :facebook, :wechat, :github, :follow_me, :link_click_count)
 
 	def self.create_with_facebook auth_hash
 		timezone = auth_hash.extra.raw_info.timezone
 		profile = auth_hash['info']
 		fb_token = auth_hash.credentials.token
-		user = User.new name: profile["name"], profile_pic_url: profile["image"], timezone: timezone, email: profile["email"], password: rand(1213920) 
+		user = User.new name: profile["name"], profile_pic_url: profile["image"], timezone: timezone, email: profile["email"], password: rand(1213920)
     user.authorizations.build :uid => auth_hash["uid"]
     binding.pry
     user if user.save
@@ -70,4 +70,3 @@ include Clearance::User
 
 
 end
-

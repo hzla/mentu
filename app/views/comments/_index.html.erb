@@ -1,5 +1,5 @@
 <% @questions.each do |question| %>
-	<div class="question-thread p-hor-bid p-top-big" data-score="<%= question.score %>" data-time="<%= question.elapsed_time %>" >
+	<div class="question-thread p-hor-big p-top-big" data-score="<%= question.score %>" data-time="<%= question.elapsed_time %>" >
 		<% if current_admin %>
 			<div class="admin-actions">
 				<%= link_to comment_path(question), method: "delete", remote: true, :class => "admin-delete", data: {confirm: "yo you sure?"} do  %>
