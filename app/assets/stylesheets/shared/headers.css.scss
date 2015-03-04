@@ -50,6 +50,8 @@
 	z-index: 20;
 }
 
+
+
 @media (min-width: 1024px) {
 	body {
 		#main-header {
@@ -101,6 +103,9 @@
 		}
 		.menu-arrow.m-half {
 			margin-top: 27px;
+		}
+		.menu-arrow.black {
+			display: none;
 		}
 	}
 }

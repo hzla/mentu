@@ -119,24 +119,21 @@
 		}
 		#question-form-content {
 			width: 600px;
-			margin-left: calc(50% - 480px);
+			margin-left: calc(50vw - 480px);
 			display: inline-block;
 			height: 100%;
 		}
 		#questions-sort-bar {
-			display: none;
-			margin-left: 20px;
 			text-align: right;
 			vertical-align: bottom;
-			margin-bottom: 20px;
 		}
 		.sort-option {
 			cursor: pointer;
 			border-radius: 5px;
 		}
 		.sort-option.active {
-			background: $red;
-			color: white;
+			text-decoration: underline;
+			color: $red;
 		}
 		#question-form #comment_body {
 			height: 40px;
