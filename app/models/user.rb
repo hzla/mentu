@@ -11,7 +11,7 @@ include Clearance::User
 	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 	attr_accessible(:one_liner, :background, :avatar, :password, :document, :role, :essay,
 	:name, :email, :profile_pic_url, :school, :dream_school, :timezone,
-	:major, :app_response, :video_url, :twitter, :weibo, :facebook, :wechat, :github, :follow_me, :link_click_count)
+	:major, :app_response, :video_url, :twitter, :weibo, :facebook, :wechat, :github, :follow_me, :link_click_count, :rec_list)
 
 	after_update :notify_mentorship
 
@@ -27,6 +27,10 @@ include Clearance::User
 
 	def is_mentor
 		role == "mentor" || role == "admin"
+	end
+
+	def is_beta
+		codes.count > 0
 	end
 
 	def avatar_url

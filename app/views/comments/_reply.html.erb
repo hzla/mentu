@@ -13,7 +13,7 @@
 	</div>
 	<div class="question-mid">
 		<div class="header-text-info">
-			<div class="bold blue header-name inline"><%= reply.user.name %></div>
+			<div class="bold blue header-name inline"><%= reply.user.name %><%= badge(reply.user) %></div>
 			<div class="header-heat inline p-hor">432 heat</div>
 			<div class="header-school grey p-vert"><%= reply.user.school[0..30] if reply.user.school %></div>
 		</div>

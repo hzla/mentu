@@ -3,6 +3,8 @@ Ama =
     $('body').on 'ajax:success', '#question-form', @addQuestion
     $('body').on 'ajax:success', '.reply-form', @addReply
     $('body').on 'ajax:success', '.comment-form', @addComment
+    $('body').on 'mouseenter', '#rec-count', @showRecBox
+    $('body').on 'mouseleave', '#rec-box', @hideRecBox
     $('body').on 'submit', '.reply-form', @showSubmitting
     $('body').on 'ajax:success', '.upvote-link', @upvoteComment
     $(".best_in_place").best_in_place()
@@ -15,6 +17,13 @@ Ama =
     $('body').on 'ajax:success', '#approval-link', @showApproving
     @initCountdown()
     @startScrollHeight = $('#ama-cover').height()
+    @mobile = $(window).width() < 1024
+
+  showRecBox: ->
+    $('#rec-box').show()
+
+  hideRecBox: ->
+    $('#rec-box').hide()
 
   expandBox: ->
     $(@).animate
@@ -40,13 +49,18 @@ Ama =
     if $(window).scrollTop() + 1 > Ama.startScrollHeight
       $('#questions').css 'overflow-y', 'scroll'
       $('#main-header').addClass('outlined')
-      $('.menu-arrow.black').show()
-      $('.menu-arrow.white').hide()
+      if !Ama.mobile
+        console.log "hey"
+        $('.menu-arrow.black').show()
+        $('.menu-arrow.white').hide()
     else
       $('#questions').css 'overflow-y', 'hidden'
       $('#main-header').removeClass('outlined')
-      $('.menu-arrow.black').hide()
-      $('.menu-arrow.white').show()
+      if !Ama.mobile
+        console.log "ho"
+        console.log Ama.mobile
+        $('.menu-arrow.black').hide()
+        $('.menu-arrow.white').show()
 
   deleteComments: (event, data) ->
     $(@).parents(".admin-actions").parent().hide()

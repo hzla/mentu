@@ -1,5 +1,6 @@
 class AmasController < ApplicationController
 	include SessionsHelper
+	include ApplicationHelper
 
 
 	def show
@@ -24,6 +25,14 @@ class AmasController < ApplicationController
 	def index
 		@amas = Ama.date_grouped_amas(params[:category])
 		render partial: "index"	 
+	end
+
+	def recommend
+		if current_mentor
+			@ama = Ama.find(params[:id])
+			@ama.recommend_by current_user
+		end
+		render nothing: true
 	end
 
 end

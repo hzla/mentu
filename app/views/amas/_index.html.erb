@@ -13,7 +13,11 @@
 							<%= ama.description %>
 						</div>
 						<div class="ama-recommendations p-vert blue">
-							<span class= "no-desk">Recs:</span><span class= "no-mobile">Recommended by:
+							<span class= "no-desk">Recs:</span><span class= "no-mobile">Recommended by:</span>
+							<%= ama.recommenders_name %>
+							<% if ama.recommenders.count > 6 %>
+								+ <%= ama.recommenders.count - 6 %> more
+							<% end %>
 						</div>
 						<div class="ama-add-info inline-container p-vert grey">
 							<div class="answer-count">
@@ -27,6 +31,14 @@
 									<%= image_tag "heat.svg", :class => "info-icon" %>
 									<%= ama.like_count %> <span class= "no-mobile">heat</span>
 								</div>
+
+								<% if current_mentor %>
+									<%= link_to recommend_path(ama), :class => "rec-link", remote: true do %>
+										<div class="mobile-rec blue bold no-desk">
+											Recommend<%= "ed" if ama.recommended_by? current_user %>
+										</div>
+									<% end %>
+								<% end %>
 							</div>
 					</div>
 					<div class="ama-right">
@@ -34,6 +46,13 @@
 							<%= image_tag "heat.svg", :class => "info-icon" %>
 							<%= ama.like_count %> <span class= "no-mobile">heat</span>
 						</div>
+						<% if current_mentor %>
+							<%= link_to recommend_path(ama), :class => "rec-link", remote: true do %>
+								<div class="desk-rec blue bold no-mobile">
+									Recommend<%= "ed" if ama.recommended_by? current_user %>
+								</div>
+							<% end %>
+						<% end %>
 					</div>
 				</div>
 			<% end %>

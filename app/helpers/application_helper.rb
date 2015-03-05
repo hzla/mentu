@@ -18,4 +18,13 @@ module ApplicationHelper
 	def current_mentor
 		current_user && current_user.role == "mentor" || current_user && current_user.role == "admin"
 	end
+
+	def badge user
+		if user.is_mentor
+			image_tag("badgementor.svg", :class => "badge")
+		elsif user.is_beta
+			image_tag("badgebeta.svg", :class => "badge")
+		else
+		end
+	end
 end
