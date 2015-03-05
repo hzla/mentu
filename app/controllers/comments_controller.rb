@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 	include SessionsHelper
 	# a 'question' refers to a top level comment asked by a user
 	# a 'reply' refers to a response to a question by a mentor
-	# a 'comment' refers to a response to a reply by a user
+
 
 
 	def create #test this
@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 			current_user.comments << comment
 			comment.attempt_upvote_from current_user
 			if comment.comment_type == "question" #top level question
-				render partial: "show", locals: {question: comment} and return
+				render partial: "show", locals: {question: comment, ama: comment.ama} and return
 			elsif comment.comment_type == "reply" #reply from mentor
 				UserMailer.comment(comment.root.user, current_user, comment).deliver
 				render partial: "reply", locals: {reply: comment} and return

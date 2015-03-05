@@ -273,6 +273,17 @@ div .question-mid {
 	width: 60px;
 }
 
+.reply-form {
+	position: relative;
+}
+
+.posting {
+	position: absolute;
+	top: 50px;
+	display: none;
+	right: 20px;
+}
+
 .user-comment-form {
 	padding-left: 60px;
 }

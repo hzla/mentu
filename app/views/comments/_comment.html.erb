@@ -1,24 +1,48 @@
-<div class="comment">
-	<div class="comment-header flex">
-		<%= image_tag comment.user.profile_pic_url, :class => "comment-pic m-top-big" %>
-		<div class="header-text-info p-full inline">
+<div class="comment flex-parent">
+	<% if current_admin %>
+		<div class="admin-actions">
+			<%= link_to comment_path(comment), method: "delete", remote: true, :class => "admin-delete", data: {confirm: "yo you sure?"} do  %>
+				<div class="delete-thread red">
+					Delete Comment
+				</div>
+			<% end %>
+	</div>
+	<% end %>
+	<div class="question-left">
+		<%= image_tag comment.user.avatar_url, :class => "comment-pic" %>
+	</div>
+	<div class="question-mid">
+		<div class="header-text-info inline">
 			<div class="bold <%= 'blue' if comment.user.is_mentor %> header-name inline"><%= comment.user.name %></div>
 			<div class="header-heat inline p-hor">432 heat</div>
 			<div class="header-school grey p-vert"><%= comment.user.school[0..30] if comment.user.school %></div>
-			<div class="upvote-container">
-				<%= link_to comment_upvote_path(comment), remote: true, :class => "upvote-link active" do %>
-					<%= image_tag "upvoteempty.svg", :class => "upvote-arrow svg" %>
-					<div class="upvote-value grey">
-						<%= comment.score %>
-					</div>
-				<% end %>
+		</div>
+		<div class="reply-body">
+			<%= comment.body %>
+			<div class="comment-timestamp grey p-vert-big">
+				<%= comment.timestamp %>
 			</div>
 		</div>
 	</div>
-	<div class="reply-body">
-		<%= comment.body %>
-		<div class="comment-timestamp grey p-vert-big">
-			<%= comment.timestamp %>
+	<div class="question-right">
+		<% if current_user && comment.upvoted_by?(current_user) %>
+				<div class="upvote-container">
+					<%= link_to comment_upvote_path(comment), remote: true, :class => "upvote-link active" do %>
+						<%= image_tag "upvoteclick.svg", :class => "upvote-arrow svg" %>
+						<div class="upvote-value white">
+							<%= comment.score %>
+						</div>
+					<% end %>
+				</div>
+			<% else %>
+				<div class="upvote-container">
+					<%= link_to comment_upvote_path(comment), remote: true, :class => "upvote-link inactive" do %>
+						<%= image_tag "upvoteempty.svg", :class => "upvote-arrow svg" %>
+						<div class="upvote-value grey">
+							<%= comment.score %>
+						</div>
+					<% end %>
+				</div>
+			<% end %>
 		</div>
-	</div>
 </div>

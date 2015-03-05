@@ -77,7 +77,7 @@
 				<div class="bold m-vert-big">AMAS OF THE DAY</div>
 				<% Ama.current.each do |ama| %>
 					<%= link_to ama_path(ama) do %>
-						<div class="featured-ama flex">
+						<div class="featured-ama flex-parent">
 							<%= image_tag current_avatar, :class => "comment-pic" %>
 							<div class="featured-desc m-bottom-big m-left">
 								<%= ama.description %>

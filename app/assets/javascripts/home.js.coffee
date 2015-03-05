@@ -41,8 +41,7 @@ Home =
       return false
 
   makeAmasScrollable: ->
-    console.log "desk"
-    if $(window).scrollTop() > Home.startScrollHeight 
+    if $(window).scrollTop() + 1 > Home.startScrollHeight 
       $('.amas-container').css 'overflow-y', 'scroll'
       $('#landing-ama').css('z-index', '2')
       $('#main-header').hide()

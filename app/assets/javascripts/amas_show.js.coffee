@@ -130,9 +130,7 @@ Ama =
   showSubmitting: ->
     console.log "blurring"
     $(@).find('textarea').blur()
-    setTimeout ->
-      $(@).find('textarea').val('Posting your answer...')
-    , 500
+    $(@).find('.posting').show()
 
 
 
@@ -142,9 +140,10 @@ Ama =
   	$(@)[0].reset()
   	
   addReply: (event, data) ->
-  	$(@).parents('.mentor-reply-form').after(data)
-  	$(@).parents('.mentor-reply-form').next().addClass('animated fadeIn')
-  	$(@)[0].reset()
+    $(@).parents('.mentor-reply-form').after(data)
+    $(@).find('.posting').hide()
+    $(@).parents('.mentor-reply-form').next().addClass('animated fadeIn')
+    $(@)[0].reset()
 
 
   addQuestion: (event, data) ->

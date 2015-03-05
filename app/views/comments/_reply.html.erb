@@ -1,24 +1,48 @@
-<div class="reply">
-	<div class="comment-header flex">
-		<%= image_tag reply.user.profile_pic_url, :class => "comment-pic m-top-big" %>
-		<div class="header-text-info p-full inline">
+<div class="reply flex-parent">
+	<% if current_admin %>
+		<div class="admin-actions">
+			<%= link_to comment_path(reply), method: "delete", remote: true, :class => "admin-delete", data: {confirm: "yo you sure?"} do  %>
+				<div class="delete-thread red">
+					Delete Reply
+				</div>
+			<% end %>
+		</div>
+	<% end %>
+	<div class="question-left">
+		<%= image_tag reply.user.avatar_url, :class => "comment-pic" %>
+	</div>
+	<div class="question-mid">
+		<div class="header-text-info">
 			<div class="bold blue header-name inline"><%= reply.user.name %></div>
 			<div class="header-heat inline p-hor">432 heat</div>
 			<div class="header-school grey p-vert"><%= reply.user.school[0..30] if reply.user.school %></div>
+		</div>
+		<div class="reply-body">
+			<%= reply.body %>
+			<div class="comment-timestamp grey p-vert-big">
+				<%= reply.timestamp %>
+			</div>
+		</div>
+	</div>
+	<div class="question-right">
+		<% if current_user && reply.upvoted_by?(current_user) %>
 			<div class="upvote-container">
-				<%= link_to comment_upvote_path(reply), remote: true, :class => "upvote-link" do %>
+				<%= link_to comment_upvote_path(reply), remote: true, :class => "upvote-link active" do %>
+					<%= image_tag "upvoteclick.svg", :class => "upvote-arrow svg" %>
+					<div class="upvote-value white">
+						<%= reply.score %>
+					</div>
+				<% end %>
+			</div>
+		<% else %>
+			<div class="upvote-container">
+				<%= link_to comment_upvote_path(reply), remote: true, :class => "upvote-link inactive" do %>
 					<%= image_tag "upvoteempty.svg", :class => "upvote-arrow svg" %>
 					<div class="upvote-value grey">
 						<%= reply.score %>
 					</div>
 				<% end %>
-			</div>		
-		</div>
-	</div>
-	<div class="reply-body">
-		<%= reply.body %>
-		<div class="comment-timestamp grey p-vert-big">
-			<%= reply.timestamp %>
-		</div>
+			</div>
+		<% end %>
 	</div>
 </div>
