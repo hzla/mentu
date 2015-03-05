@@ -22,7 +22,7 @@
 			<% else %>
 				<div id="user-one-liner" class="m-vert"><%= @user.one_liner %></div>
 			<% end %>
-		</div>	
+		</div>
 			<div id="user-stats" class="m-vert-big">
 				<div class="m-hor-big">
 					<%= image_tag "question.svg", :class => "info-icon" %>
@@ -42,7 +42,7 @@
 					<div class="info-icon"></div>
 					<%= @user.like_count %> Recommendations
 				</div>
-			</div>	
+			</div>
 	</div>
 
 
@@ -50,7 +50,7 @@
 <div id="user-info-body" class="flex-parent">
 	<div id="user-sub-info" class="p-full">
 		<div class="user-info-header bold m-bottom-big">
-			Background 
+			Background
 			<% if @edit_mode %>
 				<span class="red m-left-big edit-text" id="edit-background">edit</span>
 			<% end %>
@@ -110,19 +110,46 @@
 	function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
-        
+
         reader.onload = function (e) {
             $('#preview').show()
             $('#upload-photo-text').text('Confirm Photo')
             $('#preview').attr('src', e.target.result);
         }
-        
+
         reader.readAsDataURL(input.files[0]);
     }
   }
-    
+
   $("#user_avatar").change(function(){
       readURL(this);
+  });
+
+  $('img.svg').each(function(){
+    var $img = $(this);
+    var imgID = $img.attr('id');
+    var imgClass = $img.attr('class');
+    var imgURL = $img.attr('src');
+
+    $.get(imgURL, function(data) {
+        // Get the SVG tag, ignore the rest
+        var $svg = $(data).find('svg');
+
+        // Add replaced image's ID to the new SVG
+        if(typeof imgID !== 'undefined') {
+            $svg = $svg.attr('id', imgID);
+        }
+        // Add replaced image's classes to the new SVG
+        if(typeof imgClass !== 'undefined') {
+            $svg = $svg.attr('class', imgClass+' replaced-svg');
+        }
+        // Remove any invalid XML tags as per http://validator.w3.org
+        $svg = $svg.removeAttr('xmlns:a');
+        // Replace image with new SVG
+        $img.replaceWith($svg);
+        $('.menu-arrow.black').show()
+        $('.menu-arrow.white').hide()
+    }, 'xml');
   });
 
 </script>
