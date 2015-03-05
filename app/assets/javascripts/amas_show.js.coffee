@@ -3,6 +3,7 @@ Ama =
     $('body').on 'ajax:success', '#question-form', @addQuestion
     $('body').on 'ajax:success', '.reply-form', @addReply
     $('body').on 'ajax:success', '.comment-form', @addComment
+    $('body').on 'submit', '.reply-form', @showSubmitting
     $('body').on 'ajax:success', '.upvote-link', @upvoteComment
     $(".best_in_place").best_in_place()
     $('body').on 'click', '#sort-new', @sortCommentsByDate
@@ -126,6 +127,14 @@ Ama =
       $(@).addClass('inactive')
       value.css('color', 'darkgrey')
 
+  showSubmitting: ->
+    console.log "blurring"
+    $(@).find('textarea').blur()
+    setTimeout ->
+      $(@).find('textarea').val('Posting your answer...')
+    , 500
+
+
 
   addComment: (event, data) ->
   	$(@).parents('.user-comment-form').before(data)
@@ -139,7 +148,7 @@ Ama =
 
 
   addQuestion: (event, data) ->
-  	$('#questions').prepend(data)
+  	$('#questions-sort-bar').after(data)
   	$('.question-thread').first().addClass('animated fadeIn')
   	$(@)[0].reset()
     

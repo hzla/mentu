@@ -16,14 +16,24 @@
 
 #user-main {
 	background: $greylight;
+	flex-wrap: wrap;
 }
 
 .user-main-info {
 	max-width: calc(100% - 100px);
+	display: block;
+}
+
+#user-info-body {
+	flex-wrap: wrap;
+}
+#user-sub-info, #user-follow-me {
+	display: block;
 }
 
 #user-container #user-stats {
 	text-align: center;
+	margin-top: 20px;
 	width: 100%;
 }
 
@@ -31,6 +41,16 @@
 	border: 1px solid red;
   width: 100%;
   border-radius: 5px;
+}
+
+.form_in_place {
+	input, textarea {
+		border: 1px solid $greymid;
+		border-radius: 5px;
+	}
+	input {
+		height: 30px;
+	}
 }
 
 
@@ -48,6 +68,10 @@
 
 @media (min-width: 1024px) {
 	body {
+		#user-container {
+			padding-top: 60px;
+			background: $greylight;
+		}
 		#user-main{
 			padding-left: calc(50% - 480px);
 			padding-right: calc(50% - 480px);
@@ -61,6 +85,11 @@
 			width: 120px;
 			cursor: pointer;
 		}
+		.form_in_place {
+			input {
+				height: 40px;
+			}
+		}
 		#user-sub-info {
 			padding-left: calc(50% - 480px);
 			display: inline-block;
@@ -69,11 +98,16 @@
 		}
 		.user-main-info {
 			width: calc(100% - 480px);
+			display: block;
 		}
 		#user-container #user-stats {
 			width: 200px;
 			margin: 0px 20px;
 			position: static;
+			.info-icon {
+				width: 30px;
+				display: inline-block;
+			}
 		}
 		#user-container #user_avatar {
 			height: 120px;
@@ -119,9 +153,10 @@
 		}
 		#user-container #user-stats {
 			text-align: left;
+			display: block;
 		}
 		#user-info-body {
-
+			background: white; 
 		}
 	}
 }
