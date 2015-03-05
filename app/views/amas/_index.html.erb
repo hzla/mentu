@@ -35,7 +35,7 @@
 								<% if current_mentor %>
 									<%= link_to recommend_path(ama), :class => "rec-link", remote: true do %>
 										<div class="mobile-rec blue bold no-desk">
-											Recommend<%= "ed" if ama.recommended_by? current_user %>
+											Rec<%= "ed" if ama.recommended_by? current_user %>
 										</div>
 									<% end %>
 								<% end %>

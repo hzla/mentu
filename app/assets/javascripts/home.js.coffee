@@ -44,14 +44,15 @@ Home =
       return false
 
   makeAmasScrollable: ->
-    if $(window).scrollTop() + 1 > Home.startScrollHeight 
-      $('.amas-container').css 'overflow-y', 'scroll'
-      $('#landing-ama').css('z-index', '2')
-      $('#main-header').hide()
-    else
-      $('.amas-container').css 'overflow-y', 'hidden'
-      $('#landing-ama').css('z-index', '0')
-      $('#main-header').show()
+    if $('.amas-container').length > 0
+      if $(window).scrollTop() + 1 > Home.startScrollHeight 
+        $('.amas-container').css 'overflow-y', 'scroll'
+        $('#landing-ama').css('z-index', '2')
+        $('#main-header').hide()
+      else
+        $('.amas-container').css 'overflow-y', 'hidden'
+        $('#landing-ama').css('z-index', '0')
+        $('#main-header').show()
 
 
   closeWelcome: ->

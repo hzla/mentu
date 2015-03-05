@@ -3,8 +3,6 @@ class CommentsController < ApplicationController
 	# a 'question' refers to a top level comment asked by a user
 	# a 'reply' refers to a response to a question by a mentor
 
-
-
 	def create #test this
 		if current_user  && current_user.activated?
 			comment = Comment.create params[:comment]
@@ -14,6 +12,7 @@ class CommentsController < ApplicationController
 				render partial: "show", locals: {question: comment, ama: comment.ama} and return
 			elsif comment.comment_type == "reply" #reply from mentor
 				# UserMailer.comment(comment.root.user, current_user, comment).deliver
+				if comment.user != comment.ama.user 
 				render partial: "reply", locals: {reply: comment} and return
 			else #response to the reply from mentor
 				render partial: 'comment', locals: {comment: comment} and return
