@@ -342,6 +342,7 @@ body {
 	#ama-questions {
 		position: relative;
 		height: 100vh;
+		padding: 0 !important;
 	}
 	.ama-mentor-intro .form_in_place {
 		width: 100%;
@@ -427,6 +428,10 @@ body {
 		top: 10px;
 		border: none;
 	}
+}
+
+#ama-questions {
+	padding: 0 10px 0 10px;
 }
 
 /********  Admin Tools ************/

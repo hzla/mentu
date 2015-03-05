@@ -56,7 +56,7 @@ gem 'unicorn'
 # Deploy with Capistrano
 gem "net-ssh", "~> 2.7.0"
 gem 'capistrano', '~> 2.15'
-gem "rvm-capistrano"
+gem "rvm-capistrano", require: false
 gem 'rails-web-console', require: 'rails_web_console/engine'
 
 

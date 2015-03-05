@@ -51,7 +51,7 @@
 				<%= image_tag current_avatar, :class => "comment-pic no-mobile" %>
 
 				<%= f.text_field :body, :placeholder => "Ask a question...", :class => "no-submit-on-enter field normal" %>
-				<%= f.submit "Post", id: "submit-comment", :class => "btn red-btn normal" %>
+				<%= f.submit "Post", id: "submit-comment", :class => "btn blue-btn normal bold" %>
 			<% end %>
 		</div>
 	</div>
@@ -109,8 +109,8 @@
 		</div>
 
 	</div>
-	
-	
+
+
 </section>
 
 <% if @browser.mobile? %>
