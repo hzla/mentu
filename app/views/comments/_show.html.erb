@@ -46,15 +46,7 @@
   </div>
   <% if current_mentor %>
       <div class="mentor-reply-form">
-          <%= form_for Comment.new, remote: true, html: {:class => "reply-form flex"} do |f| %>
-              <%= image_tag current_avatar, :class => "comment-pic" %>
-              <%= f.hidden_field :comment_type, value: "reply" %>
-              <div class="posting">Posting your answer...</div>
-              <%= f.hidden_field :ama_id, value: ama.id %>
-              <%= f.hidden_field :parent_id, value: question.id %>
-              <%= f.text_area :body, :class => "m-left-big reply-box inline m-answer-field", :placeholder => "Answer this question..." %>
-              <%= f.submit "Post", id: "submit-reply", :class => "btn red-btn hidden" %>
-          <% end %>
+          <%= render partial: "comments/new", locals: {comment: Comment.new, parent_id: question.id, placeholder: "Reply to this question...", ama_id: ama.id, comment_type: "reply", klass: "reply-form"} %>
       </div>
   <% end %>
 
@@ -64,17 +56,15 @@
           <%= render partial: "comments/comment", locals: {comment: comment} %>
       <% end %>
           <div class="user-comment-form">
-              <%= form_for Comment.new, remote: true, html: {:class => "comment-form flex"} do |f| %>
-                  <%= image_tag current_avatar, :class => "comment-pic" %>
-                  <%= f.hidden_field :comment_type, value: "comment" %>
-                  <%= f.hidden_field :ama_id, value: ama.id %>
-                  <%= f.hidden_field :parent_id, value: reply.id %>
-                  <%= f.text_area :body, :class => "m-left-big reply-box inline", :placeholder => "Reply to this answer..." %>
-                  <%= f.submit "Post", id: "submit-reply", :class => "btn red-btn hidden" %>
-              <% end %>
+              <%= render partial: "comments/new", locals: {comment: Comment.new, parent_id: reply.id, placeholder: "Reply to this answer...", ama_id: ama.id, comment_type: "comment", klass: "comment-form"} %>
           </div>
   <% end %>
 </div>
+
+
+
+
+
 
 <script>
   $('img.svg').each(function(){

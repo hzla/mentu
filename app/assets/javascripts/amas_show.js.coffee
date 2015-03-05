@@ -135,9 +135,10 @@ Ama =
 
 
   addComment: (event, data) ->
-  	$(@).parents('.user-comment-form').before(data)
-  	$(@).parents('.user-comment-form').prev().addClass('animated fadeIn')
-  	$(@)[0].reset()
+    console.log data
+    $(@).parents('.user-comment-form').before(data)
+    $(@).parents('.user-comment-form').prev().addClass('animated fadeIn')
+    $(@)[0].reset()
   	
   addReply: (event, data) ->
     $(@).parents('.mentor-reply-form').after(data)
