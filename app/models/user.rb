@@ -50,6 +50,10 @@ include Clearance::User
 		!amas.empty? ? amas.pluck(:like_count).reduce(:+) : 0
 	end
 
+	def date_ordered_amas
+		amas.where(show: true).order(:start_time).reverse
+	end
+
 	def activated?
 		codes.count > 0
 		#UNCOMMENT THE LINE BELOW THIS TO TURN OFF THE CODE REQUIREMENT

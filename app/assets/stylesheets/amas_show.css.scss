@@ -81,9 +81,23 @@
 
 /*******************  AMA Questions **************************/
 
+.main {
+	padding: 0px 10px;
+}
+
 #question-form-container {
 	height: 44px;
 	background: $greylight;
+}
+
+
+.sort-option {
+	cursor: pointer;
+	border-radius: 5px;
+}
+.sort-option.active {
+	text-decoration: underline;
+	color: $red;
 }
 
 #question-form {
@@ -126,14 +140,7 @@
 		#questions-sort-bar {
 			text-align: right;
 			vertical-align: bottom;
-		}
-		.sort-option {
-			cursor: pointer;
-			border-radius: 5px;
-		}
-		.sort-option.active {
-			text-decoration: underline;
-			color: $red;
+			padding-left: 0px;
 		}
 		#question-form #comment_body {
 			height: 40px;
@@ -151,7 +158,7 @@
 }
 
 body {
-	.question, .header-text-info {
+	.question {
 		padding-right: 40px;
 		position: relative;
 		box-sizing: border-box;
@@ -162,14 +169,47 @@ body {
 	}
 }
 
+
+.question-left {
+	width: 50px;
+}
+.question-body, .question-mid {
+	width: calc(100% - 100px);
+}
+
+div .question-mid {
+	display: block;
+}
+.upvote-container {
+	width: 50px;
+	position: relative;
+}
+.reply {
+	width: calc(100% - 50px);
+	margin-left: 50px;
+	margin-top: 10px;
+}
+.reply-body {
+	padding: 0px;
+}
+.comment {
+	width: calc(100% - 100px);
+	padding-left: 0px;
+	margin-left: 100px;
+}
+.header-text-info > * {
+	display: inline;
+}
+.header-text-info {
+	height: 40px;
+	width: 100%;
+	padding: none;
+}
+
+
 .question-body {
 	width: calc(100% - 40px);
 	overflow-x: hidden;
-}
-
-.upvote-container {
-	width: 40px;
-	position: static;
 }
 
 .comment-header {
@@ -182,8 +222,7 @@ body {
 
 .upvote-arrow {
 	position: absolute;
-	right: -2px;
-	top: 15px;
+	right: 0px;
 	height: 40px;
 	width: 20px;
 }
@@ -208,8 +247,8 @@ body {
 
 .upvote-value {
 	position: absolute;
-	right: 0;
-	top: 35px;
+	right: 2px;
+	top: 20px;
 	height: 15px;
 	width: 15px;
 	text-align: center;
@@ -234,7 +273,7 @@ body {
 	width: 60px;
 }
 
-.reply-body, .comment, .user-comment-form {
+.user-comment-form {
 	padding-left: 60px;
 }
 
@@ -245,21 +284,43 @@ body {
 
 @media (min-width: 1024px) {
 	body {
+		.question-left {
+			width: 60px;
+		}
+		.question-body, .question-mid {
+			width: calc(100% - 120px);
+		}
+		.question-mid {
+			display: block;
+		}
+		.upvote-container {
+			width: 60px;
+		}
+		.reply {
+			width: calc(100% - 60px);
+			margin-left: 60px;
+		}
 		.reply-body {
-			padding-left: 60px;
-			padding-right: 40px;
+			padding: 0px;
+		}
+		.comment {
+			width: calc(100% - 120px);
+			padding-left: 0px;
+			margin-left: 120px;
 		}
 		.header-text-info > * {
-			display: inline-block;
+			display: inline;
 		}
 		.header-text-info {
-			height: 80px;
+			height: 40px;
+			width: 100%;
+			padding: none;
 		}
 		.header-school {
 			width: 100%;
 		}
 		#questions {
-			height: calc(100vh - 90px);
+			height: calc(100vh - 60px);
 			overflow-y: hidden;
 		}
 		.reply-form, .comment-form {
@@ -284,7 +345,8 @@ body {
 		}
 		.upvote-value {
 			width: 30px;
-			top: 45px;
+			top: 30px;
+			right: 0px;
 			font-size: 16px;
 		}
 		#right-sidebar-container {
@@ -436,7 +498,7 @@ body {
 
 /********  Admin Tools ************/
 
-.admin-actions {
+div .admin-actions {
 	display: none;
 }
 

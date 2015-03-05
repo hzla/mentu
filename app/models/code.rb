@@ -9,10 +9,9 @@ class Code < ActiveRecord::Base
 	end
 
 	def generate_code
-		random = (48..122).map {|x| x.chr}
-		characters = (random - random[43..48] - random[10..16])
+		characters = (97..122).map {|x| x.chr}
 		code = characters.map {|c| characters.sample}
-		code.join[0..15]
+		code.join[0..9].upcase
 	end
 
 end

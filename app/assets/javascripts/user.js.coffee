@@ -3,13 +3,12 @@ User =
 		$('body').on 'click', '#upload-photo-text', @uploadPhoto
 		$('body').on 'click', '.edit-text', @editText
 		$('body').on 'keydown', '.form_in_place input, .form_in_place textarea', @saveOnEnter
+		$('body').on 'blur', '.form_in_place input, .form_in_place textarea', @saveFields
 		$('body').on 'click', '.background, .user-links', @incrementLinkClickCount
 		$('body').on 'ajax:success', '#activation-form', @showActivationStatus
 
 	showActivationStatus: (event, data) ->
-		console.log data
 		$('.activation-text').text(data.activation_text)
-
 
 	incrementLinkClickCount: ->
 		currentCount = parseInt($(@).attr('data-counter'))
@@ -21,8 +20,9 @@ User =
 			success: (data) ->
 				$(@).attr('data-counter', newCount)
 
-
-
+	saveFields: ->
+		$('.edit-text').text('edit')
+		$('.edit-text').attr('style', 'none')
 
 
 	saveOnEnter: (e) ->

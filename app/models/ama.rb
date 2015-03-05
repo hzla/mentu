@@ -23,7 +23,7 @@ class Ama < ActiveRecord::Base
 	def self.current
 		where(show: true).select do |ama|
 			ama.start_time.day == Time.now.day
-		end
+		end[0..2]
 	end
 	def question_count
 		comments.where(comment_type: "question").count

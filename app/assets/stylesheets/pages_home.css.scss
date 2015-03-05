@@ -97,8 +97,6 @@
 }
 
 .amas-container {
-	height: calc(100% - 44px);
-
 }
 
 .ama {
@@ -144,6 +142,9 @@
 			position: relative;
 			padding: 0;
 		}
+		.amas-container {
+			height: calc(100% - 44px);
+		}
 		#ama-header-content {
 			width: 960px;
 			margin-left: calc(50% - 480px);
@@ -173,11 +174,12 @@
 
 
 .info-icon {
-	height: 15px;
+	height: 20px;
 }
 
-.ama-main-info {
+body .ama-main-info {
 	max-width: calc(100% - 50px);
+	display: block;
 }
 
 .ama-add-info > * > * {
@@ -221,8 +223,15 @@
 			height: 80px;
 			border: none;
 		}
+		.ama-left {
+			width: 100px;
+		}
 		.ama-main-info{
-			width: 90%;
+			width: calc(100% - 240px);
+			display: block;
+		}
+		.ama-right {
+			width: 140px;
 		}
 		.ama-mentor-info {
 			width: calc(100% - 100px);

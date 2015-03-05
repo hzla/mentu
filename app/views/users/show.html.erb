@@ -1,8 +1,10 @@
 <%= render partial: 'pages/main_header' %>
 
-
+<script>
+	$('#main-header').css('background', 'white')
+</script>
 <div id="user-container">
-	<div id="user-main" class="flex p-full-big m-vert">
+	<div id="user-main" class="flex-parent p-full m-vert">
 		<%= image_tag @user.avatar_url, :class => "user-profile-pic m-right" %>
 		<% if @edit_mode %>
 			<img id="preview"></img>
@@ -37,6 +39,7 @@
 					<%= @user.like_count %> heat
 				</div>
 				<div class="m-hor-big bold no-mobile">
+					<div class="info-icon"></div>
 					<%= @user.like_count %> Recommendations
 				</div>
 			</div>	
@@ -44,8 +47,8 @@
 
 
 
-<div id="user-info-body">
-	<div id="user-sub-info" class="m-vert p-full">
+<div id="user-info-body" class="flex-parent">
+	<div id="user-sub-info" class="p-full">
 		<div class="user-info-header bold m-bottom-big">
 			Background 
 			<% if @edit_mode %>
@@ -63,7 +66,7 @@
 			AMAS
 		</div>
 		<div class="user-amas m-vert underlined">
-			<% @user.amas.order(:start_time).each do |ama| %>
+			<% @user.date_ordered_amas.each do |ama| %>
 				<%= link_to ama_path(ama), :class => "user-ama-link blue" do %>
 					<%= ama.start_time.strftime("%B %-d") %><br>
 				<% end %>
@@ -84,7 +87,7 @@
 		<% end %>
 	</div>
 	<div id="user-follow-me" class="p-full">
-		<div class="user-info-header bold m-vert-big">
+		<div class="user-info-header bold m-bottom-big">
 			Follow Me
 			<% if @edit_mode %>
 				<span class="red m-left-big edit-text" id="edit-follow-me">edit</span>
