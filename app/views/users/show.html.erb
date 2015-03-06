@@ -2,6 +2,7 @@
 
 <script>
 	$('#main-header').css('background', 'white')
+	$('.menu-arrow').toggle()
 </script>
 <div id="user-container">
 	<div id="user-main" class="flex-parent p-full m-vert">
@@ -15,7 +16,10 @@
 			<div class="red no-mobile" id="upload-photo-text">Upload Photo</div>
 		<% end %>
 		<div class="user-main-info m-hor">
-			<div id="user-name" class="bold"><%= @user.name %></div>
+			<div id="user-name" class="bold">
+				<%= @user.name %>
+				<%= image_tag("badgementor.svg", :class => "user-badge") %>
+			</div>
 			<% if @edit_mode %>
 				<div id="user-one-liner" class="m-vert"><%= best_in_place @user, :one_liner, type: :input, place_holder: "What school do you go to? Or what do you do?", activator: '#edit-one-liner' %></div>
 				<div class="red m-vert edit-text" id="edit-one-liner">edit</div>

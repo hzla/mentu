@@ -1,0 +1,9 @@
+<%= form_for comment, remote: true, html: {:class => "#{klass} flex"} do |f| %>
+  <%= image_tag current_avatar, :class => "comment-pic" %>
+  <%= f.hidden_field :comment_type, value: comment_type %>
+  <div class="posting">Posting your answer...</div>
+  <%= f.hidden_field :ama_id, value: ama_id %>
+  <%= f.hidden_field :parent_id, value: parent_id %>
+  <%= f.text_area :body, :class => "m-left-big reply-box inline m-answer-field", :placeholder => placeholder %>
+  <%= f.submit "Post", id: "submit-reply", :class => "btn red-btn hidden" %>
+<% end %>

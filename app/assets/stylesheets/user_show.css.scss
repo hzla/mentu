@@ -13,6 +13,11 @@
 	width: 60px;
 	border-radius: 60px;
 }
+.user-badge {
+	height: 30px;
+	margin-left: 10px;
+  -webkit-transform: translateY(20%);
+}
 
 #user-main {
 	background: $greylight;

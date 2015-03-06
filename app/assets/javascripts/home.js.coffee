@@ -9,12 +9,15 @@ Home =
     $('body').on 'click', '#got-it', @closeWelcome
     $('body').on 'submit', '#new_user', @checkFields
     $('body').on 'click', 'textarea, input, .upvote-container', @forceSignUp
+    $('body').on 'ajax:success', '.rec-link', @showRecommended
     @startScrollHeight = $('#landing-main').height()
     $(window).on 'scroll', @makeAmasScrollable if $('.amas-container').length > 0 && $(window).width() > 1024 
-    $(window).on 'scroll', @fillHeader if $(window).width() < 1024
+    $(window).on 'scroll', @fillHeader if $(window).width() < 1024 && $('.amas-container').length > 0
+
+  showRecommended: (event, data) ->
+    $(@).find('div').text('Recommended')
 
   fillHeader: ->
-    console.log Home.startScrollHeight
     if $(window).scrollTop() > Home.startScrollHeight 
       $('#main-header').css('background','white')
       $('#main-header').css('box-shadow', '0px 0px 10px 0px rgba(0,0,0,0.1)')
@@ -41,15 +44,15 @@ Home =
       return false
 
   makeAmasScrollable: ->
-    console.log "desk"
-    if $(window).scrollTop() > Home.startScrollHeight 
-      $('.amas-container').css 'overflow-y', 'scroll'
-      $('#landing-ama').css('z-index', '2')
-      $('#main-header').hide()
-    else
-      $('.amas-container').css 'overflow-y', 'hidden'
-      $('#landing-ama').css('z-index', '0')
-      $('#main-header').show()
+    if $('.amas-container').length > 0
+      if $(window).scrollTop() + 1 > Home.startScrollHeight 
+        $('.amas-container').css 'overflow-y', 'scroll'
+        $('#landing-ama').css('z-index', '2')
+        $('#main-header').hide()
+      else
+        $('.amas-container').css 'overflow-y', 'hidden'
+        $('#landing-ama').css('z-index', '0')
+        $('#main-header').show()
 
 
   closeWelcome: ->

@@ -1,0 +1,3 @@
+comments/_index.html
+	make it so that this file can use the _question, _comment, and _reply partials
+	so that changes to don't have to happen to all files

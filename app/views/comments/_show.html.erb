@@ -1,22 +1,71 @@
-<div class="question-thread p-full">
-	<div class="question p-vert">
-		<div class="question-body bold">
-			<%= question.body %>
-		</div>
-        <div class="upvote-container">
-    		<%= link_to comment_upvote_path(question), remote: true, :class => "upvote-link active" do %>
-    			<%= image_tag "upvoteempty.svg", :class => "upvote-arrow svg" %>
-    			<div class="upvote-value white">
-    				<%= question.score %>
-    			</div>
-    		<% end %>
-        </div>	
+<div class="question-thread p-top-big" data-score="<%= question.score %>" data-time="<%= question.elapsed_time %>" >
+  <% if current_admin %>
+      <div class="admin-actions">
+        <%= link_to comment_path(question), method: "delete", remote: true, :class => "admin-delete", data: {confirm: "yo you sure?"} do  %>
+            <div class="delete-thread red">
+              Delete Thread
+            </div>
+        <% end %>
+        <%= link_to edit_comment_path(question) do  %>
+            <div class="delete-thread green">
+              Edit Question
+            </div>
+        <% end %>
+      </div>
+  <% end %>
+
+  <div class="question p-vert flex-parent">
+      <div class="question-left no-mobile">
+          <%= image_tag question.user.avatar_url, :class => "comment-pic" %>
+      </div>
+      <div class="question-body bold">
+          <%= question.body %>
+      </div>
+      <% if current_user && question.upvoted_by?(current_user) %>
+          <div class="upvote-container">
+              <%= link_to comment_upvote_path(question), remote: true, :class => "upvote-link active" do %>
+                  <%= image_tag "upvoteclick.svg", :class => "upvote-arrow svg" %>
+                  <div class="upvote-value white">
+                      <%= question.score %>
+                  </div>
+              <% end %>
+          </div>
+      <% else %>
+          <div class="upvote-container">
+              <%= link_to comment_upvote_path(question), remote: true, :class => "upvote-link inactive" do %>
+                  <%= image_tag "upvoteempty.svg", :class => "upvote-arrow svg" %>
+                  <div class="upvote-value grey">
+                      <%= question.score %>
+                  </div>
+              <% end %>
+          </div>
+      <% end %>
+  </div>
+  <div class="question-timestamp grey p-vert-big">
+      <%= question.timestamp %>
+  </div>
+  <% if current_mentor %>
+      <div class="mentor-reply-form">
+          <%= render partial: "comments/new", locals: {comment: Comment.new, parent_id: question.id, placeholder: "Reply to this question...", ama_id: ama.id, comment_type: "reply", klass: "reply-form"} %>
+      </div>
+  <% end %>
+
+  <% question.children.each do |reply| %>
+      <%= render partial: "comments/reply", locals: {reply: reply} %>
+      <% reply.children.each do |comment| %>
+          <%= render partial: "comments/comment", locals: {comment: comment} %>
+      <% end %>
+          <div class="user-comment-form">
+              <%= render partial: "comments/new", locals: {comment: Comment.new, parent_id: reply.id, placeholder: "Reply to this answer...", ama_id: ama.id, comment_type: "comment", klass: "comment-form"} %>
+          </div>
+  <% end %>
 </div>
-	<div class="question-timestamp grey p-vert-big">
-		<%= question.timestamp %>
-	</div>
-</div>
-	
+
+
+
+
+
+
 <script>
   $('img.svg').each(function(){
     var $img = $(this);

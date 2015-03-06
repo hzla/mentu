@@ -3,7 +3,7 @@ class Ama < ActiveRecord::Base
 	has_many :comments
 	attr_accessible(:approved, :checking_approval, :mentor_code, :mentor_url, :category, :user_id, :start_time,
 	 :question_count, :like_count, :answer_count, :desc, :one_liner, :description, :background, :show,
-	 :background_url)
+	 :background_url, :rec_list)
 	after_create :generate_mentor_url
 	after_update :send_notification_after_review
 
@@ -33,6 +33,10 @@ class Ama < ActiveRecord::Base
 		comments.where(comment_type: "reply").count
 	end
 
+	def rec_count
+		rec_list ? rec_list.length : 0
+	end
+
 	def heat
 		comments.pluck(:score).reduce(:+)
 	end
@@ -53,6 +57,27 @@ class Ama < ActiveRecord::Base
 		code = characters.map {|c| characters.sample}
 		code.join[0..15]
 	end
+
+	def recommend_by user
+		if !rec_list
+			update_attributes rec_list: [user.id]
+			return
+		end 
+		new_rec_list = (rec_list.clone << user.id)
+		update_attributes rec_list: new_rec_list.uniq
+	end
+
+	def recommended_by? user
+		rec_list && rec_list.include?(user.id)
+	end
+	def recommenders
+		User.where('id in (?)', rec_list)
+	end
+
+	def recommenders_name
+		recommenders.pluck(:name)[0..5].join(", ")
+	end
+
 
 	private
 

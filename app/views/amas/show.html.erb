@@ -34,8 +34,17 @@
 			<%= image_tag "heat.svg", :class => "info-icon" %>
 			<%= @ama.heat %> heat
 		</div>
-		<div class="m-hor-big bold">
-			<%= @ama.like_count %> Rec<span class="no-mobile">ommendation</span>s
+		<div class="m-hor-big bold" id="rec-count">
+			<%= @ama.rec_count %> Rec<span class="no-mobile hidden">ommendation</span>s
+			<div class="no-mobile flex-parent" id="rec-box">
+				<% @ama.recommenders.each do |user| %>
+					<div class="recer p-half">
+						<%= image_tag user.avatar_url, :class => "rec-pic" %>
+						<div class="rec-name"><%= user.name %></div>
+					</div>
+				<% end %>
+
+			</div>
 		</div>
 	</div>
 </section>
@@ -77,7 +86,7 @@
 				<div class="bold m-vert-big">AMAS OF THE DAY</div>
 				<% Ama.current.each do |ama| %>
 					<%= link_to ama_path(ama) do %>
-						<div class="featured-ama flex">
+						<div class="featured-ama flex-parent">
 							<%= image_tag current_avatar, :class => "comment-pic" %>
 							<div class="featured-desc m-bottom-big m-left">
 								<%= ama.description %>

@@ -190,6 +190,10 @@ body .ama-main-info {
 	margin-left: 5px;
 }
 
+body .grey .mobile-rec {
+	color: $blue;
+}
+
 @media (min-width: 1024px) {
 	body {
 
@@ -232,6 +236,7 @@ body .ama-main-info {
 		}
 		.ama-right {
 			width: 140px;
+			position: relative;
 		}
 		.ama-mentor-info {
 			width: calc(100% - 100px);
@@ -260,9 +265,16 @@ body .ama-main-info {
 		}
 		.like-count {
 			position: absolute;
-			right: 20px;
+			right: 0px;
 			top: 20px;
 			font-size: 16px;
+		}
+		.desk-rec {
+			position: absolute;
+			bottom: 10px;
+			text-decoration: underline;
+			text-align: right;
+			right: 0px;
 		}
 		.like-count .info-icon {
 			height: 20px;
