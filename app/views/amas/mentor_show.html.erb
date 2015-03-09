@@ -5,27 +5,27 @@
 <% end %>
 <section id="ama-cover">
 	<div class="mentor-prompt first bold p-half">
-		<span class="no-mobile">Click anywhere on the picture or text to edit it.</span>
-		<span class="no-desk">Please update your profile using desktop.</span>
-	</div> 
+		<span class="no-mobile">点击任意一个地方开始编辑</span>
+		<span class="no-desk">请从电脑登陆火花并开始编辑</span>
+	</div>
 	<div id="mentor-prompts" class="bold">
 
 		<div class="mentor-prompt m-vert-very-big" id="photo-prompt">
-			Upload a profile picture.
-		</div> 
+			上传你的头像
+		</div>
 
 		<div class="mentor-prompt m-vert-very-big">
-			Write a short bio explaning who you are or what you do.
-		</div> 
+			写一个简单的介绍，你是谁，你在做些什么
+		</div>
 
 		<div class="mentor-prompt m-vert-very-big">
-			Write a quick background. Feel free to promote yourself or anything you are working on.
-		</div> 
+			分享你的故事，让火花上的伙伴更便捷的了解你
+		</div>
 
 	</div>
 
 	<div id="ama-countdown" class="white no-mobile">
-		 AMA scheduled for <%= @ama.start_time %>
+		 回答倒计时 <%= @ama.start_time %>
 	</div>
 
 	<div id="ama-mentor">
@@ -34,7 +34,7 @@
 			<%= hidden_field_tag :ama, @ama.id %>
 			<%= f.submit "Confirm", :class => "upload-photo hidden" %>
 		<% end %>
-		<img id="preview" src="#" alt="preview failed to load" class="hidden" /> 
+		<img id="preview" src="#" alt="preview failed to load" class="hidden" />
 		<%= image_tag @mentor.avatar_url, id: "ama-mentor-pic", :class => "m-vert" %>
 		<div class="ama-mentor-intro white m-vert-very-big big bold">
 			<%= best_in_place @ama, :one_liner, type: :input, place_holder: "Write a short one liner that tells people about yourself. Click here to edit." %>
@@ -57,17 +57,17 @@
 			</div>
 
 			<% if @ama.checking_approval && !@ama.approved %>
-				<div id="submit-ama" class="btn blue-btn bold"> 
+				<div id="submit-ama" class="btn blue-btn bold">
 					Pending Approval...
 				</div>
 			<% elsif !@ama.checking_approval %>
 				<%= link_to ama_path(id: @ama.id, ama: {checking_approval: true }), method: "put", remote: true, id: "approval-link" do %>
-					<div id="submit-ama" class="btn blue-btn bold"> 
+					<div id="submit-ama" class="btn blue-btn bold">
 						Submit for approval
 					</div>
 				<% end %>
 			<% else %>
-				<div id="submit-ama" class="btn blue-btn bold"> 
+				<div id="submit-ama" class="btn blue-btn bold">
 					Approved! (editing locked)
 				</div>
 			<% end %>
@@ -90,17 +90,17 @@
 	function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
-        
+
         reader.onload = function (e) {
             $('#preview').show()
             $('#preview').attr('src', e.target.result);
             $('.upload-photo').show()
         }
-        
+
         reader.readAsDataURL(input.files[0]);
     }
   }
-    
+
   $("#user_avatar").change(function(){
       readURL(this);
   });

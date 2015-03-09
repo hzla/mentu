@@ -8,7 +8,7 @@
 
 <section id="ama-cover">
 	<div id="ama-countdown" class="white no-mobile">
-		 <span>Countdown to answering</span> <span id="countdown" data-countdown="<%= (@ama.start_time - (Time.now + 8.hours)).floor %>">00:00:00</span>
+		 <span>回答倒计时</span> <span id="countdown" data-countdown="<%= (@ama.start_time - (Time.now + 8.hours)).floor %>">00:00:00</span>
 	</div>
 
 	<div id="ama-mentor">
@@ -24,18 +24,18 @@
 	<div id="ama-stats" class="inline-container small white">
 		<div class="m-hor-big">
 			<%= image_tag "answer.svg", :class => "info-icon" %>
-			<%= @ama.answer_count %> answers
+			<%= @ama.answer_count %> 回答
 		</div>
 		<div class="no-mobile m-hor-big">
 			<%= image_tag "question.svg", :class => "info-icon" %>
-			<%= @ama.question_count %> questions
+			<%= @ama.question_count %> 问题
 		</div>
 		<div class="m-hor-big">
 			<%= image_tag "heat.svg", :class => "info-icon" %>
 			<%= @ama.heat %> heat
 		</div>
 		<div class="m-hor-big bold" id="rec-count">
-			<%= @ama.rec_count %> Rec<span class="no-mobile hidden">ommendation</span>s
+			<%= @ama.rec_count %> 人推荐
 			<div class="no-mobile flex-parent" id="rec-box">
 				<% @ama.recommenders.each do |user| %>
 					<div class="recer p-half">
@@ -59,8 +59,8 @@
 
 				<%= image_tag current_avatar, :class => "comment-pic no-mobile" %>
 
-				<%= f.text_field :body, :placeholder => "Ask a question...", :class => "no-submit-on-enter field normal" %>
-				<%= f.submit "Post", id: "submit-comment", :class => "btn blue-btn normal bold" %>
+				<%= f.text_field :body, :placeholder => "提出你的问题...", :class => "no-submit-on-enter field normal" %>
+				<%= f.submit "发布", id: "submit-comment", :class => "btn blue-btn normal bold" %>
 			<% end %>
 		</div>
 	</div>
@@ -68,22 +68,22 @@
 	<div class="main">
 		<div id="questions" class="main-left">
 			<div id="questions-sort-bar" class="inline-container bigsub p-vert">
-				<div>Sort questions by:</div>
-				<div class="sort-option m-hor-big p-hor bold" id="sort-new">New</div>
-				<div class="sort-option active p-hor bold" id="sort-popular">Popular</div>
+				<div>问题排序:</div>
+				<div class="sort-option m-hor-big p-hor bold" id="sort-new">最新</div>
+				<div class="sort-option active p-hor bold" id="sort-popular">热门</div>
 			</div>
 			<%= render partial: "comments/index" %>
 		</div>
 
 		<div id="right-sidebar-container" class="no-mobile main-right">
 			<div class="background-container m-top-very-big">
-				<div class="bold">FOLLOW ME</div>
+				<div class="bold">请关注</div>
 				<div class="background m-vert inline-container" data-counter="<%= @mentor.link_click_count %>" data-user-id="<%= @mentor.id %>">
 					<%= @ama.background %>
 				</div>
 			</div>
 			<div class="featured m-top-very-big">
-				<div class="bold m-vert-big">AMAS OF THE DAY</div>
+				<div class="bold m-vert-big">今日导师</div>
 				<% Ama.current.each do |ama| %>
 					<%= link_to ama_path(ama) do %>
 						<div class="featured-ama flex-parent">
@@ -97,21 +97,21 @@
 			</div>
 			<div class="sidebar-footer">
 				<div id="feedback" class="m-vert">
-					Send Feedback
+					联系我们
 				</div>
 
 				<div id="site-info-box" class="inline-container grey">
 					<div class="site-info">
-						Support
+						支持
 					</div>
 					<div class="site-info">
-						Privacy
+            隐私
 					</div>
 					<div class="site-info">
-						Terms
+						协议
 					</div>
 					<div class="site-info last">
-						© 2014 Spark
+						© 2014 火花
 					</div>
 				</div>
 			</div>

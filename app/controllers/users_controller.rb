@@ -31,11 +31,16 @@ class UsersController < ApplicationController
 
 	def activate
 		code = Code.where(body: params[:code])
-		if code.first && code.first.user.nil? 
+		if code.first && code.first.user.nil?
 			current_user.codes << code
 			render json: {activation_text: "Your account is now activated! For supporting us so early, you also get a beta user badge next to your name."} and return
 		else
 			render json: {activation_text: "Sorry, that code is invalid or has already been claimed. If you lose your code you can contact support@spark.com to get a new one."}
+		end
+
+		def upload_avatar
+			p params
+			p request.body.read
 		end
 	end
 

@@ -1,14 +1,14 @@
 <div class="signup-overlay-container hidden">
 	<%= image_tag "close.svg", id: "close-modal" %>
 	<div class="modal-content">
-		<div class="bold p-bottom-very-big big" id="signup-message">Sign up to start contributing!</div>
-		<div class="p-vert-very-big big">Get in the heads of people who've done it.</div>
+		<div class="bold p-bottom-very-big big" id="signup-message">注册并开始</div>
+		<div class="p-vert-very-big big">与火花上的小伙伴们一起分享你的故事!</div>
 
 		<div id="signup-content">
 			<div id="signup-buttons">
 				<%= link_to '/auth/facebook' do %>
 					<div class="btn blue-btn sign-up-btn m-vert-big" id="facebook">
-						Sign up with Facebook
+						通过Facebook登陆
 					</div>
 				<% end %>
 <!-- 				<div class="btn sign-up-btn m-vert-big wechat">
@@ -22,10 +22,10 @@
 			<div id="desk-separator" class="no-mobile"></div>
 			<div id="signup-form">
 				<%= form_for @user do |f| %>
-					<%= f.text_field :name, :class => "signup-field field m-bottom-big", placeholder:"Name" %>
-					<%= f.text_field :email, :class => "signup-field field m-vert", placeholder:"Email", type: "email" %>
-					<%= f.password_field :password, :class => "signup-field field m-vert", placeholder: "Password" %>
-					<%= f.submit "Create Account", :class => "signup-field field m-vert blue-btn", id: "create-user"  %>
+					<%= f.text_field :name, :class => "signup-field field m-bottom-big", placeholder:"姓名" %>
+					<%= f.text_field :email, :class => "signup-field field m-vert", placeholder:"邮箱地址", type: "email" %>
+					<%= f.password_field :password, :class => "signup-field field m-vert", placeholder: "密码" %>
+					<%= f.submit "创建账号", :class => "signup-field field m-vert blue-btn", id: "create-user"  %>
 				<% end %>
 			</div>
 		</div>

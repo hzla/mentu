@@ -17,6 +17,7 @@ class CommentsController < ApplicationController
 				render partial: 'comment', locals: {comment: comment} and return
 			end
 		else
+			# need implementation
 			render "not activated yet"
 		end
 	end

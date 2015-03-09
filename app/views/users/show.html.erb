@@ -6,14 +6,13 @@
 </script>
 <div id="user-container">
 	<div id="user-main" class="flex-parent p-full m-vert">
-		<%= image_tag @user.avatar_url, :class => "user-profile-pic m-right" %>
-		<% if @edit_mode %>
-			<img id="preview"></img>
-			<%= form_for @user, multipart: true, html: {id: "avatar-form"} do |f| %>
+		<%= image_tag @user.avatar_url, id: 'avatarPreview', :class => "user-profile-pic m-right" %>
+		  <% if @edit_mode %>
+			  <%= form_for @user, multipart: true, html: {id: "avatar-form"} do |f| %>
 				<%= f.file_field :avatar, :class => "no-mobile" %>
 				<%= f.submit "Confirm", :class => "upload-photo hidden" %>
 			<% end %>
-			<div class="red no-mobile" id="upload-photo-text">Upload Photo</div>
+			<div class="red no-mobile" id="upload-photo-text">上传照片</div>
 		<% end %>
 		<div class="user-main-info m-hor">
 			<div id="user-name" class="bold">
@@ -21,8 +20,8 @@
 				<%= image_tag("badgementor.svg", :class => "user-badge") %>
 			</div>
 			<% if @edit_mode %>
-				<div id="user-one-liner" class="m-vert"><%= best_in_place @user, :one_liner, type: :input, place_holder: "What school do you go to? Or what do you do?", activator: '#edit-one-liner' %></div>
-				<div class="red m-vert edit-text" id="edit-one-liner">edit</div>
+				<div id="user-one-liner" class="m-vert"><%= best_in_place @user, :one_liner, type: :input, place_holder: "介绍一下你自己", activator: '#edit-one-liner' %></div>
+				<div class="red m-vert edit-text" id="edit-one-liner">编辑</div>
 			<% else %>
 				<div id="user-one-liner" class="m-vert"><%= @user.one_liner %></div>
 			<% end %>
@@ -30,12 +29,12 @@
 			<div id="user-stats" class="m-vert-big">
 				<div class="m-hor-big">
 					<%= image_tag "question.svg", :class => "info-icon" %>
-					<%= @user.question_count %> questions
+					<%= @user.question_count %> 提问
 				</div>
 				<% if @user.is_mentor %>
 					<div class="m-hor-big">
 						<%= image_tag "answer.svg", :class => "info-icon" %>
-						<%= @user.answer_count %> answers
+						<%= @user.answer_count %> 回答
 					</div>
 				<% end %>
 				<div class="m-hor-big">
@@ -54,20 +53,20 @@
 <div id="user-info-body" class="flex-parent">
 	<div id="user-sub-info" class="p-full">
 		<div class="user-info-header bold m-bottom-big">
-			Background
+			我的故事
 			<% if @edit_mode %>
 				<span class="red m-left-big edit-text" id="edit-background">edit</span>
 			<% end %>
 		</div>
 		<div class="m-vert" id="user-background">
 			<% if @edit_mode %>
-				<%= best_in_place @user, :background, type: :textarea, place_holder: "Let people know a bit about who are you, your interests, or what you like to do.", activator: '#edit-background' %>
+				<%= best_in_place @user, :background, type: :textarea, place_holder: "简单的分享你的故事让大家方便的了解你。", activator: '#edit-background' %>
 			<% else %>
 				<%= @user.background %>
 			<% end %>
 		</div>
 		<div class="user-info-header bold m-vert-big">
-			AMAS
+			我的问题和回答
 		</div>
 		<div class="user-amas m-vert underlined">
 			<% @user.date_ordered_amas.each do |ama| %>
@@ -92,7 +91,7 @@
 	</div>
 	<div id="user-follow-me" class="p-full">
 		<div class="user-info-header bold m-bottom-big">
-			Follow Me
+			请关注我
 			<% if @edit_mode %>
 				<span class="red m-left-big edit-text" id="edit-follow-me">edit</span>
 			<% end %>
@@ -116,9 +115,8 @@
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            $('#preview').show()
-            $('#upload-photo-text').text('Confirm Photo')
-            $('#preview').attr('src', e.target.result);
+            $('#upload-photo-text').text('上传成功')
+            $('#avatarPreview').attr('src', e.target.result);
         }
 
         reader.readAsDataURL(input.files[0]);
