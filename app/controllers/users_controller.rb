@@ -37,11 +37,6 @@ class UsersController < ApplicationController
 		else
 			render json: {activation_text: "Sorry, that code is invalid or has already been claimed. If you lose your code you can contact support@spark.com to get a new one."}
 		end
-
-		def upload_avatar
-			p params
-			p request.body.read
-		end
 	end
 
 end
