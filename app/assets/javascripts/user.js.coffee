@@ -21,7 +21,7 @@ User =
 				$(@).attr('data-counter', newCount)
 
 	saveFields: ->
-		$('.edit-text').text('edit')
+		$('.edit-text').text('编辑')
 		$('.edit-text').attr('style', 'none')
 
 
@@ -41,7 +41,7 @@ User =
   	# console.log $("##{field}")
   	# $("##{field}").click()
 		# console.log "Wtf"
-		$(@).text('Press Enter to Save')
+		$(@).text('敲击回车保存')
 		$(@).css('color', '#288aff')
 		$(@).css('text-decoration', 'underline')
 
