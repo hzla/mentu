@@ -10,7 +10,7 @@ class Ama < ActiveRecord::Base
 
 	def self.date_grouped_amas category
 		amas = (category == "all") ? Ama.all : where(category: category)
-		grouped = amas.where(show: true).where('start_time < (?)', Time.now + 24.hours).order(:start_time).reverse.group_by do |ama| 
+		grouped = amas.where(show: true).order(:start_time).reverse.group_by do |ama| 
 			time = ama.start_time.strftime("%B %-d") 
 			if ama.start_time.strftime("%B %-d") == Time.now.strftime("%B %-d")
 				time = "Today"

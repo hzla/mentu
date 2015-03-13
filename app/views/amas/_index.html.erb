@@ -53,6 +53,11 @@
 								</div>
 							<% end %>
 						<% end %>
+						<% if current_admin %>
+							<%= link_to ama_path(ama), method: "delete", data: {confirm: "yo you sure?"} do %>
+								Delete Ama
+							<% end %>
+						<% end %>
 					</div>
 				</div>
 			<% end %>

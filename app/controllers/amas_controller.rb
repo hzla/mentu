@@ -16,10 +16,18 @@ class AmasController < ApplicationController
 		end
 	end
 
+	def edit
+		@ama = Ama.find(params[:id])
+	end
+
 	def update
 		@ama = Ama.find(params[:id])
 		@ama.update_attributes params[:ama] if !@ama.approved
-		render nothing: true;
+		if request.xhr?
+		  render nothing: true and return
+		else
+		  redirect_to root_path
+		end
 	end
 
 	def index
@@ -33,6 +41,12 @@ class AmasController < ApplicationController
 			@ama.recommend_by current_user
 		end
 		render nothing: true
+	end
+
+	def destroy
+		@ama = Ama.find(params[:id])
+		@ama.destroy
+		redirect_to root_path
 	end
 
 end
