@@ -9,8 +9,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # uncomment the two gems below if they are causing errors
-gem "eventmachine", '~> 1.0.7'
-gem 'tzinfo-data'
+# gem "eventmachine", '~> 1.0.7'
+# gem 'tzinfo-data'
 
 
 group :assets do
@@ -56,7 +56,7 @@ gem "opentok", "~> 2.2"
 
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 # comment out unicorn during development if you are using windows
 
 
