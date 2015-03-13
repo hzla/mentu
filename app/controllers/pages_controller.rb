@@ -4,6 +4,7 @@ class PagesController < ApplicationController
 
 	def home
 		@amas = Ama.date_grouped_amas "all"
+		@error_message = params[:error_message]
 		@user = User.new
 		@new_user = params[:sign_up] == "true"
 	end

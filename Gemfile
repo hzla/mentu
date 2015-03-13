@@ -12,6 +12,11 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem "eventmachine", '~> 1.0.7'
 # gem 'tzinfo-data'
 
+# Use unicorn as the app server
+# gem 'unicorn'
+# comment out unicorn during development if you are using windows
+
+
 
 group :assets do
   gem 'sprockets'
@@ -55,9 +60,6 @@ gem 'exception_notification'
 gem "opentok", "~> 2.2"
 
 
-# Use unicorn as the app server
-gem 'unicorn'
-# comment out unicorn during development if you are using windows
 
 
 # Deploy with Capistrano

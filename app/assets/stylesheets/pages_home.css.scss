@@ -13,6 +13,14 @@
 	}
 }
 
+#error-message {
+  text-align: center;
+  position: fixed;
+  top: 20px;
+  color: $red;
+  width: 100%;
+  z-index: 2;
+}
 
 
 #landing-main {

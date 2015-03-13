@@ -17,7 +17,9 @@ class AmasController < ApplicationController
 	end
 
 	def edit
-		@ama = Ama.find(params[:id])
+		if current_admin
+			@ama = Ama.find(params[:id])
+		end
 	end
 
 	def update

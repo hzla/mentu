@@ -3,6 +3,9 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.create params[:user]
+		if @user.errors[:email]
+			redirect_to root_path(:error_message => "Email has already been taken") and return
+		end
 		session[:user_id] = @user.id
 		redirect_to root_path(sign_in: true, sign_up: true)
 	end

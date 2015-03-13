@@ -5,6 +5,12 @@
 <% if @new_user %>
 	<%= render partial: "welcome" %>
 <% end %>
+
+<% if @error_message %>
+	<div id="error-message">
+		<%= @error_message %>
+	</div>
+<% end %>
 	<section id="landing-main" class="<%= 'signed-in-main' if current_user %>">
 		<div id="landing-content">
 			<div class="landing-message">
