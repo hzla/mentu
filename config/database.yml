@@ -3,16 +3,16 @@ development:
   encoding: unicode
   database: mentu
   host: localhost
-  username: postgres
-  password: password
+  username: mentu
+  password: secret
 test:
   adapter: postgresql
   encoding: unicode
   database: mentu_test
   host: localhost
   pool: 5
-  username: postgres
-  password: password
+  username: mentu
+  password: secret
 production:
   adapter: postgresql
   encoding: unicode
