@@ -27,7 +27,9 @@
 #ama-cover {
 	height: 80vh;
 	width: 100vw;
-	background: image_url('amabg.jpg');
+	background:
+	  linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+	  image_url('amabg.jpg');
 	background-size: cover;
 	position: relative;
 }
@@ -214,7 +216,7 @@ body {
 	width: 50px;
 }
 .question-body, .question-mid {
-	width: calc(100% - 100px);
+	width: calc(100% - 70px);
 }
 
 div .question-mid {
@@ -225,17 +227,15 @@ div .question-mid {
 	position: relative;
 }
 .reply {
-	width: calc(100% - 50px);
-	margin-left: 50px;
 	margin-top: 10px;
 }
 .reply-body {
 	padding: 0px;
 }
 .comment {
-	width: calc(100% - 100px);
+	width: calc(100% - 50px);
 	padding-left: 0px;
-	margin-left: 100px;
+	margin-left: 50px;
 }
 .header-text-info > * {
 	display: inline;
@@ -248,7 +248,7 @@ div .question-mid {
 
 
 .question-body {
-	width: calc(100% - 40px);
+	width: calc(100% - 20px);
 	overflow-x: hidden;
 }
 
@@ -257,7 +257,7 @@ div .question-mid {
 }
 
 .header-text-info {
-	width: calc(100% - 40px);
+	width: 100%;
 }
 
 .upvote-arrow {
@@ -325,7 +325,7 @@ div .question-mid {
 }
 
 .user-comment-form {
-	padding-left: 60px;
+	padding-left: 4s0px;
 }
 
 .reply-body, .comment-body{
@@ -456,7 +456,7 @@ div .question-mid {
 	#ama-questions {
 		position: relative;
 		height: 100vh;
-		padding: 0 !important;
+		padding: 0;
 	}
 	.ama-mentor-intro .form_in_place {
 		width: 100%;
@@ -542,10 +542,6 @@ div .question-mid {
 		top: 10px;
 		border: none;
 	}
-}
-
-#ama-questions {
-	padding: 0 10px 0 10px;
 }
 
 /********  Admin Tools ************/
