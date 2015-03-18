@@ -1,0 +1,148 @@
+@import 'variables';
+
+#main-header {
+	position: fixed;
+	height: 44px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+}
+#main-header.outlined {
+	background: white;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+	z-index: 3;
+}
+
+.logo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 30px;
+	margin: 5px 10px 5px 10px;
+}
+
+#main-header-actions-right {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#sign-up {
+	width: 67px;
+	cursor: pointer;
+	text-align: center;
+	display: inline;
+}
+
+.menu-arrow {
+	cursor: pointer;
+}
+
+.menu-arrow.black {
+	g, path {
+		fill: $greydark;
+	}
+}
+
+.mobile-menu {
+	height: 25px;
+	z-index: 20;
+}
+
+
+
+@media (min-width: 1024px) {
+	body {
+		#main-header {
+			height: 60px;
+		}
+		#main-header-actions-right {
+			margin-right: calc(50% - 480px);
+		}
+		.logo {
+			height: 40px;
+			margin-left: calc(50% - 480px);
+			margin-top: 10px;
+		}
+		#sign-up {
+			width: 106px;
+			border-radius: 5px;
+			text-align: center;
+  		display: inline;
+		}
+		.main-header-action {
+			cursor: pointer;
+			height: 40px;
+			line-height: 40px;
+			padding: 0px 10px;
+			border-radius: 0px;
+			border-bottom: 1px solid $blue;
+			-webkit-transition: border-color 1s ease;
+         -moz-transition: border-color 1s ease;
+           -o-transition: border-color 1s ease;
+          -ms-transition: border-color 1s ease;
+              transition: border-color 1s ease;
+      border-color: rgba(0,0,0,0)
+		}
+		.main-header-action.m-full {
+			margin-top: 10px;
+		}
+		.main-header-action:hover {
+			border-color: $blue;
+		}
+		.current-user-pic {
+			height: 40px;
+			width: 40px;
+			border-radius: 40px;
+		}
+		.current-user-name {
+			height: 60px;
+			line-height: 60px;
+		}
+		.menu-arrow.m-half {
+<<<<<<< HEAD
+			margin-top: 30px;
+=======
+			margin-top: 5px;
+			margin-bottom: 5px;
+>>>>>>> master
+		}
+		.menu-arrow.black {
+			display: none;
+		}
+	}
+}
+
+/********** Menu  ***************/
+
+#menu {
+	position: fixed;
+	background: white;
+	height: 100vh;
+	width: 66vw;
+	right: 0;
+	top: 0;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.menu-item {
+	height: 40px;
+	line-height: 40px;
+	color: $red;
+	cursor: pointer;
+	width: 100%;
+	margin: 10px 0px 10px 20px;
+}
+
+@media (min-width: 1024px) {
+	body {
+		#menu {
+			width: 160px;
+			top: 60px;
+			border-radius: 5px;
+			right: calc(50vw - 480px);
+			height: auto;
+		}
+	}
+}
