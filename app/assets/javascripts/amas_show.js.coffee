@@ -72,7 +72,7 @@ Ama =
       counter = setInterval ->
         count = count - 1
         if count > 0
-        
+
 
           seconds = count % 60
           minutes = Math.floor(count / 60)
@@ -93,7 +93,7 @@ Ama =
     $people = $('#questions')
     $peopleli = $people.children('.question-thread')
 
-    $peopleli.sort (a,b) -> 
+    $peopleli.sort (a,b) ->
       an = parseInt(a.getAttribute('data-time'))
       bn = parseInt(b.getAttribute('data-time'))
 
@@ -112,7 +112,7 @@ Ama =
     $people = $('#questions')
     $peopleli = $people.children('.question-thread')
 
-    $peopleli.sort (a,b) -> 
+    $peopleli.sort (a,b) ->
       an = parseInt(a.getAttribute('data-score'))
       bn = parseInt(b.getAttribute('data-score'))
 
@@ -136,7 +136,7 @@ Ama =
       $(@).removeClass('inactive')
       $(@).addClass('active')
       value.css('color', 'white')
-    else 
+    else
       $(@).removeClass('active')
       $(@).addClass('inactive')
       value.css('color', 'darkgrey')
@@ -153,7 +153,7 @@ Ama =
     $(@).parents('.user-comment-form').before(data)
     $(@).parents('.user-comment-form').prev().addClass('animated fadeIn')
     $(@)[0].reset()
-  	
+
   addReply: (event, data) ->
     $(@).parents('.mentor-reply-form').after(data)
     $(@).find('.posting').hide()
@@ -165,7 +165,7 @@ Ama =
   	$('#questions-sort-bar').after(data)
   	$('.question-thread').first().addClass('animated fadeIn')
   	$(@)[0].reset()
-    
+
 
 ready = ->
   Ama.init()

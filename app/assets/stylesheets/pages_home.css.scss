@@ -30,7 +30,9 @@
 	text-align: center;
 	position: relative;
 	overflow-x: hidden;
-	background: image-url("backgroundpic.jpg");
+	background:
+	  linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+	  image-url("backgroundpic.jpg");
 	background-size: cover;
 }
 
@@ -178,6 +180,9 @@
 	height: 40px;
 	width: 40px;
 	border-radius: 100px;
+}
+.ama-left {
+	width: 50px;
 }
 
 
