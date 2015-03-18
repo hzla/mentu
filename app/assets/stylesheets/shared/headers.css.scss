@@ -18,8 +18,8 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 85px;
 	height: 30px;
+	margin: 5px 10px 5px 10px;
 }
 
 #main-header-actions-right {
@@ -60,9 +60,8 @@
 		#main-header-actions-right {
 			margin-right: calc(50% - 480px);
 		}
-		.logo.m-full {
+		.logo {
 			height: 40px;
-			width: 115px;
 			margin-left: calc(50% - 480px);
 			margin-top: 10px;
 		}
@@ -102,7 +101,8 @@
 			line-height: 60px;
 		}
 		.menu-arrow.m-half {
-			margin-top: 30px;
+			margin-top: 5px;
+			margin-bottom: 5px;
 		}
 		.menu-arrow.black {
 			display: none;
