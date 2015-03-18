@@ -218,6 +218,9 @@ body {
 .question-body, .question-mid {
 	width: calc(100% - 70px);
 }
+.question-right {
+	width: 20px;
+}
 
 div .question-mid {
 	display: block;
@@ -343,6 +346,9 @@ div .question-mid {
 		}
 		.question-mid {
 			display: block;
+		}
+		.question-right {
+			width: 60px;
 		}
 		.upvote-container {
 			width: 60px;
