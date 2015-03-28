@@ -13,7 +13,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'tzinfo-data'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 # comment out unicorn during development if you are using windows
 
 
